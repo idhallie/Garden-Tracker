@@ -14,6 +14,7 @@
 		26CFCA9923C0EA730069E05D /* Garden_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9723C0EA730069E05D /* Garden_Tracker.xcdatamodeld */; };
 		26CFCA9B23C0EA750069E05D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CFCA9A23C0EA750069E05D /* Assets.xcassets */; };
 		26CFCA9E23C0EA750069E05D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CFCA9C23C0EA750069E05D /* LaunchScreen.storyboard */; };
+		26FDBE9023C12BB600BEBA66 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		26CFCA9D23C0EA750069E05D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26CFCA9F23C0EA750069E05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CFCAA923C0ECC80069E05D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		26CFCAA723C0EABA0069E05D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */,
 				26CFCA9223C0EA730069E05D /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26FDBE9023C12BB600BEBA66 /* AddPlantViewController.swift in Sources */,
 				26CFCA9323C0EA730069E05D /* ViewController.swift in Sources */,
 				26CFCA8F23C0EA730069E05D /* AppDelegate.swift in Sources */,
 				26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */,
