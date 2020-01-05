@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddPlantViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class AddPlantViewController: UIViewController {
          var plantType : String! = ""
      
     @IBOutlet weak var typeMenuTitle: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +46,9 @@ class AddPlantViewController: UIViewController {
         // lightMenu.isHidden = !lightMenu.isHidden
         
         }
-        
+    
+    
+
     
     @IBAction func addBtnTapped(_ sender: UIButton) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -61,5 +65,21 @@ class AddPlantViewController: UIViewController {
     }
     
     
+    // LIGHT MENU STUFF
+    // Light buttons
+    @IBOutlet var lightButtons: [UIButton]!
+    
+    
+    
+    @IBAction func handleLightSelection(_ sender: UIButton) {
+        lightButtons.forEach {(button) in
+            button.isHidden = !button.isHidden
+        }
+    }
+    
+        
+    @IBAction func lightBtnTapped(_ sender: UIButton) {
+
+    }
     
 }
