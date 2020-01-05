@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddPlantViewController: UIViewController {
+class AddPlantViewController: UIViewController, UITextViewDelegate {
 
     
     @IBOutlet weak var plantName: UITextField!
@@ -29,10 +29,16 @@ class AddPlantViewController: UIViewController {
     @IBOutlet var floweringButtons: [UIButton]!
     var flowering : String! = ""
     
+    // Notes field
+    @IBOutlet weak var plantNotes: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        plantNotes.text = "Notes"
+        plantNotes.textColor = UIColor.lightGray
+        plantNotes.delegate = self
     }
     
     
@@ -91,6 +97,14 @@ class AddPlantViewController: UIViewController {
             button.isHidden = !button.isHidden }
     }
     
+    // Notes
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Notes" {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
     
     // SUBMIT
     @IBAction func addBtnTapped(_ sender: UIButton) {
@@ -101,7 +115,7 @@ class AddPlantViewController: UIViewController {
         plant.type = plantType
         plant.light = lightNeeds
         plant.flowering = flowering
-        
+        plant.notes = plantNotes.text!
         
         //Save the data to coredata
         

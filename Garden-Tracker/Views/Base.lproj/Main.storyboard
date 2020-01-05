@@ -447,10 +447,21 @@
                                     <constraint firstAttribute="trailing" secondItem="3DD-AJ-mdE" secondAttribute="trailing" constant="40" id="vrD-sb-uqH"/>
                                 </constraints>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EaF-CY-7MU">
+                                <rect key="frame" x="40" y="568" width="334" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="JxT-4E-CoC"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IYN-cv-mxU" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" id="5as-sv-Bn8"/>
+                            <constraint firstItem="mgr-MC-ODK" firstAttribute="trailing" secondItem="EaF-CY-7MU" secondAttribute="trailing" constant="40" id="9Qe-Cx-Cs4"/>
                             <constraint firstItem="IYN-cv-mxU" firstAttribute="top" secondItem="Wn8-13-AUb" secondAttribute="bottom" constant="40" id="C8R-0g-0ij"/>
                             <constraint firstItem="Wn8-13-AUb" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" constant="40" id="D59-lb-91N"/>
                             <constraint firstItem="Wn8-13-AUb" firstAttribute="centerX" secondItem="3bb-OA-4SN" secondAttribute="centerX" id="Epu-65-7Kc"/>
@@ -461,6 +472,8 @@
                             <constraint firstItem="8DQ-Vr-tdp" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" id="VpT-mN-nQZ"/>
                             <constraint firstItem="06d-ca-h78" firstAttribute="centerX" secondItem="3bb-OA-4SN" secondAttribute="centerX" id="Wl9-5e-i0a"/>
                             <constraint firstItem="mgr-MC-ODK" firstAttribute="trailing" secondItem="8DQ-Vr-tdp" secondAttribute="trailing" id="Wry-yD-liM"/>
+                            <constraint firstItem="EaF-CY-7MU" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" constant="40" id="XZ3-E9-pf6"/>
+                            <constraint firstItem="EaF-CY-7MU" firstAttribute="top" secondItem="8DQ-Vr-tdp" secondAttribute="bottom" constant="40" id="fXO-EO-08k"/>
                             <constraint firstItem="Wn8-13-AUb" firstAttribute="top" secondItem="mgr-MC-ODK" secondAttribute="top" constant="40" id="gkm-Ax-gKM"/>
                             <constraint firstItem="mgr-MC-ODK" firstAttribute="trailing" secondItem="Wn8-13-AUb" secondAttribute="trailing" constant="40" id="xpe-rF-pU9"/>
                             <constraint firstItem="fLa-fF-uJB" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" id="yb3-tn-efX"/>
@@ -473,6 +486,7 @@
                         <outlet property="floweringMenuTitle" destination="iEf-ZD-gad" id="YaD-Bh-0f5"/>
                         <outlet property="lightMenuTitle" destination="odf-FU-Q0J" id="QI8-sB-Jbz"/>
                         <outlet property="plantName" destination="Wn8-13-AUb" id="CKZ-ET-ih5"/>
+                        <outlet property="plantNotes" destination="EaF-CY-7MU" id="4rd-KY-bdT"/>
                         <outlet property="typeMenuTitle" destination="FXn-Ny-XBB" id="D1V-J3-YVX"/>
                         <outletCollection property="typeButtons" destination="Nkm-eZ-bWp" collectionClass="NSMutableArray" id="BH4-Td-8Gx"/>
                         <outletCollection property="typeButtons" destination="8Io-ox-EY7" collectionClass="NSMutableArray" id="sJU-oV-UyC"/>

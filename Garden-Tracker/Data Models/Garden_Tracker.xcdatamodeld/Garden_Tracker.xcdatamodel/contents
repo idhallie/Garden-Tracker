@@ -4,9 +4,10 @@
         <attribute name="flowering" optional="YES" attributeType="String"/>
         <attribute name="light" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Plant" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Plant" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>
