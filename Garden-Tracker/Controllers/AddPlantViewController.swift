@@ -13,9 +13,15 @@ class AddPlantViewController: UIViewController {
 
     @IBOutlet weak var plantName: UITextField!
     @IBOutlet var typeButtons: [UIButton]!
-         var plantType : String! = ""
+    var plantType : String! = ""
      
     @IBOutlet weak var typeMenuTitle: UIButton!
+    
+    // Light Stuff
+    @IBOutlet weak var lightMenuTitle: UIButton!
+    @IBOutlet var lightButtons: [UIButton]!
+    var lightNeeds : String! = ""
+    
     
     
     override func viewDidLoad() {
@@ -32,7 +38,7 @@ class AddPlantViewController: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
-        // lightMenu.isHidden = !lightMenu.isHidden
+        lightMenuTitle.isHidden = !lightMenuTitle.isHidden
     }
     
     
@@ -43,7 +49,7 @@ class AddPlantViewController: UIViewController {
         typeButtons.forEach { (button) in
             button.isHidden = !button.isHidden }
         
-        // lightMenu.isHidden = !lightMenu.isHidden
+        lightMenuTitle.isHidden = !lightMenuTitle.isHidden
         
         }
     
@@ -56,6 +62,7 @@ class AddPlantViewController: UIViewController {
         let plant = Plant(context: context)
         plant.name = plantName.text!
         plant.type = plantType
+        plant.light = lightNeeds
         
         
         //Save the data to coredata
@@ -66,10 +73,7 @@ class AddPlantViewController: UIViewController {
     
     
     // LIGHT MENU STUFF
-    // Light buttons
-    @IBOutlet var lightButtons: [UIButton]!
-    
-    
+
     
     @IBAction func handleLightSelection(_ sender: UIButton) {
         lightButtons.forEach {(button) in
@@ -79,7 +83,12 @@ class AddPlantViewController: UIViewController {
     
         
     @IBAction func lightBtnTapped(_ sender: UIButton) {
-
+        lightNeeds = sender.currentTitle!
+        lightMenuTitle.setTitle("Light Needs: \(lightNeeds!)", for: .normal)
+        
+        lightButtons.forEach { (button) in
+            button.isHidden = !button.isHidden }
+        
     }
     
 }

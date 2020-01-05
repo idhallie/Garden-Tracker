@@ -296,6 +296,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cEY-OK-wEg"/>
                     <connections>
+                        <outlet property="lightMenuTitle" destination="odf-FU-Q0J" id="QI8-sB-Jbz"/>
                         <outlet property="plantName" destination="Wn8-13-AUb" id="CKZ-ET-ih5"/>
                         <outlet property="typeMenuTitle" destination="FXn-Ny-XBB" id="D1V-J3-YVX"/>
                         <outletCollection property="typeButtons" destination="Nkm-eZ-bWp" collectionClass="NSMutableArray" id="BH4-Td-8Gx"/>
