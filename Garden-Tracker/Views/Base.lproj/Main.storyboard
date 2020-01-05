@@ -21,16 +21,8 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTy-HA-pZs">
-                                <rect key="frame" x="30" y="48" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="gEG-sQ-EjI" kind="show" id="aPg-hV-k1r"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wsY-lQ-THk">
-                                <rect key="frame" x="87" y="426" width="240" height="128"/>
+                                <rect key="frame" x="40" y="426" width="334" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -73,9 +65,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dF1-Qx-EjN">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GVe-fy-cII"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="dF1-Qx-EjN"/>
                     <connections>
                         <outlet property="descLabel" destination="wsY-lQ-THk" id="mbx-xQ-ONf"/>
                         <outlet property="floweringLabel" destination="dyS-qV-wyT" id="01j-vS-dRk"/>
@@ -86,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2827.536231884058" y="943.52678571428567"/>
+            <point key="canvasLocation" x="2826.0869565217395" y="943.52678571428567"/>
         </scene>
         <!--My Plants View Controller-->
         <scene sceneID="wKe-Or-mIZ">
@@ -112,7 +102,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="HqF-cg-GMW">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="cRa-bK-gBn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cRa-bK-gBn">
                             <connections>
                                 <segue destination="sss-Ua-dsh" kind="show" id="zBc-iC-qon"/>
                             </connections>
@@ -546,7 +536,6 @@
                             <constraint firstItem="mgr-MC-ODK" firstAttribute="trailing" secondItem="EaF-CY-7MU" secondAttribute="trailing" constant="40" id="9Qe-Cx-Cs4"/>
                             <constraint firstItem="IYN-cv-mxU" firstAttribute="top" secondItem="Wn8-13-AUb" secondAttribute="bottom" constant="40" id="C8R-0g-0ij"/>
                             <constraint firstItem="Wn8-13-AUb" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" constant="40" id="D59-lb-91N"/>
-                            <constraint firstItem="Wn8-13-AUb" firstAttribute="centerX" secondItem="3bb-OA-4SN" secondAttribute="centerX" id="Epu-65-7Kc"/>
                             <constraint firstItem="mgr-MC-ODK" firstAttribute="bottom" secondItem="06d-ca-h78" secondAttribute="bottom" constant="40" id="Kn8-tf-Gtf"/>
                             <constraint firstItem="8DQ-Vr-tdp" firstAttribute="top" secondItem="fLa-fF-uJB" secondAttribute="bottom" constant="80" id="Kqr-5k-sxH"/>
                             <constraint firstItem="fLa-fF-uJB" firstAttribute="top" secondItem="IYN-cv-mxU" secondAttribute="bottom" constant="80" id="LgV-Hg-gXW"/>
