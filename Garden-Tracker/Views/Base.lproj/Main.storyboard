@@ -225,6 +225,7 @@
                     <navigationItem key="navigationItem" id="cEY-OK-wEg"/>
                     <connections>
                         <outlet property="plantName" destination="Wn8-13-AUb" id="CKZ-ET-ih5"/>
+                        <outlet property="typeMenuTitle" destination="FXn-Ny-XBB" id="D1V-J3-YVX"/>
                         <outletCollection property="typeButtons" destination="Nkm-eZ-bWp" collectionClass="NSMutableArray" id="BH4-Td-8Gx"/>
                         <outletCollection property="typeButtons" destination="8Io-ox-EY7" collectionClass="NSMutableArray" id="sJU-oV-UyC"/>
                         <outletCollection property="typeButtons" destination="tQE-8s-bJL" collectionClass="NSMutableArray" id="H4t-Ds-02q"/>
