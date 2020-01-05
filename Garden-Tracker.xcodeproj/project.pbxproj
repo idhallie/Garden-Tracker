@@ -16,6 +16,7 @@
 		26CFCA9E23C0EA750069E05D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CFCA9C23C0EA750069E05D /* LaunchScreen.storyboard */; };
 		26FDBE9023C12BB600BEBA66 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */; };
 		26FDBE9623C26A1400BEBA66 /* MyPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9523C26A1400BEBA66 /* MyPlantsViewController.swift */; };
+		26FDBE9823C2A80600BEBA66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9723C2A80600BEBA66 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		26CFCAA923C0ECC80069E05D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		26FDBE9523C26A1400BEBA66 /* MyPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsViewController.swift; sourceTree = "<group>"; };
+		26FDBE9723C2A80600BEBA66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 		26CFCA8223C0EA730069E05D = {
 			isa = PBXGroup;
 			children = (
+				26FDBE9723C2A80600BEBA66 /* Constants.swift */,
 				26CFCAA923C0ECC80069E05D /* README.md */,
 				26CFCA8D23C0EA730069E05D /* Garden-Tracker */,
 				26CFCA8C23C0EA730069E05D /* Products */,
@@ -185,6 +188,7 @@
 				26FDBE9623C26A1400BEBA66 /* MyPlantsViewController.swift in Sources */,
 				26CFCA9323C0EA730069E05D /* ViewController.swift in Sources */,
 				26CFCA8F23C0EA730069E05D /* AppDelegate.swift in Sources */,
+				26FDBE9823C2A80600BEBA66 /* Constants.swift in Sources */,
 				26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */,
 				26CFCA9923C0EA730069E05D /* Garden_Tracker.xcdatamodeld in Sources */,
 			);
