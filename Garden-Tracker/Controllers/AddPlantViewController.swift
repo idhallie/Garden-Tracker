@@ -100,6 +100,7 @@ class AddPlantViewController: UIViewController {
         plant.name = plantName.text!
         plant.type = plantType
         plant.light = lightNeeds
+        plant.flowering = flowering
         
         
         //Save the data to coredata
