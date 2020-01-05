@@ -44,11 +44,6 @@ class AddPlantViewController: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
-        lightMenuTitle.isHidden = !lightMenuTitle.isHidden
-        lightButtons.forEach {(button) in
-            button.isHidden = true
-        }
-        
     }
     
     @IBAction func typeBtnTapped(_ sender: UIButton) {
@@ -57,14 +52,15 @@ class AddPlantViewController: UIViewController {
         
         typeButtons.forEach { (button) in
             button.isHidden = !button.isHidden }
-        
-        lightMenuTitle.isHidden = !lightMenuTitle.isHidden
         }
     
     // LIGHT MENU
     @IBAction func handleLightSelection(_ sender: UIButton) {
-        lightButtons.forEach {(button) in
-            button.isHidden = !button.isHidden
+        lightButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
         }
     }
         
@@ -79,10 +75,12 @@ class AddPlantViewController: UIViewController {
     // FLOWERING MENU
     
     @IBAction func handleFloweringSelection(_ sender: UIButton) {
-        floweringButtons.forEach {(button) in
-            button.isHidden = !button.isHidden
+        floweringButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
         }
-        
     }
     
     @IBAction func floweringBtnTapped(_ sender: UIButton) {
