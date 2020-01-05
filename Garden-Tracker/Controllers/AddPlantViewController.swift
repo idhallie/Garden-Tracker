@@ -11,18 +11,23 @@ import CoreData
 
 class AddPlantViewController: UIViewController {
 
+    
     @IBOutlet weak var plantName: UITextField!
+    
+    // Type menu outlets
+    @IBOutlet weak var typeMenuTitle: UIButton!
     @IBOutlet var typeButtons: [UIButton]!
     var plantType : String! = ""
-     
-    @IBOutlet weak var typeMenuTitle: UIButton!
     
-    // Light Stuff
+    // Light menu outlets
     @IBOutlet weak var lightMenuTitle: UIButton!
     @IBOutlet var lightButtons: [UIButton]!
     var lightNeeds : String! = ""
     
-    
+    // Flowering menu outlets
+    @IBOutlet weak var floweringMenuTitle: UIButton!
+    @IBOutlet var floweringButtons: [UIButton]!
+    var flowering : String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,7 @@ class AddPlantViewController: UIViewController {
     }
     
     
+    // TYPE MENU
     @IBAction func handleTypeSelection(_ sender: UIButton) {
         typeButtons.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
@@ -38,9 +44,7 @@ class AddPlantViewController: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
-        lightMenuTitle.isHidden = !lightMenuTitle.isHidden
     }
-    
     
     @IBAction func typeBtnTapped(_ sender: UIButton) {
         plantType = sender.currentTitle!
@@ -48,39 +52,17 @@ class AddPlantViewController: UIViewController {
         
         typeButtons.forEach { (button) in
             button.isHidden = !button.isHidden }
-        
-        lightMenuTitle.isHidden = !lightMenuTitle.isHidden
-        
         }
     
-    
-
-    
-    @IBAction func addBtnTapped(_ sender: UIButton) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let plant = Plant(context: context)
-        plant.name = plantName.text!
-        plant.type = plantType
-        plant.light = lightNeeds
-        
-        
-        //Save the data to coredata
-        
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        navigationController!.popViewController(animated: true)
-    }
-    
-    
-    // LIGHT MENU STUFF
-
-    
+    // LIGHT MENU
     @IBAction func handleLightSelection(_ sender: UIButton) {
-        lightButtons.forEach {(button) in
-            button.isHidden = !button.isHidden
+        lightButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
         }
     }
-    
         
     @IBAction func lightBtnTapped(_ sender: UIButton) {
         lightNeeds = sender.currentTitle!
@@ -88,7 +70,43 @@ class AddPlantViewController: UIViewController {
         
         lightButtons.forEach { (button) in
             button.isHidden = !button.isHidden }
+    }
+    
+    // FLOWERING MENU
+    
+    @IBAction func handleFloweringSelection(_ sender: UIButton) {
+        floweringButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    @IBAction func floweringBtnTapped(_ sender: UIButton) {
+        flowering = sender.currentTitle!
+        floweringMenuTitle.setTitle("Flowering Season: \(flowering!)", for: .normal)
         
+        floweringButtons.forEach { (button) in
+            button.isHidden = !button.isHidden }
+    }
+    
+    
+    // SUBMIT
+    @IBAction func addBtnTapped(_ sender: UIButton) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let plant = Plant(context: context)
+        plant.name = plantName.text!
+        plant.type = plantType
+        plant.light = lightNeeds
+        plant.flowering = flowering
+        
+        
+        //Save the data to coredata
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
     }
     
 }
