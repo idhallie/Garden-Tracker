@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Y-Am-pmf">
-                                <rect key="frame" x="186" y="149" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Y-Am-pmf">
+                                <rect key="frame" x="0.0" y="128" width="414" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -38,8 +37,40 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybg-Zh-aP8">
+                                <rect key="frame" x="40" y="198" width="334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light Needs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wx-1p-FsH">
+                                <rect key="frame" x="40" y="259" width="334" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flowering Season" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-qV-wyT">
+                                <rect key="frame" x="40" y="319.5" width="334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z4Y-Am-pmf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2qs-bb-58b"/>
+                            <constraint firstItem="dyS-qV-wyT" firstAttribute="top" secondItem="3Wx-1p-FsH" secondAttribute="bottom" constant="40" id="3qo-s7-cEa"/>
+                            <constraint firstItem="Z4Y-Am-pmf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="COh-KF-2CI"/>
+                            <constraint firstItem="dyS-qV-wyT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="NF6-0a-E7A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Wx-1p-FsH" secondAttribute="trailing" constant="40" id="NMr-lI-gzA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dyS-qV-wyT" secondAttribute="trailing" constant="40" id="atG-ep-pDL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z4Y-Am-pmf" secondAttribute="trailing" id="b1I-B7-1NK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ybg-Zh-aP8" secondAttribute="trailing" constant="40" id="lea-x4-PWx"/>
+                            <constraint firstItem="3Wx-1p-FsH" firstAttribute="top" secondItem="Ybg-Zh-aP8" secondAttribute="bottom" constant="40" id="s1p-cH-oyS"/>
+                            <constraint firstItem="3Wx-1p-FsH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="tSe-kj-vzv"/>
+                            <constraint firstItem="Ybg-Zh-aP8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="w5X-ch-Evy"/>
+                            <constraint firstItem="Ybg-Zh-aP8" firstAttribute="top" secondItem="Z4Y-Am-pmf" secondAttribute="bottom" constant="40" id="wJf-3s-PfD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="dF1-Qx-EjN">
@@ -47,12 +78,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descLabel" destination="wsY-lQ-THk" id="mbx-xQ-ONf"/>
+                        <outlet property="floweringLabel" destination="dyS-qV-wyT" id="01j-vS-dRk"/>
+                        <outlet property="lightLabel" destination="3Wx-1p-FsH" id="wBf-hu-Mcd"/>
                         <outlet property="titleLabel" destination="Z4Y-Am-pmf" id="cZf-lF-Nhi"/>
+                        <outlet property="typeLabel" destination="Ybg-Zh-aP8" id="V4Z-Sm-CTc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2897.1014492753625" y="582.58928571428567"/>
+            <point key="canvasLocation" x="2827.536231884058" y="943.52678571428567"/>
         </scene>
         <!--My Plants View Controller-->
         <scene sceneID="wKe-Or-mIZ">
@@ -559,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGZ-KE-Ggw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2828" y="-80"/>
+            <point key="canvasLocation" x="2826" y="206"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uMM-fV-0jm">
