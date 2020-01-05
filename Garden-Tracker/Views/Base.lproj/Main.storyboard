@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DI4-Wu-0Jl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gEG-sQ-EjI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -12,7 +12,7 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Y-Am-pmf">
@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="DI4-Wu-0Jl" kind="show" id="aPg-hV-k1r"/>
+                                    <segue destination="gEG-sQ-EjI" kind="show" id="aPg-hV-k1r"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wsY-lQ-THk">
@@ -52,14 +52,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986.9565217391305" y="582.58928571428567"/>
+            <point key="canvasLocation" x="2897.1014492753625" y="582.58928571428567"/>
         </scene>
         <!--My Plants View Controller-->
         <scene sceneID="wKe-Or-mIZ">
             <objects>
                 <tableViewController id="DI4-Wu-0Jl" customClass="MyPlantsViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tKV-g8-7nv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -77,14 +77,20 @@
                             <outlet property="delegate" destination="DI4-Wu-0Jl" id="CvC-jS-WvB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="HqF-cg-GMW"/>
+                    <navigationItem key="navigationItem" id="HqF-cg-GMW">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="cRa-bK-gBn">
+                            <connections>
+                                <segue destination="sss-Ua-dsh" kind="show" id="zBc-iC-qon"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="detailSegue" id="2V7-oF-tTo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqh-DQ-UI3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="583"/>
+            <point key="canvasLocation" x="1942.0289855072465" y="582.58928571428567"/>
         </scene>
         <!--Add Plant View Controller-->
         <scene sceneID="Zpo-oQ-0AS">
@@ -95,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Plant Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wn8-13-AUb">
-                                <rect key="frame" x="40" y="84" width="334" height="50"/>
+                                <rect key="frame" x="40" y="128" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="93r-Vl-Ocz"/>
                                 </constraints>
@@ -117,7 +123,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IYN-cv-mxU">
-                                <rect key="frame" x="0.0" y="174" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="218" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXn-Ny-XBB">
                                         <rect key="frame" x="40" y="0.0" width="334" height="50"/>
@@ -300,7 +306,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fLa-fF-uJB">
-                                <rect key="frame" x="0.0" y="304" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="348" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odf-FU-Q0J">
                                         <rect key="frame" x="40" y="0.0" width="334" height="50"/>
@@ -387,7 +393,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8DQ-Vr-tdp">
-                                <rect key="frame" x="0.0" y="434" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="478" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEf-ZD-gad">
                                         <rect key="frame" x="40" y="0.0" width="334" height="50"/>
@@ -490,7 +496,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EaF-CY-7MU">
-                                <rect key="frame" x="40" y="524" width="334" height="100"/>
+                                <rect key="frame" x="40" y="568" width="334" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="JxT-4E-CoC"/>
@@ -553,22 +559,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGZ-KE-Ggw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="-315"/>
+            <point key="canvasLocation" x="2828" y="-80"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="oTx-PI-WhA">
+        <scene sceneID="uMM-fV-0jm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jh1-Mk-2Ie" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gEG-sQ-EjI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aQW-70-FAm">
+                    <navigationItem key="navigationItem" id="N2f-1l-0ub"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mtW-Cp-pbx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DI4-Wu-0Jl" kind="relationship" relationship="rootViewController" id="AN6-6s-q7e"/>
+                    </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vbK-BX-aDH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aax-eK-gsT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+            <point key="canvasLocation" x="1031.8840579710145" y="582.58928571428567"/>
         </scene>
     </scenes>
 </document>
