@@ -24,6 +24,11 @@ class AddPlantViewController: UIViewController {
     @IBOutlet var lightButtons: [UIButton]!
     var lightNeeds : String! = ""
     
+    // Flowering menu outlets
+    @IBOutlet weak var floweringMenuTitle: UIButton!
+    @IBOutlet var floweringButtons: [UIButton]!
+    var flowering : String! = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +45,10 @@ class AddPlantViewController: UIViewController {
             })
         }
         lightMenuTitle.isHidden = !lightMenuTitle.isHidden
+        lightButtons.forEach {(button) in
+            button.isHidden = true
+        }
+        
     }
     
     @IBAction func typeBtnTapped(_ sender: UIButton) {
@@ -52,7 +61,7 @@ class AddPlantViewController: UIViewController {
         lightMenuTitle.isHidden = !lightMenuTitle.isHidden
         }
     
-    // LIGHT MENU STUFF
+    // LIGHT MENU
     @IBAction func handleLightSelection(_ sender: UIButton) {
         lightButtons.forEach {(button) in
             button.isHidden = !button.isHidden
@@ -67,8 +76,25 @@ class AddPlantViewController: UIViewController {
             button.isHidden = !button.isHidden }
     }
     
-    // SUBMIT
+    // FLOWERING MENU
     
+    @IBAction func handleFloweringSelection(_ sender: UIButton) {
+        floweringButtons.forEach {(button) in
+            button.isHidden = !button.isHidden
+        }
+        
+    }
+    
+    @IBAction func floweringBtnTapped(_ sender: UIButton) {
+        flowering = sender.currentTitle!
+        floweringMenuTitle.setTitle("Flowering Season: \(flowering!)", for: .normal)
+        
+        floweringButtons.forEach { (button) in
+            button.isHidden = !button.isHidden }
+    }
+    
+    
+    // SUBMIT
     @IBAction func addBtnTapped(_ sender: UIButton) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         

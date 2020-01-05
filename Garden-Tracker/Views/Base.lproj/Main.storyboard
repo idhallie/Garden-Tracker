@@ -276,6 +276,86 @@
                                     <constraint firstItem="Rcp-hk-6UX" firstAttribute="leading" secondItem="fLa-fF-uJB" secondAttribute="leading" constant="40" id="pL4-Vj-Sgg"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8DQ-Vr-tdp">
+                                <rect key="frame" x="0.0" y="426" width="414" height="182"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEf-ZD-gad">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="32"/>
+                                        <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Flowering Season">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleFloweringSelection:" destination="sss-Ua-dsh" eventType="touchUpInside" id="To1-Lz-qCu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DD-AJ-mdE">
+                                        <rect key="frame" x="40" y="32" width="334" height="30"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Winter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="cGF-Bd-gxN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUc-fD-j9T">
+                                        <rect key="frame" x="40" y="62" width="334" height="30"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Spring">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="8gm-7n-mpq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty9-Uc-jof">
+                                        <rect key="frame" x="40" y="92" width="334" height="30"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Summer">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="uM6-km-zcl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49E-H9-s0L">
+                                        <rect key="frame" x="40" y="122" width="334" height="30"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Fall">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="SLf-nz-N58"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R55-JS-f7Y">
+                                        <rect key="frame" x="40" y="152" width="334" height="30"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Not Applicable">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="3gP-Cr-oOX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ty9-Uc-jof" firstAttribute="leading" secondItem="8DQ-Vr-tdp" secondAttribute="leading" constant="40" id="0To-hd-gog"/>
+                                    <constraint firstAttribute="trailing" secondItem="iEf-ZD-gad" secondAttribute="trailing" constant="40" id="9vt-uv-dYI"/>
+                                    <constraint firstAttribute="trailing" secondItem="cUc-fD-j9T" secondAttribute="trailing" constant="40" id="KT7-72-4oW"/>
+                                    <constraint firstAttribute="trailing" secondItem="49E-H9-s0L" secondAttribute="trailing" constant="40" id="Tuw-Xo-uSU"/>
+                                    <constraint firstItem="R55-JS-f7Y" firstAttribute="leading" secondItem="8DQ-Vr-tdp" secondAttribute="leading" constant="40" id="bqf-pb-Tga"/>
+                                    <constraint firstAttribute="trailing" secondItem="R55-JS-f7Y" secondAttribute="trailing" constant="40" id="cWi-at-jDH"/>
+                                    <constraint firstItem="49E-H9-s0L" firstAttribute="leading" secondItem="8DQ-Vr-tdp" secondAttribute="leading" constant="40" id="gC5-x9-aOG"/>
+                                    <constraint firstItem="iEf-ZD-gad" firstAttribute="leading" secondItem="8DQ-Vr-tdp" secondAttribute="leading" constant="40" id="kAQ-VO-MU6"/>
+                                    <constraint firstItem="3DD-AJ-mdE" firstAttribute="leading" secondItem="8DQ-Vr-tdp" secondAttribute="leading" constant="40" id="lMs-hi-XIJ"/>
+                                    <constraint firstItem="cUc-fD-j9T" firstAttribute="leading" secondItem="8DQ-Vr-tdp" secondAttribute="leading" constant="40" id="mEF-Hy-HQU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ty9-Uc-jof" secondAttribute="trailing" constant="40" id="sTK-vH-zT8"/>
+                                    <constraint firstAttribute="trailing" secondItem="3DD-AJ-mdE" secondAttribute="trailing" constant="40" id="vrD-sb-uqH"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -284,9 +364,12 @@
                             <constraint firstItem="Wn8-13-AUb" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" constant="40" id="D59-lb-91N"/>
                             <constraint firstItem="Wn8-13-AUb" firstAttribute="centerX" secondItem="3bb-OA-4SN" secondAttribute="centerX" id="Epu-65-7Kc"/>
                             <constraint firstItem="mgr-MC-ODK" firstAttribute="bottom" secondItem="06d-ca-h78" secondAttribute="bottom" constant="40" id="Kn8-tf-Gtf"/>
+                            <constraint firstItem="8DQ-Vr-tdp" firstAttribute="top" secondItem="fLa-fF-uJB" secondAttribute="bottom" constant="80" id="Kqr-5k-sxH"/>
                             <constraint firstItem="fLa-fF-uJB" firstAttribute="top" secondItem="IYN-cv-mxU" secondAttribute="bottom" constant="80" id="LgV-Hg-gXW"/>
                             <constraint firstItem="mgr-MC-ODK" firstAttribute="trailing" secondItem="IYN-cv-mxU" secondAttribute="trailing" id="TTZ-zc-WTe"/>
+                            <constraint firstItem="8DQ-Vr-tdp" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" id="VpT-mN-nQZ"/>
                             <constraint firstItem="06d-ca-h78" firstAttribute="centerX" secondItem="3bb-OA-4SN" secondAttribute="centerX" id="Wl9-5e-i0a"/>
+                            <constraint firstItem="mgr-MC-ODK" firstAttribute="trailing" secondItem="8DQ-Vr-tdp" secondAttribute="trailing" id="Wry-yD-liM"/>
                             <constraint firstItem="Wn8-13-AUb" firstAttribute="top" secondItem="mgr-MC-ODK" secondAttribute="top" constant="40" id="gkm-Ax-gKM"/>
                             <constraint firstItem="mgr-MC-ODK" firstAttribute="trailing" secondItem="Wn8-13-AUb" secondAttribute="trailing" constant="40" id="xpe-rF-pU9"/>
                             <constraint firstItem="fLa-fF-uJB" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" id="yb3-tn-efX"/>
@@ -296,6 +379,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cEY-OK-wEg"/>
                     <connections>
+                        <outlet property="floweringMenuTitle" destination="iEf-ZD-gad" id="YaD-Bh-0f5"/>
                         <outlet property="lightMenuTitle" destination="odf-FU-Q0J" id="QI8-sB-Jbz"/>
                         <outlet property="plantName" destination="Wn8-13-AUb" id="CKZ-ET-ih5"/>
                         <outlet property="typeMenuTitle" destination="FXn-Ny-XBB" id="D1V-J3-YVX"/>
@@ -313,6 +397,11 @@
                         <outletCollection property="lightButtons" destination="Rcp-hk-6UX" collectionClass="NSMutableArray" id="Skc-qc-sOf"/>
                         <outletCollection property="lightButtons" destination="syc-L5-Rbh" collectionClass="NSMutableArray" id="SfH-ih-WiE"/>
                         <outletCollection property="lightButtons" destination="Zpd-W6-Zbv" collectionClass="NSMutableArray" id="MgD-6a-s2m"/>
+                        <outletCollection property="floweringButtons" destination="3DD-AJ-mdE" collectionClass="NSMutableArray" id="xLW-Qb-Mtb"/>
+                        <outletCollection property="floweringButtons" destination="cUc-fD-j9T" collectionClass="NSMutableArray" id="Fay-6K-uQT"/>
+                        <outletCollection property="floweringButtons" destination="Ty9-Uc-jof" collectionClass="NSMutableArray" id="roS-JT-gnd"/>
+                        <outletCollection property="floweringButtons" destination="49E-H9-s0L" collectionClass="NSMutableArray" id="e8b-nN-6cl"/>
+                        <outletCollection property="floweringButtons" destination="R55-JS-f7Y" collectionClass="NSMutableArray" id="HZD-ui-ibb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGZ-KE-Ggw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
