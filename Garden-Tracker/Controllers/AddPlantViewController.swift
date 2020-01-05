@@ -23,7 +23,6 @@ class AddPlantViewController: UIViewController {
     }
     
     
- 
     @IBAction func handleTypeSelection(_ sender: UIButton) {
         typeButtons.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
@@ -60,5 +59,7 @@ class AddPlantViewController: UIViewController {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }
+    
+    
     
 }
