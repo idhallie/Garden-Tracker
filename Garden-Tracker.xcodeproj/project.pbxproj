@@ -18,6 +18,8 @@
 		26FDBE9623C26A1400BEBA66 /* MyPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9523C26A1400BEBA66 /* MyPlantsViewController.swift */; };
 		26FDBE9823C2A80600BEBA66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9723C2A80600BEBA66 /* Constants.swift */; };
 		26FDBE9A23C3894500BEBA66 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9923C3894500BEBA66 /* WeatherManager.swift */; };
+		26FDBE9C23C3D69D00BEBA66 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9B23C3D69D00BEBA66 /* WeatherData.swift */; };
+		26FDBE9E23C3E49500BEBA66 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9D23C3E49500BEBA66 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		26FDBE9523C26A1400BEBA66 /* MyPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsViewController.swift; sourceTree = "<group>"; };
 		26FDBE9723C2A80600BEBA66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		26FDBE9923C3894500BEBA66 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		26FDBE9B23C3D69D00BEBA66 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		26FDBE9D23C3E49500BEBA66 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 			children = (
 				26CFCA9723C0EA730069E05D /* Garden_Tracker.xcdatamodeld */,
 				26FDBE9923C3894500BEBA66 /* WeatherManager.swift */,
+				26FDBE9B23C3D69D00BEBA66 /* WeatherData.swift */,
+				26FDBE9D23C3E49500BEBA66 /* WeatherModel.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -191,9 +197,11 @@
 				26FDBE9623C26A1400BEBA66 /* MyPlantsViewController.swift in Sources */,
 				26FDBE9A23C3894500BEBA66 /* WeatherManager.swift in Sources */,
 				26CFCA9323C0EA730069E05D /* ViewController.swift in Sources */,
+				26FDBE9E23C3E49500BEBA66 /* WeatherModel.swift in Sources */,
 				26CFCA8F23C0EA730069E05D /* AppDelegate.swift in Sources */,
 				26FDBE9823C2A80600BEBA66 /* Constants.swift in Sources */,
 				26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */,
+				26FDBE9C23C3D69D00BEBA66 /* WeatherData.swift in Sources */,
 				26CFCA9923C0EA730069E05D /* Garden_Tracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
