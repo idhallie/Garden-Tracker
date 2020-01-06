@@ -13,11 +13,12 @@ class MyPlantsViewController: UITableViewController, CLLocationManagerDelegate {
     
     var plants : [Plant] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var longitude : Double = 0.0
-    var latitude : Double = 0.0
     
     // for weather
     let locationManager = CLLocationManager()
+    var longitude : Double = 0.0
+    var latitude : Double = 0.0
+    var weatherManager = WeatherManager()
 
 
     override func viewDidLoad() {
@@ -56,6 +57,7 @@ class MyPlantsViewController: UITableViewController, CLLocationManagerDelegate {
             
             print(location.coordinate.longitude)
             print(location.coordinate.latitude)
+            weatherManager.fetchWeather(latitude: latitude, longitude: longitude)
             
             // reload the table view
             tableView.reloadData()
@@ -63,7 +65,7 @@ class MyPlantsViewController: UITableViewController, CLLocationManagerDelegate {
         }
     }
 
-    
+    // header for weather details
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "locations = Latitude: \(latitude) Longitude: \(longitude)"
     }
