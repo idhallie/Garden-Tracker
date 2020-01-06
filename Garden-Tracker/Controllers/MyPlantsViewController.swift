@@ -7,23 +7,33 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MyPlantsViewController: UITableViewController {
     
     var plants : [Plant] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // for weather
+    let locationManager = CLLocationManager()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // for weather
+        self.locationManager.requestAlwaysAuthorization()
 
-        // Do any additional setup after loading the view.
-
+        // to find database file:
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
 
+    
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Words go here"
+//    }
 
     override func viewWillAppear(_ animated: Bool) {
         // load data from core data
@@ -101,5 +111,30 @@ class MyPlantsViewController: UITableViewController {
             destVC.plant = sender as? Plant
         }
     }
+    
+    // MARK: Code for weather
+    
+    func getCurrentLocation() {
+        // Ask user for permission
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // While using app
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+    }
 
+}
+
+extension MyPlantsViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else
+            {return}
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+
+    }
 }
