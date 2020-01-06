@@ -13,9 +13,11 @@ class MyPlantsViewController: UITableViewController, CLLocationManagerDelegate {
     
     var plants : [Plant] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var longitude : Double = 0.0
+    var latitude : Double = 0.0
     
     // for weather
-    let locManager = CLLocationManager()
+    let locationManager = CLLocationManager()
 
 
     override func viewDidLoad() {
@@ -24,28 +26,47 @@ class MyPlantsViewController: UITableViewController, CLLocationManagerDelegate {
         tableView.delegate = self
         
         // for weather
-        locManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            locManager.delegate = self
-            locManager.desiredAccuracy = kCLLocationAccuracyBest
-            locManager.startUpdatingLocation()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestLocation()
         }
     
         // to find database file:
-        // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+    }
+    
+    // MARK: Weather functions
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("error: \(error.localizedDescription)")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            print(location.coordinate)
+            longitude = location.coordinate.longitude
+            latitude = location.coordinate.latitude
+            
+            print(location.coordinate.longitude)
+            print(location.coordinate.latitude)
+            
+            // reload the table view
+            tableView.reloadData()
+            
         }
     }
 
     
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "locations = Latitude: \(latitude) Longitude: \(longitude)"
-//    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "locations = Latitude: \(latitude) Longitude: \(longitude)"
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         // load data from core data
