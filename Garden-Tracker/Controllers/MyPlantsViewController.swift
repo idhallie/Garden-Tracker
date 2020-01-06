@@ -9,13 +9,13 @@
 import UIKit
 import CoreLocation
 
-class MyPlantsViewController: UITableViewController {
+class MyPlantsViewController: UITableViewController, CLLocationManagerDelegate {
     
     var plants : [Plant] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     // for weather
-    let locationManager = CLLocationManager()
+    let locManager = CLLocationManager()
 
 
     override func viewDidLoad() {
@@ -24,15 +24,27 @@ class MyPlantsViewController: UITableViewController {
         tableView.delegate = self
         
         // for weather
-        self.locationManager.requestAlwaysAuthorization()
-
+        locManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locManager.delegate = self
+            locManager.desiredAccuracy = kCLLocationAccuracyBest
+            locManager.startUpdatingLocation()
+        }
+    
         // to find database file:
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print(location.coordinate)
+        }
     }
 
     
 //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Words go here"
+//        return "locations = Latitude: \(latitude) Longitude: \(longitude)"
 //    }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -111,30 +123,7 @@ class MyPlantsViewController: UITableViewController {
             destVC.plant = sender as? Plant
         }
     }
-    
-    // MARK: Code for weather
-    
-    func getCurrentLocation() {
-        // Ask user for permission
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // While using app
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        }
-    }
+
 
 }
 
-extension MyPlantsViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else
-            {return}
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-
-    }
-}
