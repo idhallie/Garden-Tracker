@@ -12,6 +12,9 @@ import CoreLocation
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, WeatherManagerDelegate {
 
     @IBOutlet weak var headerView: UIView!
+    
+    @IBOutlet weak var conditionImage: UIImageView!
+    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -32,11 +35,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             tableView.rowHeight = 100
 
             // for weather
-            weatherManager.delegate = self as? WeatherManagerDelegate
+            weatherManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
             
             if CLLocationManager.locationServicesEnabled() {
-                locationManager.delegate = self as? CLLocationManagerDelegate
+                locationManager.delegate = self as CLLocationManagerDelegate
                 locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
                 locationManager.requestLocation()
             }
@@ -65,34 +68,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print(location.coordinate.longitude)
                 print(location.coordinate.latitude)
                 weatherManager.fetchWeather(latitude: latitude, longitude: longitude)
-                
+
                 // reload the table view
                 tableView.reloadData()
-                
             }
         }
         
         func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-            print(weather.temperature)
+            print(weather.conditionName)
+            DispatchQueue.main.async {
+                self.headerLabel.text = "\(weather.temperature)"
+                self.conditionImage.image = UIImage(systemName: weather.conditionName)
+            }
         }
 
         func didFailWithError(error: Error) {
             print(error)
         }
         
-
-    //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        let cell =
-    //
-    //        latitudeLabel.text = "\(latitude)"
-    //        longitudeLabel.text = "\(longitude)"
-    //
-    //    }
-        
-        // header for weather details
-    //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        return "locations = Latitude: \(latitude) Longitude: \(longitude)"
-    //    }
 
         override func viewWillAppear(_ animated: Bool) {
             // load data from core data
