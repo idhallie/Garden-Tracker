@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieving your weather..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="in9-Q6-bFp">
-                                        <rect key="frame" x="86.5" y="40" width="241.5" height="24"/>
+                                        <rect key="frame" x="86.5" y="20" width="241.5" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -29,13 +29,22 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are here." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U9-T0-LkE">
+                                        <rect key="frame" x="20" y="54" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="header"/>
                                 <constraints>
-                                    <constraint firstItem="in9-Q6-bFp" firstAttribute="top" secondItem="wFr-K1-BmH" secondAttribute="top" constant="40" id="6Zl-7b-jVP"/>
+                                    <constraint firstAttribute="trailing" secondItem="0U9-T0-LkE" secondAttribute="trailing" constant="20" symbolic="YES" id="4iq-t3-1ey"/>
+                                    <constraint firstItem="in9-Q6-bFp" firstAttribute="top" secondItem="wFr-K1-BmH" secondAttribute="top" constant="20" id="6Zl-7b-jVP"/>
+                                    <constraint firstItem="0U9-T0-LkE" firstAttribute="leading" secondItem="wFr-K1-BmH" secondAttribute="leading" constant="20" symbolic="YES" id="GFV-rD-kNw"/>
                                     <constraint firstAttribute="height" constant="200" id="LxV-fj-aQg"/>
                                     <constraint firstItem="in9-Q6-bFp" firstAttribute="centerX" secondItem="wFr-K1-BmH" secondAttribute="centerX" id="Q8w-07-GEf"/>
+                                    <constraint firstItem="0U9-T0-LkE" firstAttribute="top" secondItem="in9-Q6-bFp" secondAttribute="bottom" constant="10" id="WAh-k2-goO"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qut-cZ-Wo8">
@@ -73,10 +82,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cityLabel" destination="0U9-T0-LkE" id="5JQ-9y-My3"/>
                         <outlet property="conditionImage" destination="L9T-3c-WbF" id="HGB-lZ-sOF"/>
-                        <outlet property="headerLabel" destination="in9-Q6-bFp" id="Hwz-GW-t3m"/>
                         <outlet property="headerView" destination="wFr-K1-BmH" id="jpS-uj-Zwb"/>
                         <outlet property="tableView" destination="Qut-cZ-Wo8" id="xdC-Ww-DRA"/>
+                        <outlet property="tempLabel" destination="in9-Q6-bFp" id="9ze-Pb-PZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pZ-aw-QX7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

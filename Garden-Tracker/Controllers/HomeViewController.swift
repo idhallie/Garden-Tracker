@@ -10,14 +10,13 @@ import UIKit
 import CoreLocation
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, WeatherManagerDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var headerView: UIView!
-    
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet var cityLabel: UILabel!
     @IBOutlet weak var conditionImage: UIImageView!
-    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
     
     var plants: [Plant] = []
     
@@ -25,8 +24,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // for weather
         let locationManager = CLLocationManager()
-        var longitude : Double = 0.0
-        var latitude : Double = 0.0
+//        var longitude : Double = 0.0
+//        var latitude : Double = 0.0
         var weatherManager = WeatherManager()
 
         
@@ -45,47 +44,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
                 locationManager.requestLocation()
             }
-            
+             
             
             // to find database file:
             //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        }
-        
-        // MARK: Weather functions
-        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-             print("error: \(error.localizedDescription)")
-        }
-
-        func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-            if status == .authorizedWhenInUse {
-                locationManager.requestLocation()
-            }
-        }
-        
-        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            if let location = locations.first {
-                longitude = location.coordinate.longitude
-                latitude = location.coordinate.latitude
-                
-                print(location.coordinate.longitude)
-                print(location.coordinate.latitude)
-                weatherManager.fetchWeather(latitude: latitude, longitude: longitude)
-
-                // reload the table view
-                tableView.reloadData()
-            }
-        }
-        
-        func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-            print(weather.conditionName)
-            DispatchQueue.main.async {
-                self.headerLabel.text = "\(weather.temperatureString)ºF"
-                self.conditionImage.image = UIImage(systemName: weather.conditionName)
-            }
-        }
-
-        func didFailWithError(error: Error) {
-            print(error)
         }
         
 
@@ -158,13 +120,56 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-        
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "detailSegue" {
                 let destVC = segue.destination as! ViewController
                 destVC.plant = sender as? Plant
             }
         }
-
-
     }
+
+// MARK: - WeatherManagerDelegate
+
+extension HomeViewController: WeatherManagerDelegate {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        print(weather.conditionName)
+        DispatchQueue.main.async {
+            self.tempLabel.text = "\(weather.temperatureString)ºF"
+            self.cityLabel.text = weather.cityName
+            self.conditionImage.image = UIImage(systemName: weather.conditionName)
+        }
+    }
+
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension HomeViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("error: \(error.localizedDescription)")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            
+            print(latitude)
+            print(longitude)
+            weatherManager.fetchWeather(latitude: latitude, longitude: longitude)
+
+            // reload the table view
+            tableView.reloadData()
+        }
+    }
+    
+}
