@@ -9,12 +9,7 @@
 import Foundation
 
 struct WeatherData: Codable {
-    let cod: String
-    let list: [List]
-    
-}
-
-struct List: Codable {
+    let name: String
     let main: Main
     let weather: [Weather]
 }
@@ -24,5 +19,7 @@ struct Main: Codable {
 }
 
 struct Weather: Codable {
+    let description: String
     let id: Int
 }
+

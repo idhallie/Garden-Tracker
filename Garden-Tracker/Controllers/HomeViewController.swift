@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, WeatherManagerDelegate {
 
@@ -18,7 +19,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     
-    var plants : [Plant] = []
+    var plants: [Plant] = []
+    
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         // for weather
@@ -77,7 +79,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
             print(weather.conditionName)
             DispatchQueue.main.async {
-                self.headerLabel.text = "\(weather.temperature)"
+                self.headerLabel.text = "\(weather.temperatureString)ºF"
                 self.conditionImage.image = UIImage(systemName: weather.conditionName)
             }
         }

@@ -14,7 +14,7 @@ protocol WeatherManagerDelegate {
 }
 
 struct WeatherManager {
-    let weatherURL = "https://api.openweathermap.org/data/2.5/forecast?"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?"
     
     var delegate: WeatherManagerDelegate?
     
@@ -48,10 +48,11 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do {
             let decodeData = try decoder.decode(WeatherData.self, from: weatherData)
-            let temp = decodeData.list[0].main.temp
-            let id = decodeData.list[0].weather[0].id
-        
+            let temp = decodeData.main.temp
+            let id = decodeData.weather[0].id
+            
             let weather = WeatherModel(conditionId: id, temperature: temp)
+            print(weather.temperatureString)
             return weather
             
         } catch {
