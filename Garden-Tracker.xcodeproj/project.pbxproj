@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264D2E8323C7996A0074A167 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264D2E8223C7996A0074A167 /* AddTaskViewController.swift */; };
+		264D2E8523C799D90074A167 /* TaskLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264D2E8423C799D90074A167 /* TaskLogViewController.swift */; };
 		26CFCA8F23C0EA730069E05D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA8E23C0EA730069E05D /* AppDelegate.swift */; };
 		26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9023C0EA730069E05D /* SceneDelegate.swift */; };
 		26CFCA9323C0EA730069E05D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9223C0EA730069E05D /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		264D2E8223C7996A0074A167 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTaskViewController.swift; path = "Garden-Tracker/Views/AddTaskViewController.swift"; sourceTree = SOURCE_ROOT; };
+		264D2E8423C799D90074A167 /* TaskLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskLogViewController.swift; path = "Garden-Tracker/Views/TaskLogViewController.swift"; sourceTree = SOURCE_ROOT; };
 		26CFCA8B23C0EA730069E05D /* Garden-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garden-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CFCA8E23C0EA730069E05D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CFCA9023C0EA730069E05D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		26CFCAA723C0EABA0069E05D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				264D2E8423C799D90074A167 /* TaskLogViewController.swift */,
+				264D2E8223C7996A0074A167 /* AddTaskViewController.swift */,
 				26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */,
 				26CFCA9223C0EA730069E05D /* ViewController.swift */,
 				26FDBEA123C4495600BEBA66 /* HomeViewController.swift */,
@@ -195,10 +201,12 @@
 			files = (
 				26FDBE9023C12BB600BEBA66 /* AddPlantViewController.swift in Sources */,
 				26FDBE9A23C3894500BEBA66 /* WeatherManager.swift in Sources */,
+				264D2E8523C799D90074A167 /* TaskLogViewController.swift in Sources */,
 				26CFCA9323C0EA730069E05D /* ViewController.swift in Sources */,
 				26FDBE9E23C3E49500BEBA66 /* WeatherModel.swift in Sources */,
 				26CFCA8F23C0EA730069E05D /* AppDelegate.swift in Sources */,
 				26FDBE9823C2A80600BEBA66 /* Constants.swift in Sources */,
+				264D2E8323C7996A0074A167 /* AddTaskViewController.swift in Sources */,
 				26FDBEA223C4495600BEBA66 /* HomeViewController.swift in Sources */,
 				26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */,
 				26FDBE9C23C3D69D00BEBA66 /* WeatherData.swift in Sources */,
