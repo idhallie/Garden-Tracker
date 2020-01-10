@@ -9,18 +9,21 @@
 import UIKit
 import CoreData
 
-class AddTaskViewController: UIViewController {
+class AddTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
     @IBOutlet weak var plantMenuTitle: UIButton!
     @IBOutlet weak var tblView: UITableView!
     
     var plants: [Plant] = []
-    var plantList = ["Rose", "Daisy", "Sunflower"]
-
+    
+    // let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tblView.dataSource = self
+        tblView.delegate = self
+        tblView.rowHeight = 50
         tblView.isHidden = true
     }
 
@@ -30,22 +33,47 @@ class AddTaskViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // load data from core data
+        loadPlants()
 
-extension AddTaskViewController: UITableViewDelegate, UITableViewDataSource {
+        // reload the table view
+        tblView.reloadData()
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plantList.count
+        return plants.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath)
+//
+//
+//        cell.textLabel?.text = plants[indexPath.row].name
+//
+//        return cell
         
+        let plantCell = UITableViewCell()
         
-        
-        cell.textLabel?.text = plantList[indexPath.row]
+         let plant = plants[indexPath.row]
+         plantCell.textLabel?.text = plant.name!
 
-        return cell
+         return plantCell
     }
     
-    
-}
+    func loadPlants() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Plant>(entityName: "Plant")
+        let sort = NSSortDescriptor(key: #keyPath(Plant.name), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+            do {
+               plants = try context.fetch(fetchRequest)
+            }
+            catch {
+                print("Fetching failed \(error)")
+            }
+        }
+    }
+
