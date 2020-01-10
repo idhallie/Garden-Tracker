@@ -134,14 +134,79 @@
                     <view key="view" contentMode="scaleToFill" id="YN5-vq-5vk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-Tb-Aue">
+                                <rect key="frame" x="40" y="168" width="334" height="228"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-4f-gRL">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="zns-G9-VYf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Select a Plant">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickDropBtn:" destination="isL-JP-GAL" eventType="touchUpInside" id="TaA-vA-5Vo"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qIm-83-ypX">
+                                        <rect key="frame" x="0.0" y="58" width="334" height="170"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="5Ex-Ny-9QI"/>
+                                        </constraints>
+                                        <color key="sectionIndexBackgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="plantCell" textLabel="tGy-Sv-i7U" style="IBUITableViewCellStyleDefault" id="UOL-hO-qOs">
+                                                <rect key="frame" x="0.0" y="28" width="334" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UOL-hO-qOs" id="QSL-r9-h8f">
+                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tGy-Sv-i7U">
+                                                            <rect key="frame" x="20" y="0.0" width="294" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="isL-JP-GAL" id="fsT-Xm-Znz"/>
+                                            <outlet property="delegate" destination="isL-JP-GAL" id="QNG-cO-pzI"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="e2Z-Tb-Aue" firstAttribute="top" secondItem="lLH-9j-NZt" secondAttribute="top" constant="80" id="0gw-1E-GSa"/>
+                            <constraint firstItem="e2Z-Tb-Aue" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" constant="40" id="CZf-BQ-zVf"/>
+                            <constraint firstItem="e2Z-Tb-Aue" firstAttribute="top" secondItem="lLH-9j-NZt" secondAttribute="top" constant="80" id="KZT-7W-ejS"/>
+                            <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="e2Z-Tb-Aue" secondAttribute="trailing" constant="40" id="QPs-xJ-xsM"/>
+                            <constraint firstItem="e2Z-Tb-Aue" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" constant="40" id="YvS-Ye-4h9"/>
+                            <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="e2Z-Tb-Aue" secondAttribute="trailing" constant="40" id="mvJ-rJ-0KS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lLH-9j-NZt"/>
                     </view>
                     <navigationItem key="navigationItem" id="NtB-xY-71o"/>
+                    <connections>
+                        <outlet property="plantMenuTitle" destination="u5k-4f-gRL" id="Vsf-aL-EM7"/>
+                        <outlet property="tblView" destination="qIm-83-ypX" id="f5Z-ZB-oAu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYr-rE-BRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2619" y="1227"/>
+            <point key="canvasLocation" x="2618.840579710145" y="1226.7857142857142"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
