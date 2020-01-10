@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AddTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
     
     @IBOutlet weak var plantMenuTitle: UIButton!
@@ -20,6 +20,14 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var taskMenuTitle: UIButton!
     var task : String! = ""
     
+    // Calendar
+    @IBOutlet weak var calendarMenuTitle: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var saveDateBtn: UIButton!
+    
+    // Notes
+    @IBOutlet weak var taskNotes: UITextView!
+    
     var plants: [Plant] = []
     
     override func viewDidLoad() {
@@ -28,6 +36,11 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         tblView.delegate = self
         tblView.rowHeight = 50
         tblView.isHidden = true
+        
+        // Notes defaults
+        taskNotes.text = "Notes"
+        taskNotes.textColor = UIColor.lightGray
+        taskNotes.delegate = self
     }
 
     @IBAction func onClickDropBtn(_ sender: UIButton) {
@@ -90,5 +103,21 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         
         taskButtons.forEach { (button) in
             button.isHidden = !button.isHidden }
+    }
+    
+// MARK: Calendar
+    
+    
+    @IBAction func selectDateTapped(_ sender: UIButton) {
+        datePicker.isHidden = !datePicker.isHidden
+        
+        saveDateBtn.isHidden = !saveDateBtn.isHidden
+    }
+    
+    
+    @IBAction func saveDateTapped(_ sender: UIButton) {
+        datePicker.isHidden = !datePicker.isHidden
+        
+        saveDateBtn.isHidden = !saveDateBtn.isHidden
     }
 }

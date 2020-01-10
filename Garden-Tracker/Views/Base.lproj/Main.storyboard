@@ -286,7 +286,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ph2-cC-ha1">
-                                <rect key="frame" x="0.0" y="518" width="414" height="296"/>
+                                <rect key="frame" x="0.0" y="518" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M91-Cv-0v8">
                                         <rect key="frame" x="40" y="0.0" width="334" height="50"/>
@@ -298,12 +298,15 @@
                                         <state key="normal" title="Select a Date">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectDateTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="KYb-1a-4nM"/>
+                                        </connections>
                                     </button>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VWJ-Lp-asF">
-                                        <rect key="frame" x="47" y="50" width="320" height="216"/>
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VWJ-Lp-asF">
+                                        <rect key="frame" x="47" y="0.0" width="320" height="0.0"/>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-Hq-pwB">
-                                        <rect key="frame" x="167" y="266" width="80" height="30"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-Hq-pwB">
+                                        <rect key="frame" x="167" y="0.0" width="80" height="0.0"/>
                                         <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="X8Z-Oe-Mot"/>
@@ -311,6 +314,9 @@
                                         <state key="normal" title="Save Date">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveDateTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="QWo-Pi-li2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -318,9 +324,20 @@
                                     <constraint firstItem="M91-Cv-0v8" firstAttribute="leading" secondItem="Ph2-cC-ha1" secondAttribute="leading" constant="40" id="v2l-ZP-6T2"/>
                                 </constraints>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="94U-0p-47c">
+                                <rect key="frame" x="40" y="608" width="334" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="o1E-ka-a81"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="94U-0p-47c" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" constant="40" id="0KU-44-WL4"/>
                             <constraint firstItem="e2Z-Tb-Aue" firstAttribute="top" secondItem="lLH-9j-NZt" secondAttribute="top" constant="80" id="0gw-1E-GSa"/>
                             <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="Ph2-cC-ha1" secondAttribute="trailing" id="OTR-2s-BM8"/>
                             <constraint firstItem="NvB-F6-JIz" firstAttribute="top" secondItem="e2Z-Tb-Aue" secondAttribute="bottom" constant="40" id="QHV-GP-Spg"/>
@@ -330,13 +347,19 @@
                             <constraint firstItem="NvB-F6-JIz" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" id="YId-W6-leA"/>
                             <constraint firstItem="e2Z-Tb-Aue" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" constant="40" id="YvS-Ye-4h9"/>
                             <constraint firstItem="Ph2-cC-ha1" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" id="dtW-0A-uqC"/>
+                            <constraint firstItem="94U-0p-47c" firstAttribute="top" secondItem="Ph2-cC-ha1" secondAttribute="bottom" constant="40" id="gT8-oF-89d"/>
+                            <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="94U-0p-47c" secondAttribute="trailing" constant="40" id="jAL-jY-bqb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lLH-9j-NZt"/>
                     </view>
                     <navigationItem key="navigationItem" id="NtB-xY-71o"/>
                     <connections>
+                        <outlet property="calendarMenuTitle" destination="M91-Cv-0v8" id="xfn-7I-eGF"/>
+                        <outlet property="datePicker" destination="VWJ-Lp-asF" id="8gH-V0-yD1"/>
                         <outlet property="plantMenuTitle" destination="u5k-4f-gRL" id="Vsf-aL-EM7"/>
+                        <outlet property="saveDateBtn" destination="nHm-Hq-pwB" id="HYb-1a-ozu"/>
                         <outlet property="taskMenuTitle" destination="F5O-sA-fWa" id="gU2-ZU-uj5"/>
+                        <outlet property="taskNotes" destination="94U-0p-47c" id="9nO-Qt-uvw"/>
                         <outlet property="tblView" destination="qIm-83-ypX" id="f5Z-ZB-oAu"/>
                         <outletCollection property="taskButtons" destination="LVA-VK-BgL" collectionClass="NSMutableArray" id="aSz-j2-0yb"/>
                         <outletCollection property="taskButtons" destination="cDz-rE-c7M" collectionClass="NSMutableArray" id="bNh-BK-Zqq"/>
