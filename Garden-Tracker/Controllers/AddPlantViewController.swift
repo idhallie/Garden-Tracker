@@ -41,60 +41,41 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
         plantNotes.delegate = self
     }
     
-    
     // TYPE MENU
     @IBAction func handleTypeSelection(_ sender: UIButton) {
-        typeButtons.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        menuAction(typeButtons)
     }
     
     @IBAction func typeBtnTapped(_ sender: UIButton) {
         plantType = sender.currentTitle!
         typeMenuTitle.setTitle("Type: \(plantType!)", for: .normal)
         
-        typeButtons.forEach { (button) in
-            button.isHidden = !button.isHidden }
+        menuAction(typeButtons)
         }
     
     // LIGHT MENU
     @IBAction func handleLightSelection(_ sender: UIButton) {
-        lightButtons.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        menuAction(lightButtons)
     }
         
     @IBAction func lightBtnTapped(_ sender: UIButton) {
         lightNeeds = sender.currentTitle!
         lightMenuTitle.setTitle("Light Needs: \(lightNeeds!)", for: .normal)
         
-        lightButtons.forEach { (button) in
-            button.isHidden = !button.isHidden }
+        menuAction(lightButtons)
     }
     
     // FLOWERING MENU
     
     @IBAction func handleFloweringSelection(_ sender: UIButton) {
-        floweringButtons.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        menuAction(floweringButtons)
     }
     
     @IBAction func floweringBtnTapped(_ sender: UIButton) {
         flowering = sender.currentTitle!
         floweringMenuTitle.setTitle("Flowering Season: \(flowering!)", for: .normal)
         
-        floweringButtons.forEach { (button) in
-            button.isHidden = !button.isHidden }
+        menuAction(floweringButtons)
     }
     
     // Notes
@@ -123,4 +104,13 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
         navigationController!.popViewController(animated: true)
     }
     
+    
+    func menuAction(_ menuButtons: Array<UIButton>) {
+        menuButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
 }

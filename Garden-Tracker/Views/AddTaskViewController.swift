@@ -100,12 +100,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
 // MARK: Task Menu
 
     @IBAction func handleTaskSelection(_ sender: UIButton) {
-        taskButtons.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        menuAction(taskButtons)
     }
     
     @IBAction func taskTapped(_ sender: UIButton) {
@@ -133,4 +128,15 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         
         saveDateBtn.isHidden = !saveDateBtn.isHidden
     }
+    
+    func menuAction(_ menuButtons: Array<UIButton>) {
+        menuButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+
 }
+
