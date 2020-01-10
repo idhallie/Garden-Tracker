@@ -175,7 +175,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </tableViewCellContentView>
                                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </tableViewCell>
@@ -189,7 +188,7 @@
                                 <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NvB-F6-JIz">
-                                <rect key="frame" x="0.0" y="428" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="428" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipw-vu-Twi">
                                         <rect key="frame" x="40" y="0.0" width="334" height="50"/>
@@ -205,8 +204,8 @@
                                             <action selector="handleTaskSelection:" destination="isL-JP-GAL" eventType="touchUpInside" id="sgl-o9-6eE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVA-VK-BgL">
-                                        <rect key="frame" x="40" y="50" width="334" height="50"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVA-VK-BgL">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="SP9-pJ-zTx"/>
@@ -218,8 +217,8 @@
                                             <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="c2i-3S-bSO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDz-rE-c7M">
-                                        <rect key="frame" x="40" y="100" width="334" height="50"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDz-rE-c7M">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ogg-AT-s7k"/>
@@ -231,8 +230,8 @@
                                             <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="Xqh-7j-MFJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xw-NL-gHq">
-                                        <rect key="frame" x="40" y="150" width="334" height="50"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xw-NL-gHq">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="FPq-8H-6t7"/>
@@ -244,8 +243,8 @@
                                             <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="3YC-oK-sfw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLM-h7-Fnc">
-                                        <rect key="frame" x="40" y="200" width="334" height="50"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLM-h7-Fnc">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gq4-g1-m3Q"/>
@@ -257,8 +256,8 @@
                                             <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="X6E-pp-dmj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5O-sA-fWa">
-                                        <rect key="frame" x="40" y="250" width="334" height="50"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5O-sA-fWa">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8Ox-UV-4qY"/>
@@ -288,7 +287,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ph2-cC-ha1">
-                                <rect key="frame" x="0.0" y="768" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="518" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M91-Cv-0v8">
                                         <rect key="frame" x="40" y="0.0" width="334" height="50"/>
@@ -327,7 +326,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="94U-0p-47c">
-                                <rect key="frame" x="40" y="858" width="334" height="150"/>
+                                <rect key="frame" x="40" y="608" width="334" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="o1E-ka-a81"/>
@@ -342,6 +341,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Lq-QZ-XBg">
+                                <rect key="frame" x="157" y="838" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="64h-nB-GXT"/>
+                                    <constraint firstAttribute="height" constant="50" id="UIH-2y-1e2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Add Task">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTaskBtnTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="wJS-ea-mya"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -350,10 +364,12 @@
                             <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="Ph2-cC-ha1" secondAttribute="trailing" id="OTR-2s-BM8"/>
                             <constraint firstItem="NvB-F6-JIz" firstAttribute="top" secondItem="e2Z-Tb-Aue" secondAttribute="bottom" constant="40" id="QHV-GP-Spg"/>
                             <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="e2Z-Tb-Aue" secondAttribute="trailing" constant="40" id="QPs-xJ-xsM"/>
+                            <constraint firstItem="7Lq-QZ-XBg" firstAttribute="centerX" secondItem="YN5-vq-5vk" secondAttribute="centerX" id="Syh-az-4zC"/>
                             <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="NvB-F6-JIz" secondAttribute="trailing" id="TK9-sF-1mH"/>
                             <constraint firstItem="Eak-dd-GFM" firstAttribute="top" secondItem="lLH-9j-NZt" secondAttribute="top" constant="20" id="Uhn-U0-daI"/>
                             <constraint firstItem="Ph2-cC-ha1" firstAttribute="top" secondItem="NvB-F6-JIz" secondAttribute="bottom" constant="40" id="Umt-w8-75S"/>
                             <constraint firstItem="NvB-F6-JIz" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" id="YId-W6-leA"/>
+                            <constraint firstItem="7Lq-QZ-XBg" firstAttribute="top" secondItem="94U-0p-47c" secondAttribute="bottom" constant="80" id="YUW-qN-gcV"/>
                             <constraint firstItem="e2Z-Tb-Aue" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" constant="40" id="YvS-Ye-4h9"/>
                             <constraint firstItem="Ph2-cC-ha1" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" id="dtW-0A-uqC"/>
                             <constraint firstItem="94U-0p-47c" firstAttribute="top" secondItem="Ph2-cC-ha1" secondAttribute="bottom" constant="40" id="gT8-oF-89d"/>
@@ -451,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3500" y="1010"/>
+            <point key="canvasLocation" x="3500.0000000000005" y="1009.8214285714286"/>
         </scene>
         <!--Add Plant View Controller-->
         <scene sceneID="Zpo-oQ-0AS">

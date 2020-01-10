@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="task" attributeType="String"/>
+        <relationship name="parentPlant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plant" inverseName="activities" inverseEntity="Plant"/>
+    </entity>
     <entity name="Plant" representedClassName="Plant" syncable="YES" codeGenerationType="class">
         <attribute name="flowering" optional="YES" attributeType="String"/>
         <attribute name="light" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="parentPlant" inverseEntity="Activity"/>
     </entity>
     <elements>
-        <element name="Plant" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Plant" positionX="-8918.23046875" positionY="2899.60546875" width="128" height="133"/>
+        <element name="Activity" positionX="-8699.4765625" positionY="2913.35546875" width="128" height="103"/>
     </elements>
 </model>

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftUI
 
 class AddTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
@@ -113,7 +114,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
             button.isHidden = !button.isHidden }
     }
     
-// MARK: Calendar
+// MARK: Date Picker
     
     
     @IBAction func selectDateTapped(_ sender: UIButton) {
@@ -127,7 +128,14 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         datePicker.isHidden = !datePicker.isHidden
         
         saveDateBtn.isHidden = !saveDateBtn.isHidden
+       
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        calendarMenuTitle.setTitle("Date: \(formatter.string(from:datePicker.date))", for: .normal)
+
     }
+    
+    // MARK: Animation function
     
     func menuAction(_ menuButtons: Array<UIButton>) {
         menuButtons.forEach { (button) in
@@ -138,5 +146,24 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
+    
+//    @IBAction func addTaskBtnTapped(_ sender: UIButton) {
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//
+//        let activity = Activity(context: context)
+//        activity.task = task
+//
+//
+////        plant.type = plantType
+////        plant.light = lightNeeds
+////        plant.flowering = flowering
+////        plant.notes = plantNotes.text!
+//
+//        //Save the data to coredata
+//
+//        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+//        navigationController!.popViewController(animated: true)
+//    }
+    
 }
 
