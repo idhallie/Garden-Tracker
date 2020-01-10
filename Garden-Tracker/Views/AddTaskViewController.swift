@@ -15,9 +15,12 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var plantMenuTitle: UIButton!
     @IBOutlet weak var tblView: UITableView!
     
-    var plants: [Plant] = []
+    // Task menu outlets
+    @IBOutlet var taskButtons: [UIButton]!
+    @IBOutlet weak var taskMenuTitle: UIButton!
+    var task : String! = ""
     
-    // let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var plants: [Plant] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +50,13 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath)
-//
-//
-//        cell.textLabel?.text = plants[indexPath.row].name
-//
-//        return cell
         
         let plantCell = UITableViewCell()
-        
-         let plant = plants[indexPath.row]
-         plantCell.textLabel?.text = plant.name!
+  
+        let plant = plants[indexPath.row]
+        plantCell.textLabel?.text = plant.name!
 
-         return plantCell
+        return plantCell
     }
     
     func loadPlants() {
@@ -75,5 +72,23 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
                 print("Fetching failed \(error)")
             }
         }
-    }
 
+// MARK: Task Menu
+
+    @IBAction func handleTaskSelection(_ sender: UIButton) {
+        taskButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    @IBAction func taskTapped(_ sender: UIButton) {
+        task = sender.currentTitle!
+        taskMenuTitle.setTitle("Task: \(task!)", for: .normal)
+        
+        taskButtons.forEach { (button) in
+            button.isHidden = !button.isHidden }
+    }
+}

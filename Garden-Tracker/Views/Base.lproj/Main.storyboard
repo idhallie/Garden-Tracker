@@ -135,8 +135,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-Tb-Aue">
-                                <rect key="frame" x="40" y="168" width="334" height="228"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-Tb-Aue">
+                                <rect key="frame" x="40" y="168" width="334" height="220"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-4f-gRL">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -153,12 +153,12 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qIm-83-ypX">
-                                        <rect key="frame" x="0.0" y="58" width="334" height="170"/>
+                                        <rect key="frame" x="0.0" y="50" width="334" height="170"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="5Ex-Ny-9QI"/>
                                         </constraints>
-                                        <color key="sectionIndexBackgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="plantCell" textLabel="tGy-Sv-i7U" style="IBUITableViewCellStyleDefault" id="UOL-hO-qOs">
                                                 <rect key="frame" x="0.0" y="28" width="334" height="43.5"/>
@@ -176,7 +176,7 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -185,23 +185,164 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NvB-F6-JIz">
+                                <rect key="frame" x="0.0" y="428" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipw-vu-Twi">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GA4-kW-SQI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Select a Task">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleTaskSelection:" destination="isL-JP-GAL" eventType="touchUpInside" id="sgl-o9-6eE"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVA-VK-BgL">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SP9-pJ-zTx"/>
+                                        </constraints>
+                                        <state key="normal" title="Applied Compost">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="c2i-3S-bSO"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDz-rE-c7M">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ogg-AT-s7k"/>
+                                        </constraints>
+                                        <state key="normal" title="Fertilized">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="Xqh-7j-MFJ"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xw-NL-gHq">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="FPq-8H-6t7"/>
+                                        </constraints>
+                                        <state key="normal" title="Harvested">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="3YC-oK-sfw"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLM-h7-Fnc">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gq4-g1-m3Q"/>
+                                        </constraints>
+                                        <state key="normal" title="Pruned">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="X6E-pp-dmj"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5O-sA-fWa">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8Ox-UV-4qY"/>
+                                        </constraints>
+                                        <state key="normal" title="Applied Compost">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="taskTapped:" destination="isL-JP-GAL" eventType="touchUpInside" id="hgy-PU-VbW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="F5O-sA-fWa" firstAttribute="leading" secondItem="NvB-F6-JIz" secondAttribute="leading" constant="40" id="1ot-LV-eA1"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDz-rE-c7M" secondAttribute="trailing" constant="40" id="221-a6-D6f"/>
+                                    <constraint firstAttribute="trailing" secondItem="F5O-sA-fWa" secondAttribute="trailing" constant="40" id="65J-bn-EqF"/>
+                                    <constraint firstItem="cDz-rE-c7M" firstAttribute="leading" secondItem="NvB-F6-JIz" secondAttribute="leading" constant="40" id="7HG-yt-fDV"/>
+                                    <constraint firstItem="LVA-VK-BgL" firstAttribute="leading" secondItem="NvB-F6-JIz" secondAttribute="leading" constant="40" id="LT6-Kn-pgC"/>
+                                    <constraint firstAttribute="trailing" secondItem="4xw-NL-gHq" secondAttribute="trailing" constant="40" id="NfM-7H-Td7"/>
+                                    <constraint firstItem="bLM-h7-Fnc" firstAttribute="leading" secondItem="NvB-F6-JIz" secondAttribute="leading" constant="40" id="RB7-b8-CgK"/>
+                                    <constraint firstItem="4xw-NL-gHq" firstAttribute="leading" secondItem="NvB-F6-JIz" secondAttribute="leading" constant="40" id="UGe-Jd-Fgl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ipw-vu-Twi" secondAttribute="trailing" constant="40" id="k0p-WE-fwg"/>
+                                    <constraint firstAttribute="trailing" secondItem="LVA-VK-BgL" secondAttribute="trailing" constant="40" id="lKD-V7-rza"/>
+                                    <constraint firstAttribute="trailing" secondItem="bLM-h7-Fnc" secondAttribute="trailing" constant="40" id="rS8-U1-Mr6"/>
+                                    <constraint firstItem="Ipw-vu-Twi" firstAttribute="leading" secondItem="NvB-F6-JIz" secondAttribute="leading" constant="40" id="t8h-F4-NbC"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ph2-cC-ha1">
+                                <rect key="frame" x="0.0" y="518" width="414" height="296"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M91-Cv-0v8">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2nh-Bg-5CH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Select a Date">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VWJ-Lp-asF">
+                                        <rect key="frame" x="47" y="50" width="320" height="216"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-Hq-pwB">
+                                        <rect key="frame" x="167" y="266" width="80" height="30"/>
+                                        <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="X8Z-Oe-Mot"/>
+                                        </constraints>
+                                        <state key="normal" title="Save Date">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="M91-Cv-0v8" secondAttribute="trailing" constant="40" id="6WD-Io-gn8"/>
+                                    <constraint firstItem="M91-Cv-0v8" firstAttribute="leading" secondItem="Ph2-cC-ha1" secondAttribute="leading" constant="40" id="v2l-ZP-6T2"/>
+                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="e2Z-Tb-Aue" firstAttribute="top" secondItem="lLH-9j-NZt" secondAttribute="top" constant="80" id="0gw-1E-GSa"/>
-                            <constraint firstItem="e2Z-Tb-Aue" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" constant="40" id="CZf-BQ-zVf"/>
-                            <constraint firstItem="e2Z-Tb-Aue" firstAttribute="top" secondItem="lLH-9j-NZt" secondAttribute="top" constant="80" id="KZT-7W-ejS"/>
+                            <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="Ph2-cC-ha1" secondAttribute="trailing" id="OTR-2s-BM8"/>
+                            <constraint firstItem="NvB-F6-JIz" firstAttribute="top" secondItem="e2Z-Tb-Aue" secondAttribute="bottom" constant="40" id="QHV-GP-Spg"/>
                             <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="e2Z-Tb-Aue" secondAttribute="trailing" constant="40" id="QPs-xJ-xsM"/>
+                            <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="NvB-F6-JIz" secondAttribute="trailing" id="TK9-sF-1mH"/>
+                            <constraint firstItem="Ph2-cC-ha1" firstAttribute="top" secondItem="NvB-F6-JIz" secondAttribute="bottom" constant="40" id="Umt-w8-75S"/>
+                            <constraint firstItem="NvB-F6-JIz" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" id="YId-W6-leA"/>
                             <constraint firstItem="e2Z-Tb-Aue" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" constant="40" id="YvS-Ye-4h9"/>
-                            <constraint firstItem="lLH-9j-NZt" firstAttribute="trailing" secondItem="e2Z-Tb-Aue" secondAttribute="trailing" constant="40" id="mvJ-rJ-0KS"/>
+                            <constraint firstItem="Ph2-cC-ha1" firstAttribute="leading" secondItem="lLH-9j-NZt" secondAttribute="leading" id="dtW-0A-uqC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lLH-9j-NZt"/>
                     </view>
                     <navigationItem key="navigationItem" id="NtB-xY-71o"/>
                     <connections>
                         <outlet property="plantMenuTitle" destination="u5k-4f-gRL" id="Vsf-aL-EM7"/>
+                        <outlet property="taskMenuTitle" destination="F5O-sA-fWa" id="gU2-ZU-uj5"/>
                         <outlet property="tblView" destination="qIm-83-ypX" id="f5Z-ZB-oAu"/>
+                        <outletCollection property="taskButtons" destination="LVA-VK-BgL" collectionClass="NSMutableArray" id="aSz-j2-0yb"/>
+                        <outletCollection property="taskButtons" destination="cDz-rE-c7M" collectionClass="NSMutableArray" id="bNh-BK-Zqq"/>
+                        <outletCollection property="taskButtons" destination="4xw-NL-gHq" collectionClass="NSMutableArray" id="zpp-Wy-x7r"/>
+                        <outletCollection property="taskButtons" destination="bLM-h7-Fnc" collectionClass="NSMutableArray" id="2go-dw-YPO"/>
+                        <outletCollection property="taskButtons" destination="F5O-sA-fWa" collectionClass="NSMutableArray" id="pC6-wq-HQk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYr-rE-BRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -775,6 +916,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1Jh-Cd-FcO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rId-Dd-ZCu">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
