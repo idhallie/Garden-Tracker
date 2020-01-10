@@ -24,8 +24,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // for weather
         let locationManager = CLLocationManager()
-//        var longitude : Double = 0.0
-//        var latitude : Double = 0.0
         var weatherManager = WeatherManager()
 
         
@@ -92,9 +90,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     print("Fetching failed \(error)")
                 }
             }
-
             tableView.reloadData()
-
         }
 
         // MARK: Model Manipulation Methods
@@ -105,13 +101,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             } catch {
                print("Error saving context \(error)")
             }
-
             self.tableView.reloadData()
         }
 
 
         func loadPlants() {
-
             do {
                plants = try context.fetch(Plant.fetchRequest())
             }
