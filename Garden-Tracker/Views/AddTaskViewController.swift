@@ -17,7 +17,10 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // Task menu outlets
     @IBOutlet var taskButtons: [UIButton]!
+
     @IBOutlet weak var taskMenuTitle: UIButton!
+    
+    
     var task : String! = ""
     
     // Calendar
@@ -72,6 +75,14 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         return plantCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        plantMenuTitle.setTitle("Plant: \(plants[indexPath.row].name!)", for: .normal)
+        UIView.animate(withDuration: 0.3) {
+         self.tblView.isHidden = !self.tblView.isHidden
+         self.view.layoutIfNeeded()
+         }
+    }
+    
     func loadPlants() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -98,8 +109,10 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func taskTapped(_ sender: UIButton) {
-        task = sender.currentTitle!
+        task = sender.currentTitle
+
         taskMenuTitle.setTitle("Task: \(task!)", for: .normal)
+        print(taskMenuTitle.currentTitle!)
         
         taskButtons.forEach { (button) in
             button.isHidden = !button.isHidden }
