@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PlantDetailViewController: UIViewController {
     
     
     @IBOutlet weak var titleLabel: UILabel!
