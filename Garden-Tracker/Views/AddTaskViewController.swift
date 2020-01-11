@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import SwiftUI
 
 class AddTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
@@ -133,6 +132,14 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         formatter.dateFormat = "MM/dd/yyyy"
         calendarMenuTitle.setTitle("Date: \(formatter.string(from:datePicker.date))", for: .normal)
 
+    }
+    
+    // Notes
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Notes" {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
     }
     
     // MARK: Animation function
