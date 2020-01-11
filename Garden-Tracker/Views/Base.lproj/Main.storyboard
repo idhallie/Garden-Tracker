@@ -105,48 +105,50 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityCell" rowHeight="68" id="24x-k5-J8k" customClass="ActivityCell" customModule="Garden_Tracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="68"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityCell" rowHeight="90" id="24x-k5-J8k" customClass="ActivityCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="24x-k5-J8k" id="zpt-xM-Ctg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="boY-ml-bXG">
-                                                    <rect key="frame" x="20" y="11" width="374" height="46"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKu-kr-uw2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="58.5" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKc-e1-6Te">
-                                                            <rect key="frame" x="157.5" y="0.0" width="59" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRi-Yb-op6">
-                                                            <rect key="frame" x="315.5" y="0.0" width="58.5" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc5-Xm-Yh3">
+                                                    <rect key="frame" x="20" y="36" width="100" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="aFi-Nc-Y1S"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bU-EJ-sWt">
+                                                    <rect key="frame" x="294" y="36" width="100" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwd-0d-zjt">
+                                                    <rect key="frame" x="145" y="36" width="124" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="boY-ml-bXG" firstAttribute="top" secondItem="zpt-xM-Ctg" secondAttribute="topMargin" id="4Pb-Vj-tZ8"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="boY-ml-bXG" secondAttribute="trailing" id="KRK-cN-qQU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="boY-ml-bXG" secondAttribute="bottom" id="T6a-tr-65U"/>
-                                                <constraint firstItem="boY-ml-bXG" firstAttribute="leading" secondItem="zpt-xM-Ctg" secondAttribute="leadingMargin" id="p3u-Fn-0Vl"/>
+                                                <constraint firstItem="fwd-0d-zjt" firstAttribute="centerY" secondItem="zpt-xM-Ctg" secondAttribute="centerY" id="03L-Cn-Odf"/>
+                                                <constraint firstItem="7bU-EJ-sWt" firstAttribute="centerY" secondItem="zpt-xM-Ctg" secondAttribute="centerY" id="1Ap-Wo-Uj6"/>
+                                                <constraint firstItem="7bU-EJ-sWt" firstAttribute="leading" secondItem="fwd-0d-zjt" secondAttribute="trailing" constant="25" id="3Xw-42-krf"/>
+                                                <constraint firstItem="Oc5-Xm-Yh3" firstAttribute="centerY" secondItem="zpt-xM-Ctg" secondAttribute="centerY" id="Gyp-Pn-P5O"/>
+                                                <constraint firstItem="Oc5-Xm-Yh3" firstAttribute="leading" secondItem="zpt-xM-Ctg" secondAttribute="leadingMargin" id="ZTb-hl-hUM"/>
+                                                <constraint firstItem="fwd-0d-zjt" firstAttribute="centerX" secondItem="zpt-xM-Ctg" secondAttribute="centerX" id="e2h-D5-yft"/>
+                                                <constraint firstItem="fwd-0d-zjt" firstAttribute="leading" secondItem="Oc5-Xm-Yh3" secondAttribute="trailing" constant="25" id="imA-BT-cE9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7bU-EJ-sWt" secondAttribute="trailing" id="rCg-Ql-shT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateLabel" destination="KRi-Yb-op6" id="dJN-XB-ihE"/>
-                                            <outlet property="plantLabel" destination="CKu-kr-uw2" id="tyB-Gb-989"/>
-                                            <outlet property="taskLabel" destination="cKc-e1-6Te" id="cMg-5N-95A"/>
+                                            <outlet property="dateLabel" destination="Oc5-Xm-Yh3" id="wrE-dN-4at"/>
+                                            <outlet property="plantLabel" destination="fwd-0d-zjt" id="e2D-sy-Ilg"/>
+                                            <outlet property="taskLabel" destination="7bU-EJ-sWt" id="REp-ar-0nx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

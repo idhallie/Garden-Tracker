@@ -20,7 +20,7 @@ class ActivityCell: UITableViewCell {
         taskLabel.text = activity.task
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
+        formatter.dateFormat = "MM-dd-YY"
         dateLabel.text = formatter.string(from:activity.date!)
     }
 }
