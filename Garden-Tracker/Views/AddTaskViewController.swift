@@ -11,16 +11,17 @@ import CoreData
 
 class AddTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
+    var plants: [Plant] = []
+    var activities = [Activity]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var plantMenuTitle: UIButton!
     @IBOutlet weak var tblView: UITableView!
+    var selectedPlant : Plant?
     
     // Task menu outlets
-    @IBOutlet var taskButtons: [UIButton]!
-
     @IBOutlet weak var taskMenuTitle: UIButton!
-    
-    
+    @IBOutlet var taskButtons: [UIButton]!
     var task : String! = ""
     
     // Calendar
@@ -30,10 +31,6 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // Notes
     @IBOutlet weak var taskNotes: UITextView!
-    
-    var plants: [Plant] = []
-    var activities = [Activity]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +75,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPlant = plants[indexPath.row]
         plantMenuTitle.setTitle("Plant: \(plants[indexPath.row].name!)", for: .normal)
         UIView.animate(withDuration: 0.3) {
          self.tblView.isHidden = !self.tblView.isHidden
@@ -164,6 +162,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         newActivity.task = task
         newActivity.date = datePicker.date
         newActivity.notes = taskNotes.text!
+        newActivity.parentPlant = selectedPlant
         
         self.activities.append(newActivity)
 
