@@ -110,7 +110,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                plants = try context.fetch(Plant.fetchRequest())
             }
             catch {
-                print("Fetching failed \(error)")
+                print("Error loading plants: \(error)")
             }
         }
         

@@ -118,14 +118,12 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func selectDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
-        
         saveDateBtn.isHidden = !saveDateBtn.isHidden
     }
     
     
     @IBAction func saveDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
-        
         saveDateBtn.isHidden = !saveDateBtn.isHidden
        
         let formatter = DateFormatter()

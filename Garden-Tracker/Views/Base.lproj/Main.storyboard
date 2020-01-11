@@ -101,9 +101,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fGT-M9-7am">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fGT-M9-7am">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityCell" rowHeight="68" id="24x-k5-J8k" customClass="ActivityCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="24x-k5-J8k" id="zpt-xM-Ctg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="boY-ml-bXG">
+                                                    <rect key="frame" x="20" y="11" width="374" height="46"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKu-kr-uw2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="58.5" height="46"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKc-e1-6Te">
+                                                            <rect key="frame" x="157.5" y="0.0" width="59" height="46"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRi-Yb-op6">
+                                                            <rect key="frame" x="315.5" y="0.0" width="58.5" height="46"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="boY-ml-bXG" firstAttribute="top" secondItem="zpt-xM-Ctg" secondAttribute="topMargin" id="4Pb-Vj-tZ8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="boY-ml-bXG" secondAttribute="trailing" id="KRK-cN-qQU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="boY-ml-bXG" secondAttribute="bottom" id="T6a-tr-65U"/>
+                                                <constraint firstItem="boY-ml-bXG" firstAttribute="leading" secondItem="zpt-xM-Ctg" secondAttribute="leadingMargin" id="p3u-Fn-0Vl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="KRi-Yb-op6" id="dJN-XB-ihE"/>
+                                            <outlet property="plantLabel" destination="CKu-kr-uw2" id="tyB-Gb-989"/>
+                                            <outlet property="taskLabel" destination="cKc-e1-6Te" id="cMg-5N-95A"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -116,12 +162,15 @@
                         <viewLayoutGuide key="safeArea" id="Ewt-Vd-n1N"/>
                     </view>
                     <navigationItem key="navigationItem" id="M5D-4x-6kp">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="YIl-Et-r2W">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YIl-Et-r2W">
                             <connections>
                                 <segue destination="isL-JP-GAL" kind="show" id="uCL-Ai-j6S"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fGT-M9-7am" id="xru-mr-bgN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kad-gC-W27" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
