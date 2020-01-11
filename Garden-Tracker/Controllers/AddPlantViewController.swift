@@ -11,7 +11,7 @@ import CoreData
 
 class AddPlantViewController: UIViewController, UITextViewDelegate {
 
-    
+    var plants = [Plant]()
     @IBOutlet weak var plantName: UITextField!
     
     // Type menu outlets
@@ -31,6 +31,8 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
     
     // Notes field
     @IBOutlet weak var plantNotes: UITextView!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     override func viewDidLoad() {
@@ -87,17 +89,18 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    // SUBMIT
+    // MARK: Add new plant
     @IBAction func addBtnTapped(_ sender: UIButton) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
         
-        let plant = Plant(context: context)
-        plant.name = plantName.text!
-        plant.type = plantType
-        plant.light = lightNeeds
-        plant.flowering = flowering
-        plant.notes = plantNotes.text!
+        let newPlant = Plant(context: context)
+        newPlant.name = plantName.text!
+        newPlant.type = plantType
+        newPlant.light = lightNeeds
+        newPlant.flowering = flowering
+        newPlant.notes = plantNotes.text!
         
+        self.plants.append(newPlant)
         //Save the data to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()

@@ -32,6 +32,8 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var taskNotes: UITextView!
     
     var plants: [Plant] = []
+    var activities = [Activity]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +131,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         saveDateBtn.isHidden = !saveDateBtn.isHidden
        
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
+        formatter.dateFormat = "MMM dd, yyyy"
         calendarMenuTitle.setTitle("Date: \(formatter.string(from:datePicker.date))", for: .normal)
 
     }
@@ -153,24 +155,23 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
-    
-//    @IBAction func addTaskBtnTapped(_ sender: UIButton) {
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//
-//        let activity = Activity(context: context)
-//        activity.task = task
-//
-//
-////        plant.type = plantType
-////        plant.light = lightNeeds
-////        plant.flowering = flowering
-////        plant.notes = plantNotes.text!
-//
-//        //Save the data to coredata
-//
-//        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-//        navigationController!.popViewController(animated: true)
-//    }
+    // MARK: - Add new task
+    @IBAction func addTaskBtnTapped(_ sender: UIButton) {
+
+
+        let newActivity = Activity(context: context)
+        
+        newActivity.task = task
+        newActivity.date = datePicker.date
+        newActivity.notes = taskNotes.text!
+        
+        self.activities.append(newActivity)
+
+        //Save the data to coredata
+
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
+    }
     
 }
 
