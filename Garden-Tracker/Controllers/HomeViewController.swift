@@ -110,13 +110,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                plants = try context.fetch(Plant.fetchRequest())
             }
             catch {
-                print("Fetching failed \(error)")
+                print("Error loading plants: \(error)")
             }
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "detailSegue" {
-                let destVC = segue.destination as! ViewController
+                let destVC = segue.destination as! PlantDetailViewController
                 destVC.plant = sender as? Plant
             }
         }

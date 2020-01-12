@@ -11,7 +11,7 @@ import CoreData
 
 class AddPlantViewController: UIViewController, UITextViewDelegate {
 
-    
+    var plants = [Plant]()
     @IBOutlet weak var plantName: UITextField!
     
     // Type menu outlets
@@ -32,6 +32,8 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
     // Notes field
     @IBOutlet weak var plantNotes: UITextView!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,60 +43,41 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
         plantNotes.delegate = self
     }
     
-    
     // TYPE MENU
     @IBAction func handleTypeSelection(_ sender: UIButton) {
-        typeButtons.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        menuAction(typeButtons)
     }
     
     @IBAction func typeBtnTapped(_ sender: UIButton) {
         plantType = sender.currentTitle!
         typeMenuTitle.setTitle("Type: \(plantType!)", for: .normal)
         
-        typeButtons.forEach { (button) in
-            button.isHidden = !button.isHidden }
+        menuAction(typeButtons)
         }
     
     // LIGHT MENU
     @IBAction func handleLightSelection(_ sender: UIButton) {
-        lightButtons.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        menuAction(lightButtons)
     }
         
     @IBAction func lightBtnTapped(_ sender: UIButton) {
         lightNeeds = sender.currentTitle!
         lightMenuTitle.setTitle("Light Needs: \(lightNeeds!)", for: .normal)
         
-        lightButtons.forEach { (button) in
-            button.isHidden = !button.isHidden }
+        menuAction(lightButtons)
     }
     
     // FLOWERING MENU
     
     @IBAction func handleFloweringSelection(_ sender: UIButton) {
-        floweringButtons.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        menuAction(floweringButtons)
     }
     
     @IBAction func floweringBtnTapped(_ sender: UIButton) {
         flowering = sender.currentTitle!
         floweringMenuTitle.setTitle("Flowering Season: \(flowering!)", for: .normal)
         
-        floweringButtons.forEach { (button) in
-            button.isHidden = !button.isHidden }
+        menuAction(floweringButtons)
     }
     
     // Notes
@@ -106,21 +89,31 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    // SUBMIT
+    // MARK: Add new plant
     @IBAction func addBtnTapped(_ sender: UIButton) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
         
-        let plant = Plant(context: context)
-        plant.name = plantName.text!
-        plant.type = plantType
-        plant.light = lightNeeds
-        plant.flowering = flowering
-        plant.notes = plantNotes.text!
+        let newPlant = Plant(context: context)
+        newPlant.name = plantName.text!
+        newPlant.type = plantType
+        newPlant.light = lightNeeds
+        newPlant.flowering = flowering
+        newPlant.notes = plantNotes.text!
         
+        self.plants.append(newPlant)
         //Save the data to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }
     
+    
+    func menuAction(_ menuButtons: Array<UIButton>) {
+        menuButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
 }

@@ -11,16 +11,17 @@ import CoreData
 
 class AddTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
+    var plants: [Plant] = []
+    var activities = [Activity]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var plantMenuTitle: UIButton!
     @IBOutlet weak var tblView: UITableView!
+    var selectedPlant : Plant?
     
     // Task menu outlets
-    @IBOutlet var taskButtons: [UIButton]!
-
     @IBOutlet weak var taskMenuTitle: UIButton!
-    
-    
+    @IBOutlet var taskButtons: [UIButton]!
     var task : String! = ""
     
     // Calendar
@@ -30,8 +31,6 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // Notes
     @IBOutlet weak var taskNotes: UITextView!
-    
-    var plants: [Plant] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +75,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPlant = plants[indexPath.row]
         plantMenuTitle.setTitle("Plant: \(plants[indexPath.row].name!)", for: .normal)
         UIView.animate(withDuration: 0.3) {
          self.tblView.isHidden = !self.tblView.isHidden
@@ -100,12 +100,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
 // MARK: Task Menu
 
     @IBAction func handleTaskSelection(_ sender: UIButton) {
-        taskButtons.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        menuAction(taskButtons)
     }
     
     @IBAction func taskTapped(_ sender: UIButton) {
@@ -118,19 +113,62 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
             button.isHidden = !button.isHidden }
     }
     
-// MARK: Calendar
+// MARK: Date Picker
     
     
     @IBAction func selectDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
-        
         saveDateBtn.isHidden = !saveDateBtn.isHidden
     }
     
     
     @IBAction func saveDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
-        
         saveDateBtn.isHidden = !saveDateBtn.isHidden
+       
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd, yyyy"
+        calendarMenuTitle.setTitle("Date: \(formatter.string(from:datePicker.date))", for: .normal)
+
     }
+    
+    // Notes
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Notes" {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    // MARK: Animation function
+    
+    func menuAction(_ menuButtons: Array<UIButton>) {
+        menuButtons.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+
+    // MARK: - Add new task
+    @IBAction func addTaskBtnTapped(_ sender: UIButton) {
+
+
+        let newActivity = Activity(context: context)
+        
+        newActivity.task = task
+        newActivity.date = datePicker.date
+        newActivity.notes = taskNotes.text!
+        newActivity.parentPlant = selectedPlant
+        
+        self.activities.append(newActivity)
+
+        //Save the data to coredata
+
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
+    }
+    
 }
+
