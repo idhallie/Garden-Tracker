@@ -9,6 +9,18 @@
 import UIKit
 import CoreData
 
+extension UIViewController {
+    func HideKeyboard() {
+        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
+        
+        view.addGestureRecognizer(Tap)
+    }
+    
+    @objc func DismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 class AddPlantViewController: UIViewController, UITextViewDelegate {
 
     var plants = [Plant]()
@@ -41,6 +53,8 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
         plantNotes.text = "Notes"
         plantNotes.textColor = UIColor.lightGray
         plantNotes.delegate = self
+        
+        self.HideKeyboard()
     }
     
     // TYPE MENU
