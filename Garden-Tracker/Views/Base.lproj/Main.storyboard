@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Y5-V4-lNk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Jh-Cd-FcO">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -82,7 +82,7 @@
                     <navigationItem key="navigationItem" id="MbM-hT-kZG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6wq-OA-vgt">
                             <connections>
-                                <segue destination="sss-Ua-dsh" kind="show" id="kEz-GR-5bl"/>
+                                <segue destination="6Y5-V4-lNk" kind="show" id="Nke-gf-DRD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -651,73 +651,15 @@
             <point key="canvasLocation" x="3500" y="1289"/>
         </scene>
         <!--Add Plant View Controller-->
-        <scene sceneID="Zpo-oQ-0AS">
-            <objects>
-                <viewController id="sss-Ua-dsh" customClass="AddPlantViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3bb-OA-4SN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BG4-l7-7HV">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1907"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uZ-Bk-8Xc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1907"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="5uZ-Bk-8Xc" secondAttribute="bottom" constant="-93" id="4Mj-IU-cTv"/>
-                                    <constraint firstItem="oc5-4e-47X" firstAttribute="trailing" secondItem="5uZ-Bk-8Xc" secondAttribute="trailing" id="5gG-th-AB1"/>
-                                    <constraint firstItem="oc5-4e-47X" firstAttribute="bottom" secondItem="5uZ-Bk-8Xc" secondAttribute="bottom" id="6kx-U3-5PL"/>
-                                    <constraint firstItem="5uZ-Bk-8Xc" firstAttribute="height" secondItem="BG4-l7-7HV" secondAttribute="height" priority="250" id="6q1-or-KXJ"/>
-                                    <constraint firstItem="5uZ-Bk-8Xc" firstAttribute="width" secondItem="BG4-l7-7HV" secondAttribute="width" id="7fi-rd-86g"/>
-                                    <constraint firstItem="5uZ-Bk-8Xc" firstAttribute="leading" secondItem="oc5-4e-47X" secondAttribute="leading" id="fzF-c7-ICS"/>
-                                    <constraint firstItem="5uZ-Bk-8Xc" firstAttribute="top" secondItem="BG4-l7-7HV" secondAttribute="top" id="jqv-NO-0Qx"/>
-                                    <constraint firstAttribute="trailing" secondItem="5uZ-Bk-8Xc" secondAttribute="trailing" id="rpu-Jf-38w"/>
-                                    <constraint firstItem="5uZ-Bk-8Xc" firstAttribute="top" secondItem="oc5-4e-47X" secondAttribute="top" id="xj5-Xl-Jx9"/>
-                                    <constraint firstItem="5uZ-Bk-8Xc" firstAttribute="leading" secondItem="BG4-l7-7HV" secondAttribute="leading" id="yf7-df-oGf"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="nfB-uN-tpl"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="oc5-4e-47X"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="BG4-l7-7HV" firstAttribute="bottom" secondItem="mgr-MC-ODK" secondAttribute="bottom" id="Ix9-hX-zQT"/>
-                            <constraint firstItem="BG4-l7-7HV" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" id="K7h-e5-G0m"/>
-                            <constraint firstItem="BG4-l7-7HV" firstAttribute="top" secondItem="mgr-MC-ODK" secondAttribute="top" id="MgO-U7-sqi"/>
-                            <constraint firstItem="BG4-l7-7HV" firstAttribute="bottom" secondItem="mgr-MC-ODK" secondAttribute="bottom" id="Xl2-TR-SJI"/>
-                            <constraint firstItem="BG4-l7-7HV" firstAttribute="leading" secondItem="mgr-MC-ODK" secondAttribute="leading" id="Yv6-MG-Aco"/>
-                            <constraint firstItem="BG4-l7-7HV" firstAttribute="trailing" secondItem="mgr-MC-ODK" secondAttribute="trailing" id="anK-fh-qnp"/>
-                            <constraint firstItem="BG4-l7-7HV" firstAttribute="top" secondItem="mgr-MC-ODK" secondAttribute="top" id="iYx-od-iH0"/>
-                            <constraint firstItem="BG4-l7-7HV" firstAttribute="trailing" secondItem="mgr-MC-ODK" secondAttribute="trailing" id="oAh-Rr-ILp"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="mgr-MC-ODK"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="cEY-OK-wEg"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="2000"/>
-                    <connections>
-                        <outlet property="plantName" destination="P6g-I8-99l" id="2LS-GR-lb8"/>
-                        <outlet property="typeMenuTitle" destination="3MY-Er-0rS" id="uV6-hy-rek"/>
-                        <outletCollection property="typeButtons" destination="Omg-0d-5tC" collectionClass="NSMutableArray" id="Nwg-Bv-GaN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RGZ-KE-Ggw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3662" y="-90"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="Fyr-NH-oOe">
             <objects>
-                <viewController id="6Y5-V4-lNk" sceneMemberID="viewController">
+                <viewController id="6Y5-V4-lNk" customClass="AddPlantViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCk-e7-uBS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6C-FP-mVA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="907"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-U5-ctF" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -750,7 +692,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="handleTypeSelection:" destination="sss-Ua-dsh" eventType="touchUpInside" id="i4G-Tn-i5P"/>
+                                                            <action selector="handleTypeSelection:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="u8l-rs-yX0"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPb-g6-gsc">
@@ -760,11 +702,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="Kky-fK-fA4"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Annuals">
+                                                        <state key="normal" title="Annual">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="Tvb-lm-bau"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="M22-7a-g2g"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhb-QP-hDJ">
@@ -774,11 +716,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="yha-sz-gVh"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Bulbs">
+                                                        <state key="normal" title="Bulb">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="6nN-Kp-HBf"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="VPb-pD-OHl"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6C-2N-O1L">
@@ -788,11 +730,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="IiH-l7-Klq"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Evergreens">
+                                                        <state key="normal" title="Evergreen">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="SS6-E3-eWe"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="goV-Sd-zha"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omg-0d-5tC">
@@ -802,11 +744,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="2nL-56-DOj"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Edibles">
+                                                        <state key="normal" title="Edible">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="mL9-Xx-cYa"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="hiZ-xV-SlG"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8T-w9-H5g">
@@ -816,11 +758,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="nyP-Or-LvL"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Grasses">
+                                                        <state key="normal" title="Grasse">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="9tk-zC-ENy"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="g4t-oF-Li0"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhw-pV-kLt">
@@ -830,11 +772,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="sZq-vh-PQu"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Perennials">
+                                                        <state key="normal" title="Perennial">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="4PW-IH-blw"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="bxf-BO-n92"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OX-hb-vqq">
@@ -844,11 +786,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="071-Yn-ezf"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Shrubs">
+                                                        <state key="normal" title="Shrub">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="od6-4z-rDC"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="Onf-JJ-O0b"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvO-6k-han">
@@ -858,11 +800,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="i0K-xB-Jat"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Succulents">
+                                                        <state key="normal" title="Succulent">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="D5X-z2-h4W"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="gIx-tP-k7a"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIq-tM-KoJ">
@@ -872,11 +814,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="6ri-dR-xw5"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Trees">
+                                                        <state key="normal" title="Tree">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="ODt-a3-zWi"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="pu5-s7-2u0"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65s-yG-F4S">
@@ -886,11 +828,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="az5-cn-fZd"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Vines">
+                                                        <state key="normal" title="Vine">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="typeBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="1UI-bY-iIB"/>
+                                                            <action selector="typeBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="IjF-5V-m2p"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -933,7 +875,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="handleLightSelection:" destination="sss-Ua-dsh" eventType="touchUpInside" id="ls3-x1-eBh"/>
+                                                            <action selector="handleLightSelection:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="rOW-34-X2Y"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rya-QQ-uR2">
@@ -947,7 +889,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="lightBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="kj6-ou-9qu"/>
+                                                            <action selector="lightBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="sn2-k2-QrB"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUb-yE-xz8">
@@ -961,7 +903,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="lightBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="1p4-cT-PzA"/>
+                                                            <action selector="lightBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="fqZ-ep-vC5"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kby-ha-Icf">
@@ -975,7 +917,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="lightBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="eEA-AG-WtS"/>
+                                                            <action selector="lightBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="nL2-8m-y2B"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKi-2K-b71">
@@ -989,7 +931,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="lightBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="zYX-Ly-ndM"/>
+                                                            <action selector="lightBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="MuW-lm-zdb"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1020,7 +962,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="handleFloweringSelection:" destination="sss-Ua-dsh" eventType="touchUpInside" id="IrP-eC-qXR"/>
+                                                            <action selector="handleFloweringSelection:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="Ib4-Xu-fJR"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRb-6B-C1J">
@@ -1034,7 +976,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="Hg7-gW-vDd"/>
+                                                            <action selector="floweringBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="5Bo-83-qwt"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM4-hI-nXe">
@@ -1048,7 +990,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="EIf-oa-ocn"/>
+                                                            <action selector="floweringBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="aGq-Bf-Srd"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feS-ui-JeA">
@@ -1062,7 +1004,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="fZP-rX-0IG"/>
+                                                            <action selector="floweringBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="DAr-O4-oed"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrQ-02-K3h">
@@ -1076,7 +1018,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="oam-Rt-kNO"/>
+                                                            <action selector="floweringBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="kd8-f9-SY0"/>
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iX-VW-p5C">
@@ -1090,7 +1032,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="floweringBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="EMl-jx-UHW"/>
+                                                            <action selector="floweringBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="HQa-1F-pjF"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1131,7 +1073,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addBtnTapped:" destination="sss-Ua-dsh" eventType="touchUpInside" id="pMA-rl-Lfb"/>
+                                                    <action selector="addBtnTapped:" destination="6Y5-V4-lNk" eventType="touchUpInside" id="3mY-by-ZSd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1182,11 +1124,37 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v4s-9h-Mg9"/>
                     </view>
+                    <navigationItem key="navigationItem" id="w9q-fu-nS4"/>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="floweringMenuTitle" destination="2ar-Mi-uo7" id="yOf-Ps-uTB"/>
+                        <outlet property="lightMenuTitle" destination="06F-kl-KhK" id="lXc-S0-3O0"/>
+                        <outlet property="plantNotes" destination="8eQ-HH-Xtl" id="JMV-dB-f4I"/>
+                        <outlet property="typeMenuTitle" destination="3MY-Er-0rS" id="941-IV-Pb5"/>
+                        <outletCollection property="typeButtons" destination="SPb-g6-gsc" collectionClass="NSMutableArray" id="X6V-ep-lqk"/>
+                        <outletCollection property="typeButtons" destination="uhb-QP-hDJ" collectionClass="NSMutableArray" id="Wz1-zA-dZ2"/>
+                        <outletCollection property="typeButtons" destination="a6C-2N-O1L" collectionClass="NSMutableArray" id="7TC-pp-bPf"/>
+                        <outletCollection property="typeButtons" destination="Omg-0d-5tC" collectionClass="NSMutableArray" id="ptg-aW-XAP"/>
+                        <outletCollection property="typeButtons" destination="X8T-w9-H5g" collectionClass="NSMutableArray" id="XYm-VF-xS3"/>
+                        <outletCollection property="typeButtons" destination="mhw-pV-kLt" collectionClass="NSMutableArray" id="xF6-Nd-YjV"/>
+                        <outletCollection property="typeButtons" destination="7OX-hb-vqq" collectionClass="NSMutableArray" id="aAT-0U-P8I"/>
+                        <outletCollection property="typeButtons" destination="uvO-6k-han" collectionClass="NSMutableArray" id="9Qm-gS-iYq"/>
+                        <outletCollection property="typeButtons" destination="QIq-tM-KoJ" collectionClass="NSMutableArray" id="iH9-Lh-3OW"/>
+                        <outletCollection property="typeButtons" destination="65s-yG-F4S" collectionClass="NSMutableArray" id="gTR-wy-lSY"/>
+                        <outletCollection property="lightButtons" destination="Rya-QQ-uR2" collectionClass="NSMutableArray" id="FeR-0U-VHw"/>
+                        <outletCollection property="lightButtons" destination="QUb-yE-xz8" collectionClass="NSMutableArray" id="R2a-uY-zAJ"/>
+                        <outletCollection property="lightButtons" destination="Kby-ha-Icf" collectionClass="NSMutableArray" id="YFv-P0-laV"/>
+                        <outletCollection property="lightButtons" destination="AKi-2K-b71" collectionClass="NSMutableArray" id="OzO-Dm-ZgT"/>
+                        <outletCollection property="floweringButtons" destination="jRb-6B-C1J" collectionClass="NSMutableArray" id="f6M-IW-uoa"/>
+                        <outletCollection property="floweringButtons" destination="nM4-hI-nXe" collectionClass="NSMutableArray" id="yIC-5j-gSs"/>
+                        <outletCollection property="floweringButtons" destination="feS-ui-JeA" collectionClass="NSMutableArray" id="Sbb-xU-GcS"/>
+                        <outletCollection property="floweringButtons" destination="IrQ-02-K3h" collectionClass="NSMutableArray" id="kG8-t6-YpV"/>
+                        <outletCollection property="floweringButtons" destination="3iX-VW-p5C" collectionClass="NSMutableArray" id="t01-f2-B3c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87k-Fx-Kw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4768.8000000000002" y="-427.28635682158927"/>
+            <point key="canvasLocation" x="3500" y="300"/>
         </scene>
         <!--Home-->
         <scene sceneID="JD5-ZC-vt1">
