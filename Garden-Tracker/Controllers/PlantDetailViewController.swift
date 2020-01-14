@@ -30,8 +30,6 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
 
         if let data = plant?.image as Data? {
             plantImage.image = UIImage(data: data)
-        } else {
-            plantImage.image = UIImage(named: "NoImage.png")
         }
     }
   

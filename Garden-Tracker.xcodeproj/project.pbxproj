@@ -13,7 +13,6 @@
 		268A04C323CD791300DD9AD0 /* NoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 268A04C023CD791200DD9AD0 /* NoImage.png */; };
 		268A04C423CD791300DD9AD0 /* NoImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 268A04C123CD791200DD9AD0 /* NoImage@3x.png */; };
 		268A04C523CD791300DD9AD0 /* NoImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 268A04C223CD791200DD9AD0 /* NoImage@2x.png */; };
-		268A04EE23CE3D6100DD9AD0 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A04ED23CE3D6100DD9AD0 /* ImageHelper.swift */; };
 		26CFCA8F23C0EA730069E05D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA8E23C0EA730069E05D /* AppDelegate.swift */; };
 		26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9023C0EA730069E05D /* SceneDelegate.swift */; };
 		26CFCA9323C0EA730069E05D /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9223C0EA730069E05D /* PlantDetailViewController.swift */; };
@@ -36,7 +35,6 @@
 		268A04C023CD791200DD9AD0 /* NoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoImage.png; sourceTree = "<group>"; };
 		268A04C123CD791200DD9AD0 /* NoImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NoImage@3x.png"; sourceTree = "<group>"; };
 		268A04C223CD791200DD9AD0 /* NoImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NoImage@2x.png"; sourceTree = "<group>"; };
-		268A04ED23CE3D6100DD9AD0 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		26CFCA8B23C0EA730069E05D /* Garden-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garden-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CFCA8E23C0EA730069E05D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CFCA9023C0EA730069E05D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		26CFCAA723C0EABA0069E05D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				268A04ED23CE3D6100DD9AD0 /* ImageHelper.swift */,
 				264D2E8423C799D90074A167 /* TaskLogViewController.swift */,
 				264D2E8223C7996A0074A167 /* AddTaskViewController.swift */,
 				26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */,
@@ -229,7 +226,6 @@
 				26FDBEA223C4495600BEBA66 /* HomeViewController.swift in Sources */,
 				26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */,
 				26FDBE9C23C3D69D00BEBA66 /* WeatherData.swift in Sources */,
-				268A04EE23CE3D6100DD9AD0 /* ImageHelper.swift in Sources */,
 				26CFCA9923C0EA730069E05D /* Garden_Tracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
