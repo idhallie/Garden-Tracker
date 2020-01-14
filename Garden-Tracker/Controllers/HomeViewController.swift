@@ -45,7 +45,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
              
             
             // to find database file:
-            //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+            print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         }
         
 
