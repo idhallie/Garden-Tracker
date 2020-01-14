@@ -2,8 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app is requesting access to your photos in order to save a photo in your plant record.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>In order to provide weather data, this app needs access to this device&apos;s location abilities. This information won&apos;t be shared with anyone.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app is requesting access to your camera in order to save a photo in your plant record.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>In order to provide weather data, this app needs access to this device&apos;s location abilities. This information won&apos;t be shared with anyone.</string>
 	<key>CFBundleDevelopmentRegion</key>
