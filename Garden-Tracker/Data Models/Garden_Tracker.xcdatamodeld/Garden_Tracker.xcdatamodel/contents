@@ -8,6 +8,7 @@
     </entity>
     <entity name="Plant" representedClassName="Plant" syncable="YES" codeGenerationType="class">
         <attribute name="flowering" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="light" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
@@ -16,6 +17,6 @@
     </entity>
     <elements>
         <element name="Activity" positionX="-8699.4765625" positionY="2913.35546875" width="128" height="103"/>
-        <element name="Plant" positionX="-8918.23046875" positionY="2899.60546875" width="128" height="133"/>
+        <element name="Plant" positionX="-8918.23046875" positionY="2899.60546875" width="128" height="148"/>
     </elements>
 </model>

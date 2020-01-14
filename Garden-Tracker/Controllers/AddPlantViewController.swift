@@ -9,19 +9,8 @@
 import UIKit
 import CoreData
 
-extension UIViewController {
-    func HideKeyboard() {
-        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
-        
-        view.addGestureRecognizer(Tap)
-    }
-    
-    @objc func DismissKeyboard() {
-        view.endEditing(true)
-    }
-}
 
-class AddPlantViewController: UIViewController, UITextViewDelegate {
+class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var plants = [Plant]()
     @IBOutlet weak var plantName: UITextField!
@@ -40,7 +29,9 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var floweringMenuTitle: UIButton!
     @IBOutlet var floweringButtons: [UIButton]!
     var flowering : String! = ""
-    
+
+    // Add Image
+    @IBOutlet weak var imageView: UIImageView!
     // Notes field
     @IBOutlet weak var plantNotes: UITextView!
     
@@ -53,7 +44,7 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
         plantNotes.text = "Notes"
         plantNotes.textColor = UIColor.lightGray
         plantNotes.delegate = self
-        
+
         self.HideKeyboard()
     }
     
@@ -103,9 +94,8 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    // MARK: Add new plant
+    // MARK: - Add new plant
     @IBAction func addBtnTapped(_ sender: UIButton) {
-
         
         let newPlant = Plant(context: context)
         newPlant.name = plantName.text!
@@ -113,6 +103,12 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
         newPlant.light = lightNeeds
         newPlant.flowering = flowering
         newPlant.notes = plantNotes.text!
+        
+        // Use this to save image to Core Data
+        if let imageData = imageView.image?.pngData() {
+            // DataBaseHelper.shareInstance.saveImage(data: imageData)
+            newPlant.image = imageData
+        }
         
         self.plants.append(newPlant)
         //Save the data to coredata
@@ -130,4 +126,63 @@ class AddPlantViewController: UIViewController, UITextViewDelegate {
             })
         }
     }
+    
+    @IBAction func addPhotoClicked(_ sender: UIButton) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.view.layoutIfNeeded()
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in imagePickerController.sourceType = .camera
+
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+              self.present(imagePickerController, animated: true, completion: nil)
+            } else {
+                print("Camera not available.")
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        imageView.image = image
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }
+
+extension UIViewController {
+    func HideKeyboard() {
+        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
+
+        view.addGestureRecognizer(Tap)
+    }
+
+    @objc func DismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+

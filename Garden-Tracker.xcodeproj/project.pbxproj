@@ -10,6 +10,9 @@
 		264D2E8323C7996A0074A167 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264D2E8223C7996A0074A167 /* AddTaskViewController.swift */; };
 		264D2E8523C799D90074A167 /* TaskLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264D2E8423C799D90074A167 /* TaskLogViewController.swift */; };
 		264D2EA023CA6FE10074A167 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264D2E9F23CA6FE10074A167 /* ActivityCell.swift */; };
+		268A04C323CD791300DD9AD0 /* NoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 268A04C023CD791200DD9AD0 /* NoImage.png */; };
+		268A04C423CD791300DD9AD0 /* NoImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 268A04C123CD791200DD9AD0 /* NoImage@3x.png */; };
+		268A04C523CD791300DD9AD0 /* NoImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 268A04C223CD791200DD9AD0 /* NoImage@2x.png */; };
 		26CFCA8F23C0EA730069E05D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA8E23C0EA730069E05D /* AppDelegate.swift */; };
 		26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9023C0EA730069E05D /* SceneDelegate.swift */; };
 		26CFCA9323C0EA730069E05D /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9223C0EA730069E05D /* PlantDetailViewController.swift */; };
@@ -29,6 +32,9 @@
 		264D2E8223C7996A0074A167 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTaskViewController.swift; path = "Garden-Tracker/Views/AddTaskViewController.swift"; sourceTree = SOURCE_ROOT; };
 		264D2E8423C799D90074A167 /* TaskLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskLogViewController.swift; path = "Garden-Tracker/Views/TaskLogViewController.swift"; sourceTree = SOURCE_ROOT; };
 		264D2E9F23CA6FE10074A167 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		268A04C023CD791200DD9AD0 /* NoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoImage.png; sourceTree = "<group>"; };
+		268A04C123CD791200DD9AD0 /* NoImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NoImage@3x.png"; sourceTree = "<group>"; };
+		268A04C223CD791200DD9AD0 /* NoImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NoImage@2x.png"; sourceTree = "<group>"; };
 		26CFCA8B23C0EA730069E05D /* Garden-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garden-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CFCA8E23C0EA730069E05D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CFCA9023C0EA730069E05D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 		26CFCAA823C0EB5D0069E05D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				268A04C023CD791200DD9AD0 /* NoImage.png */,
+				268A04C223CD791200DD9AD0 /* NoImage@2x.png */,
+				268A04C123CD791200DD9AD0 /* NoImage@3x.png */,
 				26CFCA9A23C0EA750069E05D /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
@@ -189,9 +198,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				268A04C523CD791300DD9AD0 /* NoImage@2x.png in Resources */,
 				26CFCA9E23C0EA750069E05D /* LaunchScreen.storyboard in Resources */,
 				26CFCA9B23C0EA750069E05D /* Assets.xcassets in Resources */,
+				268A04C423CD791300DD9AD0 /* NoImage@3x.png in Resources */,
 				26CFCA9623C0EA730069E05D /* Main.storyboard in Resources */,
+				268A04C323CD791300DD9AD0 /* NoImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
