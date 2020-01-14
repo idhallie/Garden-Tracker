@@ -10,25 +10,25 @@
 //import CoreData
 //
 //class ImageHelper {
-//    
+//
 //    static let shareInstance = SaveImageHelper()
 //    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//    
+//
 //    func saveImage(data: Data) {
 //        let imageInstance = Plant(context: context)
 //    }
-//    
-//    
-//    func fetchImage() -> [Image] {
-//        var fetchingImage = [Image]()
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Image")
-//        
+//
+//
+//    func fetchImage() -> [Plant] {
+//        var fetchingImage = [Plant]()
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Plant")
+//
 //        do {
 //            fetchingImage = try context.fetch(fetchRequest) as! [Image]
 //        } catch {
 //            print("Error while fetching the image")
 //        }
-//        
+//
 //        return fetchingImage
 //    }
 //}
