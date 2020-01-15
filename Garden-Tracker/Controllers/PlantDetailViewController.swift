@@ -32,5 +32,15 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
             plantImage.image = UIImage(data: data)
         }
     }
+    
+    
+    @IBAction func editBtnPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "editPlantSegue", sender: plant)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! EditPlantViewController
+        destVC.plant = plant
+    }
 }
 
