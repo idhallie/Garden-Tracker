@@ -38,7 +38,6 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
         performSegue(withIdentifier: "editPlantSegue", sender: plant)
     }
     
-    // To segue to Edit page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! EditPlantViewController
         destVC.plant = plant

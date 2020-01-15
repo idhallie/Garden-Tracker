@@ -41,18 +41,35 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Plant object: \(plant)")
         
-        plantNotes.text = "Notes"
-        plantNotes.textColor = UIColor.lightGray
+        // Populate existing data into fields
+        plantName.text = plant?.name
+        typeMenuTitle.setTitle("Type: \(plant?.type ?? "Select Plant Type")", for: .normal)
+        plantType = plant?.type
+        lightMenuTitle.setTitle("Light Needs: \(plant?.light ?? "Select Light Needs")", for: .normal)
+        lightNeeds = plant?.light
+        floweringMenuTitle.setTitle("Flowering Season: \(plant?.flowering ?? "Select Plant Type")", for: .normal)
+        flowering = plant?.flowering
+        
+        if plant?.notes == "" {
+            plantNotes.text = "Notes"
+            plantNotes.textColor = UIColor.lightGray
+        }
+        else {
+            plantNotes.text = plant?.notes
+            plantNotes.textColor = UIColor.black
+        }
+        
+        if let data = plant?.image as Data? {
+            imageView.image = UIImage(data: data)
+        }
+        
+        // set delegates
         plantNotes.delegate = self
         plantName.delegate = self
         plantNotes.delegate = self
         
         self.HideKeyboard()
-        
-        // New for Edit Screen
-        plantName.text = plant?.name
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -112,18 +129,18 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
     // MARK: - Add new plant
     @IBAction func addBtnTapped(_ sender: UIButton) {
         
-        let newPlant = Plant(context: context)
-        newPlant.name = plantName.text!
-        newPlant.type = plantType
-        newPlant.light = lightNeeds
-        newPlant.flowering = flowering
-        newPlant.notes = plantNotes.text!
+        //let newPlant = Plant(context: context)
+        plant?.name = plantName.text!
+        plant?.type = plantType
+        plant?.light = lightNeeds
+        plant?.flowering = flowering
+        plant?.notes = plantNotes.text!
         
         if let imageData = imageView.image?.jpegData(compressionQuality: 1.0) {
-            newPlant.image = imageData
+            plant?.image = imageData
         }
         
-        self.plants.append(newPlant)
+        //self.plants.append(plant)
         //Save the data to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -178,7 +195,6 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

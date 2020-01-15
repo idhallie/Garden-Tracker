@@ -121,10 +121,10 @@
 				264D2E8223C7996A0074A167 /* AddTaskViewController.swift */,
 				26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */,
 				26CFCA9223C0EA730069E05D /* PlantDetailViewController.swift */,
+				268A04F123CFC10000DD9AD0 /* EditPlantViewController.swift */,
 				26FDBEA123C4495600BEBA66 /* HomeViewController.swift */,
 				264D2E9F23CA6FE10074A167 /* ActivityCell.swift */,
 				268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */,
-				268A04F123CFC10000DD9AD0 /* EditPlantViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
