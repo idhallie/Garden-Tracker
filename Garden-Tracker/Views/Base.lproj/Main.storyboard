@@ -52,19 +52,45 @@
                                     <constraint firstItem="L9T-3c-WbF" firstAttribute="top" secondItem="0U9-T0-LkE" secondAttribute="bottom" id="urT-o3-NFT"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qut-cZ-Wo8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qut-cZ-Wo8">
                                 <rect key="frame" x="0.0" y="179" width="375" height="439"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xWB-f2-5tu">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomePlantCell" id="xWB-f2-5tu" customClass="HomePlantCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xWB-f2-5tu" id="5o3-7V-rNY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMe-zI-Nff">
+                                                    <rect key="frame" x="297" y="6.5" width="58" height="77"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="JMe-zI-Nff" secondAttribute="height" multiplier="3:4" id="4ZW-kg-XPJ"/>
+                                                        <constraint firstAttribute="width" constant="58" id="UCA-w9-M69"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeS-Bh-MgX">
+                                                    <rect key="frame" x="35" y="34.5" width="247" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="sDo-cB-s1I"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JMe-zI-Nff" firstAttribute="leading" secondItem="yeS-Bh-MgX" secondAttribute="trailing" constant="15" id="462-7Y-g79"/>
+                                                <constraint firstAttribute="trailing" secondItem="JMe-zI-Nff" secondAttribute="trailing" constant="20" id="EcA-x5-cff"/>
+                                                <constraint firstItem="yeS-Bh-MgX" firstAttribute="centerY" secondItem="5o3-7V-rNY" secondAttribute="centerY" id="MnI-aG-IaO"/>
+                                                <constraint firstItem="JMe-zI-Nff" firstAttribute="centerY" secondItem="5o3-7V-rNY" secondAttribute="centerY" id="lAq-mj-Je7"/>
+                                                <constraint firstItem="yeS-Bh-MgX" firstAttribute="leading" secondItem="5o3-7V-rNY" secondAttribute="leadingMargin" constant="20" id="naP-ix-P7Y"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="detailSegue" id="W4S-8J-hAI"/>
+                                            <outlet property="plantImage" destination="JMe-zI-Nff" id="hWW-v5-WCi"/>
+                                            <outlet property="plantNameLabel" destination="yeS-Bh-MgX" id="Aa1-Ri-g03"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -95,6 +121,7 @@
                         <outlet property="headerView" destination="wFr-K1-BmH" id="jpS-uj-Zwb"/>
                         <outlet property="tableView" destination="Qut-cZ-Wo8" id="xdC-Ww-DRA"/>
                         <outlet property="tempLabel" destination="in9-Q6-bFp" id="9ze-Pb-PZC"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="detailSegue" id="has-C9-CRp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pZ-aw-QX7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1118,7 +1145,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="U2J-TG-Hbe" userLabel="Default Image">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="U2J-TG-Hbe" userLabel="Default Image">
                                                 <rect key="frame" x="107.5" y="399" width="160" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="M5Y-Pa-ZH2"/>
@@ -1299,7 +1326,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NoImage.png" width="341" height="341"/>
+        <image name="NoImage" width="341" height="341"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>

@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import CoreData
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tempLabel: UILabel!
@@ -31,7 +31,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             super.viewDidLoad()
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.rowHeight = 100
 
             // for weather
             weatherManager.delegate = self
@@ -42,10 +41,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
                 locationManager.requestLocation()
             }
-             
             
             // to find database file:
-            print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+            // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         }
         
 
@@ -57,41 +55,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             tableView.reloadData()
         }
 
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return plants.count
-        }
-
-
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = UITableViewCell()
-
-            let plant = plants[indexPath.row]
-            cell.textLabel?.text = plant.name!
-
-            return cell
-        }
-        
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let plant = plants[indexPath.row]
-            performSegue(withIdentifier: "detailSegue", sender: plant)
-        }
-
-        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
-            if editingStyle == .delete {
-                let plant = plants[indexPath.row]
-                context.delete(plant)
-                (UIApplication.shared.delegate as! AppDelegate).saveContext()
-
-                do {
-                   plants = try context.fetch(Plant.fetchRequest())
-                }
-                catch {
-                    print("Fetching failed \(error)")
-                }
-            }
-            tableView.reloadData()
-        }
+//        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//            return plants.count
+//        }
+//
+//
+//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//            let cell = UITableViewCell()
+//
+//            let plant = plants[indexPath.row]
+//            cell.textLabel?.text = plant.name!
+//
+//            return cell
+//        }
 
         // MARK: Model Manipulation Methods
 
@@ -165,5 +141,42 @@ extension HomeViewController: CLLocationManagerDelegate {
             tableView.reloadData()
         }
     }
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return plants.count
+    }
+
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let plant = plants[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomePlantCell") as! HomePlantCell
+        cell.setPlant(plant: plant)
+
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let plant = plants[indexPath.row]
+        performSegue(withIdentifier: "detailSegue", sender: plant)
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            let plant = plants[indexPath.row]
+            context.delete(plant)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+            do {
+               plants = try context.fetch(Plant.fetchRequest())
+            }
+            catch {
+                print("Fetching failed \(error)")
+            }
+        }
+        tableView.reloadData()
+    }
 }
