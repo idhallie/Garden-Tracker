@@ -140,13 +140,10 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
             plant?.image = imageData
         }
         
-        //self.plants.append(plant)
         //Save the data to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        navigationController!.popViewController(animated: true)
     }
-    
     
     func menuAction(_ menuButtons: Array<UIButton>) {
         menuButtons.forEach { (button) in
