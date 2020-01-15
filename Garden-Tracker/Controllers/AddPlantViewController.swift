@@ -104,9 +104,7 @@ class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePicke
         newPlant.flowering = flowering
         newPlant.notes = plantNotes.text!
         
-        // Use this to save image to Core Data
-        if let imageData = imageView.image?.pngData() {
-            // DataBaseHelper.shareInstance.saveImage(data: imageData)
+        if let imageData = imageView.image?.jpegData(compressionQuality: 1.0) {
             newPlant.image = imageData
         }
         
