@@ -55,20 +55,6 @@ class HomeViewController: UIViewController {
             tableView.reloadData()
         }
 
-//        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//            return plants.count
-//        }
-//
-//
-//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//            let cell = UITableViewCell()
-//
-//            let plant = plants[indexPath.row]
-//            cell.textLabel?.text = plant.name!
-//
-//            return cell
-//        }
-
         // MARK: Model Manipulation Methods
 
         func savePlants() {
@@ -147,7 +133,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return plants.count
     }
-
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let plant = plants[indexPath.row]
