@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     var plants = [Plant]()
     @IBOutlet weak var plantName: UITextField!
@@ -40,12 +40,21 @@ class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         plantNotes.text = "Notes"
         plantNotes.textColor = UIColor.lightGray
         plantNotes.delegate = self
-
+        plantName.delegate = self
+        plantNotes.delegate = self
+        
         self.HideKeyboard()
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
     // TYPE MENU
@@ -104,9 +113,7 @@ class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePicke
         newPlant.flowering = flowering
         newPlant.notes = plantNotes.text!
         
-        // Use this to save image to Core Data
-        if let imageData = imageView.image?.pngData() {
-            // DataBaseHelper.shareInstance.saveImage(data: imageData)
+        if let imageData = imageView.image?.jpegData(compressionQuality: 1.0) {
             newPlant.image = imageData
         }
         

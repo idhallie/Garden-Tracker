@@ -32,6 +32,5 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
             plantImage.image = UIImage(data: data)
         }
     }
-  
 }
 
