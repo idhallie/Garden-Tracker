@@ -715,7 +715,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dF1-Qx-EjN"/>
+                    <navigationItem key="navigationItem" id="dF1-Qx-EjN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="X2c-u2-a92">
+                            <connections>
+                                <action selector="editBtnPressed:" destination="BYZ-38-t0r" id="jRV-lL-HnL"/>
+                                <segue destination="kF8-fl-Lri" kind="show" identifier="editPlantSegue" id="JFd-UG-Qio"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="descLabel" destination="wsY-lQ-THk" id="mbx-xQ-ONf"/>
@@ -1319,16 +1326,16 @@
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="1226.7857142857142"/>
         </scene>
-        <!--Add Plant View Controller-->
+        <!--Edit Plant View Controller-->
         <scene sceneID="CQB-vO-OKi">
             <objects>
-                <viewController id="kF8-fl-Lri" customClass="AddPlantViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kF8-fl-Lri" customClass="EditPlantViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FTR-gJ-Z7i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlY-fJ-KTW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="907"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTt-ba-KQB" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -1818,9 +1825,9 @@
                         <outlet property="floweringMenuTitle" destination="JKs-xV-EAb" id="2MF-ox-yRS"/>
                         <outlet property="imageView" destination="eDr-fP-Tww" id="phY-ha-NYo"/>
                         <outlet property="lightMenuTitle" destination="x4b-Et-WUV" id="xZm-ov-9FS"/>
-                        <outlet property="plantName" destination="QAC-EM-lsV" id="wsP-Dj-Rsk"/>
+                        <outlet property="plantName" destination="QAC-EM-lsV" id="gju-dV-lWi"/>
                         <outlet property="plantNotes" destination="5dM-F0-vmT" id="9KJ-5c-u7W"/>
-                        <outlet property="typeMenuTitle" destination="7hz-Zy-c04" id="Eru-lj-efb"/>
+                        <outlet property="typeMenuTitle" destination="7hz-Zy-c04" id="XnL-uy-4YY"/>
                         <outletCollection property="typeButtons" destination="j3f-g9-kUt" collectionClass="NSMutableArray" id="wcv-6M-zQR"/>
                         <outletCollection property="typeButtons" destination="SvV-XQ-gqb" collectionClass="NSMutableArray" id="VOd-JP-bRq"/>
                         <outletCollection property="typeButtons" destination="9Xh-cE-CsR" collectionClass="NSMutableArray" id="qHA-M4-YbM"/>
@@ -1840,6 +1847,15 @@
                         <outletCollection property="floweringButtons" destination="P2s-bQ-Uqk" collectionClass="NSMutableArray" id="z3u-MK-vfi"/>
                         <outletCollection property="floweringButtons" destination="87T-rl-514" collectionClass="NSMutableArray" id="Mhz-ZE-I73"/>
                         <outletCollection property="floweringButtons" destination="h31-tW-YaE" collectionClass="NSMutableArray" id="ULt-Gi-qCE"/>
+                        <outletCollection property="typeButtons" destination="j3f-g9-kUt" collectionClass="NSMutableArray" id="h72-i2-flm"/>
+                        <outletCollection property="typeButtons" destination="SvV-XQ-gqb" collectionClass="NSMutableArray" id="Zxi-ta-IPj"/>
+                        <outletCollection property="typeButtons" destination="9Xh-cE-CsR" collectionClass="NSMutableArray" id="z2E-g5-Rlp"/>
+                        <outletCollection property="typeButtons" destination="iQr-zv-Rd8" collectionClass="NSMutableArray" id="OV5-gk-ufO"/>
+                        <outletCollection property="typeButtons" destination="g6S-9a-A14" collectionClass="NSMutableArray" id="jOb-bC-EVK"/>
+                        <outletCollection property="typeButtons" destination="YmI-h7-bGr" collectionClass="NSMutableArray" id="Orl-4u-WMc"/>
+                        <outletCollection property="typeButtons" destination="dmK-an-lxb" collectionClass="NSMutableArray" id="xTU-zp-4vY"/>
+                        <outletCollection property="typeButtons" destination="ZaV-ia-Y6E" collectionClass="NSMutableArray" id="KBq-CN-nL0"/>
+                        <outletCollection property="typeButtons" destination="j27-pP-nxu" collectionClass="NSMutableArray" id="z9e-3z-Hmb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iac-ld-LCD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
