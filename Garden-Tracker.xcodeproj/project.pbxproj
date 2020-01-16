@@ -12,6 +12,7 @@
 		264D2EA023CA6FE10074A167 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264D2E9F23CA6FE10074A167 /* ActivityCell.swift */; };
 		268A04F023CEC8C100DD9AD0 /* HomePlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */; };
 		268A04F223CFC10000DD9AD0 /* EditPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A04F123CFC10000DD9AD0 /* EditPlantViewController.swift */; };
+		268A04F423D01F5500DD9AD0 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A04F323D01F5400DD9AD0 /* TaskDetailViewController.swift */; };
 		26CFCA8F23C0EA730069E05D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA8E23C0EA730069E05D /* AppDelegate.swift */; };
 		26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9023C0EA730069E05D /* SceneDelegate.swift */; };
 		26CFCA9323C0EA730069E05D /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CFCA9223C0EA730069E05D /* PlantDetailViewController.swift */; };
@@ -33,6 +34,7 @@
 		264D2E9F23CA6FE10074A167 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlantCell.swift; sourceTree = "<group>"; };
 		268A04F123CFC10000DD9AD0 /* EditPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantViewController.swift; sourceTree = "<group>"; };
+		268A04F323D01F5400DD9AD0 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		26CFCA8B23C0EA730069E05D /* Garden-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garden-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CFCA8E23C0EA730069E05D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CFCA9023C0EA730069E05D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				26FDBEA123C4495600BEBA66 /* HomeViewController.swift */,
 				264D2E9F23CA6FE10074A167 /* ActivityCell.swift */,
 				268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */,
+				268A04F323D01F5400DD9AD0 /* TaskDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				26FDBEA223C4495600BEBA66 /* HomeViewController.swift in Sources */,
 				26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */,
 				26FDBE9C23C3D69D00BEBA66 /* WeatherData.swift in Sources */,
+				268A04F423D01F5500DD9AD0 /* TaskDetailViewController.swift in Sources */,
 				26CFCA9923C0EA730069E05D /* Garden_Tracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
