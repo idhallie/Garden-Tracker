@@ -10,50 +10,58 @@
         <!--Home View Controller-->
         <scene sceneID="fyr-ax-lwF">
             <objects>
-                <viewController id="4R5-w2-MOa" customClass="HomeViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hec-yz-ugB">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4R5-w2-MOa" customClass="HomeViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hec-yz-ugB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFr-K1-BmH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieving your weather..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="in9-Q6-bFp">
-                                        <rect key="frame" x="67" y="10" width="241.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L9T-3c-WbF">
-                                        <rect key="frame" x="152.5" y="57" width="70" height="70"/>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lej-gb-vvM">
+                                        <rect key="frame" x="24.5" y="15" width="326.5" height="70"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qFy-x7-dau">
+                                                <rect key="frame" x="0.0" y="0.0" width="241.5" height="70"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieving your weather..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="in9-Q6-bFp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="241.5" height="40"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are here." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U9-T0-LkE">
+                                                        <rect key="frame" x="0.0" y="40" width="90" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L9T-3c-WbF">
+                                                <rect key="frame" x="256.5" y="0.0" width="70" height="70"/>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="BmV-D0-jpi"/>
+                                                    <constraint firstAttribute="width" constant="70" id="L2w-Ku-cbp"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="BmV-D0-jpi"/>
-                                            <constraint firstAttribute="width" constant="70" id="L2w-Ku-cbp"/>
+                                            <constraint firstItem="qFy-x7-dau" firstAttribute="top" secondItem="Lej-gb-vvM" secondAttribute="top" id="MBe-Wo-E68"/>
                                         </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are here." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U9-T0-LkE">
-                                        <rect key="frame" x="20" y="39" width="335" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="header"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="0U9-T0-LkE" secondAttribute="trailing" constant="20" symbolic="YES" id="4iq-t3-1ey"/>
-                                    <constraint firstItem="in9-Q6-bFp" firstAttribute="top" secondItem="wFr-K1-BmH" secondAttribute="top" constant="10" id="6Zl-7b-jVP"/>
-                                    <constraint firstItem="0U9-T0-LkE" firstAttribute="top" secondItem="in9-Q6-bFp" secondAttribute="bottom" constant="5" id="7ee-BV-qM0"/>
-                                    <constraint firstItem="0U9-T0-LkE" firstAttribute="leading" secondItem="wFr-K1-BmH" secondAttribute="leading" constant="20" symbolic="YES" id="GFV-rD-kNw"/>
-                                    <constraint firstAttribute="height" constant="135" id="LxV-fj-aQg"/>
-                                    <constraint firstItem="in9-Q6-bFp" firstAttribute="centerX" secondItem="wFr-K1-BmH" secondAttribute="centerX" id="Q8w-07-GEf"/>
-                                    <constraint firstItem="L9T-3c-WbF" firstAttribute="centerX" secondItem="wFr-K1-BmH" secondAttribute="centerX" id="iow-s1-tMb"/>
-                                    <constraint firstItem="L9T-3c-WbF" firstAttribute="top" secondItem="0U9-T0-LkE" secondAttribute="bottom" id="urT-o3-NFT"/>
+                                    <constraint firstAttribute="height" constant="100" id="LxV-fj-aQg"/>
+                                    <constraint firstItem="Lej-gb-vvM" firstAttribute="top" secondItem="wFr-K1-BmH" secondAttribute="top" constant="15" id="PEu-Sg-69R"/>
+                                    <constraint firstItem="Lej-gb-vvM" firstAttribute="centerX" secondItem="wFr-K1-BmH" secondAttribute="centerX" id="W4t-pa-Ao1"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qut-cZ-Wo8">
-                                <rect key="frame" x="0.0" y="135" width="375" height="512"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="517"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomePlantCell" id="xWB-f2-5tu" customClass="HomePlantCell" customModule="Garden_Tracker" customModuleProvider="target">
@@ -95,12 +103,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-qC-6b7">
+                                <rect key="frame" x="0.0" y="100" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PQa-ce-UBv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Qut-cZ-Wo8" firstAttribute="leading" secondItem="VsN-YP-25x" secondAttribute="leading" id="8yd-8K-4hm"/>
+                            <constraint firstItem="vwX-qC-6b7" firstAttribute="leading" secondItem="VsN-YP-25x" secondAttribute="leading" id="9Gz-Zt-8dq"/>
                             <constraint firstItem="wFr-K1-BmH" firstAttribute="top" secondItem="VsN-YP-25x" secondAttribute="top" id="CI8-i8-9Ds"/>
-                            <constraint firstItem="Qut-cZ-Wo8" firstAttribute="top" secondItem="wFr-K1-BmH" secondAttribute="bottom" id="Kfg-eQ-2rN"/>
+                            <constraint firstItem="Qut-cZ-Wo8" firstAttribute="top" secondItem="vwX-qC-6b7" secondAttribute="bottom" id="Hwu-i4-gwo"/>
+                            <constraint firstItem="vwX-qC-6b7" firstAttribute="top" secondItem="wFr-K1-BmH" secondAttribute="bottom" id="W79-tw-YNw"/>
+                            <constraint firstItem="vwX-qC-6b7" firstAttribute="trailing" secondItem="VsN-YP-25x" secondAttribute="trailing" id="lVO-BZ-d5P"/>
                             <constraint firstItem="VsN-YP-25x" firstAttribute="trailing" secondItem="wFr-K1-BmH" secondAttribute="trailing" id="nef-eR-20S"/>
                             <constraint firstItem="Qut-cZ-Wo8" firstAttribute="trailing" secondItem="VsN-YP-25x" secondAttribute="trailing" id="tsW-PF-1Wx"/>
                             <constraint firstItem="Qut-cZ-Wo8" firstAttribute="bottom" secondItem="VsN-YP-25x" secondAttribute="bottom" id="txp-aX-YIb"/>
@@ -126,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pZ-aw-QX7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2618.4000000000001" y="520.38980509745136"/>
+            <point key="canvasLocation" x="2605.5999999999999" y="499.70014992503752"/>
         </scene>
         <!--Task Log View Controller-->
         <scene sceneID="gKI-Pj-xbO">
@@ -257,6 +275,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kad-gC-W27" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1768.1159420289857" y="1226.7857142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0RU-UT-k6Y">
+            <objects>
+                <viewController id="jil-a9-Ex6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W8a-0m-Gx3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Grj-NA-B4R"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4YT-D1-fNr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2606" y="1227"/>
         </scene>
         <!--Task Detail View Controller-->
         <scene sceneID="d2n-eL-Y7Z">
@@ -694,7 +727,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYr-rE-BRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2618" y="1395"/>
+            <point key="canvasLocation" x="2546" y="2139"/>
         </scene>
         <!--Plant Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1992,7 +2025,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iac-ld-LCD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3470" y="1497"/>
+            <point key="canvasLocation" x="4169" y="1568"/>
         </scene>
         <!--Edit Task View Controller-->
         <scene sceneID="soF-ul-ojX">
@@ -2293,7 +2326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9O-sk-cKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2617" y="2451"/>
+            <point key="canvasLocation" x="1767" y="2928"/>
         </scene>
     </scenes>
     <resources>
@@ -2302,6 +2335,7 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="has-C9-CRp"/>
         <segue reference="yHP-9H-u4T"/>
         <segue reference="BN1-G1-s66"/>
         <segue reference="WnH-Dc-TIZ"/>

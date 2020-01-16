@@ -20,12 +20,11 @@ class HomeViewController: UIViewController {
     
     var plants: [Plant] = []
     
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        // for weather
-        let locationManager = CLLocationManager()
-        var weatherManager = WeatherManager()
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // for weather
+    let locationManager = CLLocationManager()
+    var weatherManager = WeatherManager()
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -46,6 +45,10 @@ class HomeViewController: UIViewController {
             // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         }
         
+    func filter() {
+        let typeFilter = plants.filter({return $0.type == "Tree"})
+        print(typeFilter)
+    }
 
         override func viewWillAppear(_ animated: Bool) {
             // load data from core data
@@ -53,6 +56,7 @@ class HomeViewController: UIViewController {
 
             // reload the table view
             tableView.reloadData()
+            filter()
         }
 
         // MARK: Model Manipulation Methods
@@ -164,4 +168,5 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         tableView.reloadData()
     }
+
 }
