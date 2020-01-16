@@ -134,7 +134,6 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
     
 // MARK: Date Picker
     
-    
     @IBAction func selectDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
         saveDateBtn.isHidden = !saveDateBtn.isHidden
@@ -179,9 +178,7 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
         activity?.parentPlant = selectedPlant
 
         //Save the data to coredata
-
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        // navigationController!.popViewController(animated: true)
     }
 }
 
