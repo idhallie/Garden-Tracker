@@ -126,10 +126,9 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
     }
     
     
-    // MARK: - Add new plant
-    @IBAction func addBtnTapped(_ sender: UIButton) {
-        
-        //let newPlant = Plant(context: context)
+    // MARK: - Update plant
+    
+    @IBAction func updateBtnTapped(_ sender: Any) {
         plant?.name = plantName.text!
         plant?.type = plantType
         plant?.light = lightNeeds
@@ -141,7 +140,6 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
         }
         
         //Save the data to coredata
-        
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     

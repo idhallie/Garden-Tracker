@@ -30,6 +30,12 @@ class TaskDetailViewController: UIViewController {
         notesField.text = activity?.notes
     }
     
-
-
+    @IBAction func editBtnPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "editTaskSegue", sender: activity)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! EditTaskViewController
+        destVC.activity = activity
+    }
 }
