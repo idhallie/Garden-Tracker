@@ -10,10 +10,24 @@ import UIKit
 
 class TaskDetailViewController: UIViewController {
 
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var plantNameLabel: UILabel!
+    @IBOutlet weak var taskDateLabel: UILabel!
+    @IBOutlet weak var notesField: UITextView!
+    
+    var activity: Activity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titleLabel.text = activity?.task
+        plantNameLabel.text = activity?.parentPlant?.name
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-YY"
+        taskDateLabel.text = formatter.string(from:(activity?.date!)!)
+        
+        notesField.text = activity?.notes
     }
     
 

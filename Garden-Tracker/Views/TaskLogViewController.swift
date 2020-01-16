@@ -58,6 +58,18 @@ class TaskLogViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let activity = activities[indexPath.row]
+        performSegue(withIdentifier: "taskDetailSegue", sender: activity)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "taskDetailSegue" {
+            let destVC = segue.destination as! TaskDetailViewController
+            destVC.activity = sender as? Activity
+        }
+    }
+    
     func loadActivites() {
         do {
         activities = try context.fetch(Activity.fetchRequest())
