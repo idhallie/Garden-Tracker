@@ -13,6 +13,7 @@ class TaskLogViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     var activities : [Activity] = []
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +41,40 @@ class TaskLogViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    func loadActivites() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            let activity = activities[indexPath.row]
+            context.delete(activity)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+            do {
+               activities = try context.fetch(Activity.fetchRequest())
+            }
+            catch {
+                print("Fetching failed \(error)")
+            }
+        }
+        tableView.reloadData()
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let activity = activities[indexPath.row]
+        performSegue(withIdentifier: "taskDetailSegue", sender: activity)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "taskDetailSegue" {
+            let destVC = segue.destination as! TaskDetailViewController
+            destVC.activity = sender as? Activity
+        }
+    }
+    
+    func loadActivites() {
         do {
         activities = try context.fetch(Activity.fetchRequest())
         } catch {
             print("Error loading activities: \(error)")
         }
     }
-
 }

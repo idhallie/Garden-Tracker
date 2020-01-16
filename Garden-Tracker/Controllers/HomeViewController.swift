@@ -66,7 +66,6 @@ class HomeViewController: UIViewController {
             self.tableView.reloadData()
         }
 
-
         func loadPlants() {
             do {
                plants = try context.fetch(Plant.fetchRequest())
@@ -138,6 +137,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let plant = plants[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomePlantCell") as! HomePlantCell
+
         cell.setPlant(plant: plant)
 
         return cell
