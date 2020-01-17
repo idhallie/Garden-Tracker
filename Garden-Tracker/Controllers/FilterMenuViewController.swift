@@ -23,7 +23,7 @@ class FilterMenuViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     
-    @IBAction func doneBtnTapped(_ sender: UIButton) {
+    @IBAction func cancelBtnTapped(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
