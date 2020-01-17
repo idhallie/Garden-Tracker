@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
 
             // reload the table view
             tableView.reloadData()
-            filter()
+            
         }
 
         // MARK: Model Manipulation Methods
