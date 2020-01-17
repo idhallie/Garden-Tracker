@@ -41,7 +41,20 @@ class FilterMenuViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
+        let selection = categories[indexPath.row]
+        
+        var category: String {
+        switch selection {
+        case "Plant Type":
+            return "type"
+        case "Light Needs":
+            return "light"
+        case "Flowering Season":
+            return "flowering"
+        default:
+            return "No matches for selected category."
+            }
+        }
         performSegue(withIdentifier: "FilterSubSegue", sender: category)
     }
     

@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var plants: [Plant] = []
+    var filterCriteria: FilterCriteria?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -46,17 +47,26 @@ class HomeViewController: UIViewController {
         }
         
     func filter() {
-        let typeFilter = plants.filter({return $0.type == "Tree"})
-        print(typeFilter)
+        switch filterCriteria?.category {
+        case "type":
+        plants = plants.filter({return $0.type == filterCriteria?.item})
+        case "light":
+        plants = plants.filter({return $0.light == filterCriteria?.item})
+        case "flowering":
+        plants = plants.filter({return $0.flowering == filterCriteria?.item})
+        default:
+            print("No category found.")
+        }
     }
 
         override func viewWillAppear(_ animated: Bool) {
             // load data from core data
             loadPlants()
-
+            if filterCriteria != nil {
+                filter()}
+            
             // reload the table view
             tableView.reloadData()
-            
         }
 
         // MARK: Model Manipulation Methods

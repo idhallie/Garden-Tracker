@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct FilterCriteria {
+    var category: String
+    var item: String
+}
 class FilterSubViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var category: String!
@@ -28,11 +32,11 @@ class FilterSubViewController: UIViewController, UITableViewDataSource, UITableV
     
     func makeArray() -> [String] {
             switch category {
-            case "Plant Type":
+            case "type":
                 return ["Annual", "Bulb", "Evergreen", "Edible", "Grass", "Perennial", "Shrub", "Succulent", "Tree", "Vine"]
-            case "Light Needs":
+            case "light":
                 return ["Full Sun", "Part Sun", "Part Shade", "Full Shade"]
-            case "Flowering Season":
+            case "flowering":
                 return ["Winter", "Spring", "Summer", "Fall", "Not Applicable"]
             default:
                 return ["No matches for selected category."]
@@ -51,4 +55,16 @@ class FilterSubViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let filterSelection = FilterCriteria(category: category, item: categoryItems[indexPath.row])
+
+        performSegue(withIdentifier: "FilterHomeSegue", sender: filterSelection)
+    }
+ 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FilterHomeSegue" {
+            let destVC = segue.destination as! HomeViewController
+            destVC.filterCriteria = sender as? FilterCriteria
+        }
+    }
 }
