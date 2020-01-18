@@ -113,12 +113,21 @@
                                             <action selector="filterBtnTapped:" destination="4R5-w2-MOa" eventType="touchUpInside" id="M3r-NH-9I2"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNy-36-R0v">
+                                        <rect key="frame" x="15" y="0.0" width="75" height="30"/>
+                                        <state key="normal" title="Clear Filter"/>
+                                        <connections>
+                                            <action selector="clearBtnTapped:" destination="4R5-w2-MOa" eventType="touchUpInside" id="Mqw-yp-D2f"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="iiJ-zw-9B0" firstAttribute="leading" secondItem="vwX-qC-6b7" secondAttribute="leading" constant="15" id="4pV-qw-vZb"/>
                                     <constraint firstAttribute="height" constant="30" id="PQa-ce-UBv"/>
+                                    <constraint firstItem="ZNy-36-R0v" firstAttribute="leading" secondItem="vwX-qC-6b7" secondAttribute="leading" constant="15" id="V9C-ie-hss"/>
                                     <constraint firstItem="iiJ-zw-9B0" firstAttribute="centerY" secondItem="vwX-qC-6b7" secondAttribute="centerY" id="ZiJ-jP-hX4"/>
+                                    <constraint firstItem="ZNy-36-R0v" firstAttribute="centerY" secondItem="vwX-qC-6b7" secondAttribute="centerY" id="te5-Sp-R9N"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -146,7 +155,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cityLabel" destination="0U9-T0-LkE" id="5JQ-9y-My3"/>
+                        <outlet property="clearButton" destination="ZNy-36-R0v" id="aF4-nI-Xx9"/>
                         <outlet property="conditionImage" destination="L9T-3c-WbF" id="HGB-lZ-sOF"/>
+                        <outlet property="filterButton" destination="iiJ-zw-9B0" id="cs8-e5-nru"/>
                         <outlet property="headerView" destination="wFr-K1-BmH" id="jpS-uj-Zwb"/>
                         <outlet property="tableView" destination="Qut-cZ-Wo8" id="xdC-Ww-DRA"/>
                         <outlet property="tempLabel" destination="in9-Q6-bFp" id="9ze-Pb-PZC"/>

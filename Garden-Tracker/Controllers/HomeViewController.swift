@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet weak var conditionImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
     
     var plants: [Plant] = []
     var filterCriteria: FilterCriteria?
@@ -63,18 +65,25 @@ class HomeViewController: UIViewController {
             // load data from core data
             loadPlants()
             if filterCriteria != nil {
+                filterButton.isHidden = true
+                clearButton.isHidden = false
                 filter()}
             
             // reload the table view
             tableView.reloadData()
         }
     
-    
-    
     @IBAction func filterBtnTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "FilterSegue", sender: nil)
     }
     
+    
+    @IBAction func clearBtnTapped(_ sender: UIButton) {
+        filterCriteria = nil
+        viewWillAppear(false)
+        clearButton.isHidden = true
+        filterButton.isHidden = false
+    }
     
         // MARK: Model Manipulation Methods
 
