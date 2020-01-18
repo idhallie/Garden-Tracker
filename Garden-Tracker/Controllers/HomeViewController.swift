@@ -17,15 +17,17 @@ class HomeViewController: UIViewController {
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet weak var conditionImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
     
     var plants: [Plant] = []
+    var filterCriteria: FilterCriteria?
     
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        // for weather
-        let locationManager = CLLocationManager()
-        var weatherManager = WeatherManager()
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // for weather
+    let locationManager = CLLocationManager()
+    var weatherManager = WeatherManager()
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -46,15 +48,43 @@ class HomeViewController: UIViewController {
             // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         }
         
+    func filter() {
+        switch filterCriteria?.category {
+        case "type":
+        plants = plants.filter({return $0.type == filterCriteria?.item})
+        case "light":
+        plants = plants.filter({return $0.light == filterCriteria?.item})
+        case "flowering":
+        plants = plants.filter({return $0.flowering == filterCriteria?.item})
+        default:
+            print("No category found.")
+        }
+    }
 
         override func viewWillAppear(_ animated: Bool) {
             // load data from core data
             loadPlants()
-
+            if filterCriteria != nil {
+                filterButton.isHidden = true
+                clearButton.isHidden = false
+                filter()}
+            
             // reload the table view
             tableView.reloadData()
         }
-
+    
+    @IBAction func filterBtnTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "FilterSegue", sender: nil)
+    }
+    
+    
+    @IBAction func clearBtnTapped(_ sender: UIButton) {
+        filterCriteria = nil
+        viewWillAppear(false)
+        clearButton.isHidden = true
+        filterButton.isHidden = false
+    }
+    
         // MARK: Model Manipulation Methods
 
         func savePlants() {
@@ -164,4 +194,5 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         tableView.reloadData()
     }
+
 }
