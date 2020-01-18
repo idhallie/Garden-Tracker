@@ -33,6 +33,8 @@ class HomeViewController: UIViewController {
             super.viewDidLoad()
             tableView.dataSource = self
             tableView.delegate = self
+            let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
+            navigationItem.leftBarButtonItem = backButton
 
             // for weather
             weatherManager.delegate = self
