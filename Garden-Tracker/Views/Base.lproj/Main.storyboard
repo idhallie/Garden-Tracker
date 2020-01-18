@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFr-K1-BmH">
-                                <rect key="frame" x="0.0" y="56" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lej-gb-vvM">
                                         <rect key="frame" x="24.5" y="15" width="326.5" height="70"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qut-cZ-Wo8">
-                                <rect key="frame" x="0.0" y="186" width="375" height="461"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="517"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomePlantCell" id="xWB-f2-5tu" customClass="HomePlantCell" customModule="Garden_Tracker" customModuleProvider="target">
@@ -104,15 +104,13 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-qC-6b7">
-                                <rect key="frame" x="0.0" y="156" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-zw-9B0">
                                         <rect key="frame" x="15" y="0.0" width="35" height="30"/>
                                         <state key="normal" title="Filter"/>
                                         <connections>
-                                            <segue destination="BXp-QB-tDj" kind="popoverPresentation" popoverAnchorView="iiJ-zw-9B0" id="wT0-qy-YQv">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <action selector="filterBtnTapped:" destination="4R5-w2-MOa" eventType="touchUpInside" id="M3r-NH-9I2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -153,6 +151,7 @@
                         <outlet property="tableView" destination="Qut-cZ-Wo8" id="xdC-Ww-DRA"/>
                         <outlet property="tempLabel" destination="in9-Q6-bFp" id="9ze-Pb-PZC"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="detailSegue" id="has-C9-CRp"/>
+                        <segue destination="JGn-Yd-Sv9" kind="show" identifier="FilterSegue" id="Xwo-8t-uRf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pZ-aw-QX7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2335,7 +2334,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TcB-qL-JZ1">
-                                <rect key="frame" x="0.0" y="106" width="375" height="541"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="597"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" rowHeight="80" id="XTd-Px-Yb1" customClass="ActivityCell" customModule="Garden_Tracker" customModuleProvider="target">
@@ -2349,7 +2348,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaJ-pk-Okh">
-                                <rect key="frame" x="0.0" y="56" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-dd-wUk">
                                         <rect key="frame" x="109.5" y="13" width="156.5" height="24"/>
@@ -2392,7 +2391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMf-f5-D8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3544.8000000000002" y="1236.4317841079462"/>
+            <point key="canvasLocation" x="2606" y="1227"/>
         </scene>
         <!--Filter Sub View Controller-->
         <scene sceneID="kSR-3c-9Ah">
@@ -2403,7 +2402,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kZj-1r-EIK">
-                                <rect key="frame" x="0.0" y="106" width="375" height="541"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="597"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubFilterCell" rowHeight="80" id="dBP-Ef-pUV" customClass="ActivityCell" customModule="Garden_Tracker" customModuleProvider="target">
@@ -2417,7 +2416,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afM-ux-BHz">
-                                <rect key="frame" x="0.0" y="56" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz0-sQ-j38">
                                         <rect key="frame" x="140.5" y="13" width="94.5" height="24"/>
@@ -2454,25 +2453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gy-hn-Zdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4500" y="877"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="axD-Yn-FHL">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BXp-QB-tDj" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PVa-uh-4sG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="JGn-Yd-Sv9" kind="relationship" relationship="rootViewController" id="HQD-5u-vIZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eFr-hw-kLF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2605.5999999999999" y="1236.4317841079462"/>
+            <point key="canvasLocation" x="3441" y="1249"/>
         </scene>
     </scenes>
     <resources>
@@ -2481,7 +2462,7 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wT0-qy-YQv"/>
+        <segue reference="Xwo-8t-uRf"/>
         <segue reference="BN1-G1-s66"/>
         <segue reference="Zvv-7R-o0j"/>
     </inferredMetricsTieBreakers>

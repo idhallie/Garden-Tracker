@@ -68,7 +68,14 @@ class HomeViewController: UIViewController {
             // reload the table view
             tableView.reloadData()
         }
-
+    
+    
+    
+    @IBAction func filterBtnTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "FilterSegue", sender: nil)
+    }
+    
+    
         // MARK: Model Manipulation Methods
 
         func savePlants() {
