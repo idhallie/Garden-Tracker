@@ -12,7 +12,6 @@ import CoreData
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet weak var conditionImage: UIImageView!

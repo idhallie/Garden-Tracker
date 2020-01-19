@@ -186,7 +186,6 @@
                         <outlet property="clearButton" destination="ZNy-36-R0v" id="aF4-nI-Xx9"/>
                         <outlet property="conditionImage" destination="L9T-3c-WbF" id="HGB-lZ-sOF"/>
                         <outlet property="filterButton" destination="iiJ-zw-9B0" id="cs8-e5-nru"/>
-                        <outlet property="headerView" destination="wFr-K1-BmH" id="jpS-uj-Zwb"/>
                         <outlet property="preWeatherStack" destination="Udc-cf-Kfc" id="Trm-8z-wWx"/>
                         <outlet property="tableView" destination="Qut-cZ-Wo8" id="xdC-Ww-DRA"/>
                         <outlet property="tempLabel" destination="in9-Q6-bFp" id="9ze-Pb-PZC"/>
@@ -2459,8 +2458,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afM-ux-BHz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz0-sQ-j38">
-                                        <rect key="frame" x="140.5" y="13" width="94.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz0-sQ-j38">
+                                        <rect key="frame" x="134.5" y="13" width="106" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2503,7 +2502,6 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xwo-8t-uRf"/>
         <segue reference="BN1-G1-s66"/>
         <segue reference="Zvv-7R-o0j"/>
     </inferredMetricsTieBreakers>
