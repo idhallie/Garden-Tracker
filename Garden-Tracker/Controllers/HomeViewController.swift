@@ -20,6 +20,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     
+    @IBOutlet weak var preWeatherStack: UIStackView!
+    @IBOutlet weak var weatherStack: UIStackView!
+    
+    
     var plants: [Plant] = []
     var filterCriteria: FilterCriteria?
     
@@ -33,6 +37,8 @@ class HomeViewController: UIViewController {
             super.viewDidLoad()
             tableView.dataSource = self
             tableView.delegate = self
+            
+            // Hide the back button that may appear after navigating away and returning.
             let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
             navigationItem.leftBarButtonItem = backButton
 
@@ -124,6 +130,8 @@ extension HomeViewController: WeatherManagerDelegate {
             self.tempLabel.text = "\(weather.temperatureString)ºF"
             self.cityLabel.text = weather.cityName
             self.conditionImage.image = UIImage(systemName: weather.conditionName)
+            self.preWeatherStack.isHidden = true
+            self.weatherStack.isHidden = false
         }
     }
 

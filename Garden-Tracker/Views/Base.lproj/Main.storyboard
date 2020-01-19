@@ -18,14 +18,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFr-K1-BmH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lej-gb-vvM">
-                                        <rect key="frame" x="24.5" y="15" width="326.5" height="70"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lej-gb-vvM" userLabel="Weather Stack View">
+                                        <rect key="frame" x="100" y="15" width="175" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qFy-x7-dau">
-                                                <rect key="frame" x="0.0" y="0.0" width="241.5" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="70"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieving your weather..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="in9-Q6-bFp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="241.5" height="40"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="in9-Q6-bFp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="40"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L9T-3c-WbF">
-                                                <rect key="frame" x="256.5" y="0.0" width="70" height="70"/>
+                                                <rect key="frame" x="105" y="0.0" width="70" height="70"/>
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="BmV-D0-jpi"/>
@@ -60,6 +60,30 @@
                                     <constraint firstItem="Lej-gb-vvM" firstAttribute="centerX" secondItem="wFr-K1-BmH" secondAttribute="centerX" id="W4t-pa-Ao1"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Udc-cf-Kfc" userLabel="Pre-Weather Stack View">
+                                <rect key="frame" x="0.0" y="29" width="375" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieving your weather..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pz-BQ-MZh">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are here." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUM-ng-NPa">
+                                        <rect key="frame" x="0.0" y="24" width="375" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vUM-ng-NPa" firstAttribute="leading" secondItem="Udc-cf-Kfc" secondAttribute="leadingMargin" id="5sl-nQ-5HU"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="vUM-ng-NPa" secondAttribute="trailing" id="W6K-6p-st5"/>
+                                    <constraint firstItem="9pz-BQ-MZh" firstAttribute="top" secondItem="Udc-cf-Kfc" secondAttribute="topMargin" id="aS0-Qr-5Pz"/>
+                                    <constraint firstItem="9pz-BQ-MZh" firstAttribute="leading" secondItem="Udc-cf-Kfc" secondAttribute="leadingMargin" id="i6s-fd-PJe"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="9pz-BQ-MZh" secondAttribute="trailing" id="tBr-5n-Cxp"/>
+                                </constraints>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qut-cZ-Wo8">
                                 <rect key="frame" x="0.0" y="130" width="375" height="517"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -137,12 +161,16 @@
                             <constraint firstItem="vwX-qC-6b7" firstAttribute="leading" secondItem="VsN-YP-25x" secondAttribute="leading" id="9Gz-Zt-8dq"/>
                             <constraint firstItem="wFr-K1-BmH" firstAttribute="top" secondItem="VsN-YP-25x" secondAttribute="top" id="CI8-i8-9Ds"/>
                             <constraint firstItem="Qut-cZ-Wo8" firstAttribute="top" secondItem="vwX-qC-6b7" secondAttribute="bottom" id="Hwu-i4-gwo"/>
+                            <constraint firstItem="Udc-cf-Kfc" firstAttribute="trailing" secondItem="wFr-K1-BmH" secondAttribute="trailing" id="QyU-IU-vk2"/>
                             <constraint firstItem="vwX-qC-6b7" firstAttribute="top" secondItem="wFr-K1-BmH" secondAttribute="bottom" id="W79-tw-YNw"/>
+                            <constraint firstItem="Udc-cf-Kfc" firstAttribute="leading" secondItem="wFr-K1-BmH" secondAttribute="leading" id="evX-ku-iXa"/>
+                            <constraint firstItem="Udc-cf-Kfc" firstAttribute="leading" secondItem="wFr-K1-BmH" secondAttribute="leading" id="kwt-tq-iag"/>
                             <constraint firstItem="vwX-qC-6b7" firstAttribute="trailing" secondItem="VsN-YP-25x" secondAttribute="trailing" id="lVO-BZ-d5P"/>
                             <constraint firstItem="VsN-YP-25x" firstAttribute="trailing" secondItem="wFr-K1-BmH" secondAttribute="trailing" id="nef-eR-20S"/>
                             <constraint firstItem="Qut-cZ-Wo8" firstAttribute="trailing" secondItem="VsN-YP-25x" secondAttribute="trailing" id="tsW-PF-1Wx"/>
                             <constraint firstItem="Qut-cZ-Wo8" firstAttribute="bottom" secondItem="VsN-YP-25x" secondAttribute="bottom" id="txp-aX-YIb"/>
                             <constraint firstItem="wFr-K1-BmH" firstAttribute="leading" secondItem="VsN-YP-25x" secondAttribute="leading" id="uEH-Tr-1P0"/>
+                            <constraint firstItem="Udc-cf-Kfc" firstAttribute="centerY" secondItem="wFr-K1-BmH" secondAttribute="centerY" id="y6A-MY-PVa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VsN-YP-25x"/>
                     </view>
@@ -159,8 +187,10 @@
                         <outlet property="conditionImage" destination="L9T-3c-WbF" id="HGB-lZ-sOF"/>
                         <outlet property="filterButton" destination="iiJ-zw-9B0" id="cs8-e5-nru"/>
                         <outlet property="headerView" destination="wFr-K1-BmH" id="jpS-uj-Zwb"/>
+                        <outlet property="preWeatherStack" destination="Udc-cf-Kfc" id="Trm-8z-wWx"/>
                         <outlet property="tableView" destination="Qut-cZ-Wo8" id="xdC-Ww-DRA"/>
                         <outlet property="tempLabel" destination="in9-Q6-bFp" id="9ze-Pb-PZC"/>
+                        <outlet property="weatherStack" destination="Lej-gb-vvM" id="bkK-xi-T78"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="detailSegue" id="has-C9-CRp"/>
                         <segue destination="JGn-Yd-Sv9" kind="show" identifier="FilterSegue" id="Xwo-8t-uRf"/>
                     </connections>
@@ -915,7 +945,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5108" y="519.94002998500753"/>
+            <point key="canvasLocation" x="4204" y="520"/>
         </scene>
         <!--Add Plant View Controller-->
         <scene sceneID="Fyr-NH-oOe">
@@ -1442,7 +1472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87k-Fx-Kw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3441" y="-298"/>
+            <point key="canvasLocation" x="3441" y="-45"/>
         </scene>
         <!--Home-->
         <scene sceneID="JD5-ZC-vt1">
