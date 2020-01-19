@@ -38,8 +38,8 @@ class HomeViewController: UIViewController {
             tableView.delegate = self
             
             // Hide the back button that may appear after navigating away and returning.
-            let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
-            navigationItem.leftBarButtonItem = backButton
+//            let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
+//            navigationItem.leftBarButtonItem = backButton
 
             // for weather
             weatherManager.delegate = self
@@ -84,13 +84,14 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "FilterSegue", sender: nil)
     }
     
-    
     @IBAction func clearBtnTapped(_ sender: UIButton) {
         filterCriteria = nil
         viewWillAppear(false)
         clearButton.isHidden = true
         filterButton.isHidden = false
     }
+    
+    @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {}
     
         // MARK: Model Manipulation Methods
 
