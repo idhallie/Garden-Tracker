@@ -55,6 +55,7 @@ class FilterSubViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let filterSelection = FilterCriteria(category: category, item: categoryItems[indexPath.row])
+        print("From menu: \(filterSelection)")
 
         performSegue(withIdentifier: "FilterHomeSegue", sender: filterSelection)
     }

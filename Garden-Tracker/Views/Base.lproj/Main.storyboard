@@ -2488,10 +2488,11 @@
                     <navigationItem key="navigationItem" id="ATq-GH-6yP"/>
                     <connections>
                         <outlet property="tableView" destination="kZj-1r-EIK" id="ssf-nn-sdB"/>
-                        <segue destination="4R5-w2-MOa" kind="show" identifier="FilterHomeSegue" id="Zvv-7R-o0j"/>
+                        <segue destination="28H-vq-CAp" kind="unwind" identifier="FilterHomeSegue" unwindAction="unwindToHome:" id="0Lc-pd-eqp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gy-hn-Zdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="28H-vq-CAp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3441" y="1249"/>
         </scene>
@@ -2503,6 +2504,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BN1-G1-s66"/>
-        <segue reference="Zvv-7R-o0j"/>
+        <segue reference="WnH-Dc-TIZ"/>
     </inferredMetricsTieBreakers>
 </document>
