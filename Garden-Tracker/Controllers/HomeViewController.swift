@@ -84,7 +84,6 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "FilterSegue", sender: nil)
     }
     
-    
     @IBAction func clearBtnTapped(_ sender: UIButton) {
         filterCriteria = nil
         viewWillAppear(false)
