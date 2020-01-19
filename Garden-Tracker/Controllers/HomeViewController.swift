@@ -91,9 +91,7 @@ class HomeViewController: UIViewController {
         filterButton.isHidden = false
     }
     
-    @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
-        print("I've been unwound.")
-    }
+    @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {}
     
         // MARK: Model Manipulation Methods
 

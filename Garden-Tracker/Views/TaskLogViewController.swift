@@ -29,6 +29,8 @@ class TaskLogViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
     }
     
+    @IBAction func unwindToTaskLog(_ sender: UIStoryboardSegue) {}
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activities.count
     }
