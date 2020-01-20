@@ -23,6 +23,7 @@
 		26F3B3D623D0D3FE0094733A /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3D523D0D3FD0094733A /* EditTaskViewController.swift */; };
 		26F3B3D823D119F10094733A /* FilterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3D723D119F10094733A /* FilterMenuViewController.swift */; };
 		26F3B3DA23D13E0F0094733A /* FilterSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3D923D13E0F0094733A /* FilterSubViewController.swift */; };
+		26F3B3E523D6213D0094733A /* PlantDetailTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */; };
 		26FDBE9023C12BB600BEBA66 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */; };
 		26FDBE9823C2A80600BEBA66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9723C2A80600BEBA66 /* Constants.swift */; };
 		26FDBE9A23C3894500BEBA66 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9923C3894500BEBA66 /* WeatherManager.swift */; };
@@ -51,6 +52,7 @@
 		26F3B3D523D0D3FD0094733A /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		26F3B3D723D119F10094733A /* FilterMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMenuViewController.swift; sourceTree = "<group>"; };
 		26F3B3D923D13E0F0094733A /* FilterSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSubViewController.swift; sourceTree = "<group>"; };
+		26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTaskCell.swift; sourceTree = "<group>"; };
 		26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		26FDBE9723C2A80600BEBA66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		26FDBE9923C3894500BEBA66 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		26CFCA8D23C0EA730069E05D /* Garden-Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				26F3B3E323D617F20094733A /* Cells */,
 				26CFCA8E23C0EA730069E05D /* AppDelegate.swift */,
 				26CFCA9023C0EA730069E05D /* SceneDelegate.swift */,
 				26CFCAA623C0EA9D0069E05D /* Data Models */,
@@ -133,8 +136,6 @@
 				26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */,
 				268A04F123CFC10000DD9AD0 /* EditPlantViewController.swift */,
 				26FDBEA123C4495600BEBA66 /* HomeViewController.swift */,
-				264D2E9F23CA6FE10074A167 /* ActivityCell.swift */,
-				268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */,
 				26F3B3D723D119F10094733A /* FilterMenuViewController.swift */,
 				26F3B3D923D13E0F0094733A /* FilterSubViewController.swift */,
 			);
@@ -147,6 +148,16 @@
 				26CFCA9A23C0EA750069E05D /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26F3B3E323D617F20094733A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				264D2E9F23CA6FE10074A167 /* ActivityCell.swift */,
+				268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */,
+				26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 				268A04F223CFC10000DD9AD0 /* EditPlantViewController.swift in Sources */,
 				26F3B3DA23D13E0F0094733A /* FilterSubViewController.swift in Sources */,
 				264D2EA023CA6FE10074A167 /* ActivityCell.swift in Sources */,
+				26F3B3E523D6213D0094733A /* PlantDetailTaskCell.swift in Sources */,
 				264D2E8323C7996A0074A167 /* AddTaskViewController.swift in Sources */,
 				26FDBEA223C4495600BEBA66 /* HomeViewController.swift in Sources */,
 				26CFCA9123C0EA730069E05D /* SceneDelegate.swift in Sources */,
