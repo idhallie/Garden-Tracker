@@ -790,7 +790,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="907"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="au9-uH-iEy" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="907"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="907.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79Z-tR-eiW">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -881,20 +881,20 @@
                                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v1l-bf-X0H">
-                                                <rect key="frame" x="20" y="522" width="335" height="340.5"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v1l-bf-X0H">
+                                                <rect key="frame" x="8" y="522" width="359" height="341"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantDetailTaskCell" rowHeight="80" id="k7Y-hj-iU5" customClass="PlantDetailTaskCell" customModule="Garden_Tracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="335" height="80"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PlantDetailTaskCell" rowHeight="80" id="k7Y-hj-iU5" customClass="PlantDetailTaskCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="359" height="80"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k7Y-hj-iU5" id="QW0-sN-eOp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="80"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cAy-Ef-fYM">
-                                                                    <rect key="frame" x="15" y="11" width="305" height="58"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="cAy-Ef-fYM">
+                                                                    <rect key="frame" x="15" y="11" width="327" height="58"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAm-dg-duL">
                                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="58"/>
@@ -906,7 +906,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXK-bs-g2X">
-                                                                            <rect key="frame" x="115" y="0.0" width="190" height="58"/>
+                                                                            <rect key="frame" x="175" y="0.0" width="152" height="58"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -915,12 +915,17 @@
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="cAy-Ef-fYM" firstAttribute="leading" secondItem="QW0-sN-eOp" secondAttribute="leadingMargin" id="1XR-wu-vbx"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="cAy-Ef-fYM" secondAttribute="trailing" id="60y-Z5-jMk"/>
-                                                                <constraint firstItem="cAy-Ef-fYM" firstAttribute="top" secondItem="QW0-sN-eOp" secondAttribute="topMargin" id="9uN-sA-W1B"/>
-                                                                <constraint firstAttribute="bottomMargin" secondItem="cAy-Ef-fYM" secondAttribute="bottom" id="A6e-rN-wtp"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="cAy-Ef-fYM" secondAttribute="bottom" id="D25-xa-zYQ"/>
+                                                                <constraint firstItem="cAy-Ef-fYM" firstAttribute="leading" secondItem="QW0-sN-eOp" secondAttribute="leadingMargin" id="MLC-79-Kjk"/>
+                                                                <constraint firstItem="cAy-Ef-fYM" firstAttribute="top" secondItem="QW0-sN-eOp" secondAttribute="topMargin" id="eCE-pa-caU"/>
+                                                                <constraint firstItem="cAy-Ef-fYM" firstAttribute="trailing" secondItem="QW0-sN-eOp" secondAttribute="trailingMargin" id="hnl-M2-wM2"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <constraints>
+                                                            <constraint firstItem="cAy-Ef-fYM" firstAttribute="height" secondItem="k7Y-hj-iU5" secondAttribute="height" multiplier="0.725" id="Yxw-HU-psx"/>
+                                                            <constraint firstItem="cAy-Ef-fYM" firstAttribute="width" secondItem="k7Y-hj-iU5" secondAttribute="width" multiplier="0.910448" id="gWW-Ev-Hig"/>
+                                                        </constraints>
+                                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <connections>
                                                             <outlet property="taskDate" destination="hAm-dg-duL" id="YqC-yJ-dNw"/>
                                                             <outlet property="taskName" destination="xXK-bs-g2X" id="mSA-jy-79J"/>
@@ -938,7 +943,6 @@
                                             <constraint firstItem="79Z-tR-eiW" firstAttribute="leading" secondItem="au9-uH-iEy" secondAttribute="leading" id="6rD-fX-wRY"/>
                                             <constraint firstAttribute="trailing" secondItem="nLg-7C-JG6" secondAttribute="trailing" constant="20" id="9Lm-fS-jFf"/>
                                             <constraint firstItem="Ybg-Zh-aP8" firstAttribute="top" secondItem="Zvr-ig-F0Z" secondAttribute="bottom" constant="8" id="9cg-qH-Xa5"/>
-                                            <constraint firstItem="v1l-bf-X0H" firstAttribute="leading" secondItem="au9-uH-iEy" secondAttribute="leading" constant="20" symbolic="YES" id="AQh-hd-fGp"/>
                                             <constraint firstAttribute="trailing" secondItem="79Z-tR-eiW" secondAttribute="trailing" id="CZS-NR-A8x"/>
                                             <constraint firstItem="xkc-KV-Q63" firstAttribute="leading" secondItem="Zvr-ig-F0Z" secondAttribute="trailing" constant="8" id="DPr-7t-6VW"/>
                                             <constraint firstAttribute="trailing" secondItem="dyS-qV-wyT" secondAttribute="trailing" constant="8" id="Dl4-Qz-2y5"/>
@@ -968,7 +972,6 @@
                                             <constraint firstItem="wsY-lQ-THk" firstAttribute="leading" secondItem="au9-uH-iEy" secondAttribute="leading" constant="16" id="rKA-iP-7Ev"/>
                                             <constraint firstAttribute="trailing" secondItem="Woi-tO-Wgm" secondAttribute="trailing" constant="8" id="szE-yc-tYt"/>
                                             <constraint firstItem="xkc-KV-Q63" firstAttribute="leading" secondItem="3Wx-1p-FsH" secondAttribute="trailing" constant="8" id="t9Z-fK-FA6"/>
-                                            <constraint firstAttribute="trailing" secondItem="v1l-bf-X0H" secondAttribute="trailing" constant="20" symbolic="YES" id="wHr-LM-TmU"/>
                                             <constraint firstItem="79Z-tR-eiW" firstAttribute="top" secondItem="au9-uH-iEy" secondAttribute="top" id="wdv-5I-c6k"/>
                                         </constraints>
                                     </view>
