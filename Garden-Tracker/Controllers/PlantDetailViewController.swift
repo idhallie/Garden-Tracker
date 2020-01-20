@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PlantDetailViewController.swift
 //  Garden-Tracker
 //
 //  Created by Hallie Johnson on 1/4/20.
@@ -18,6 +18,7 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var descLabel: UITextView!
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var maintHistLabel: UILabel!
     
     var plant: Plant?
     var activities : [Activity] = []
@@ -39,7 +40,6 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
         if let data = plant?.image as Data? {
             plantImage.image = UIImage(data: data)
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +73,7 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("tasks count: \(tasks.count)")
+
         return tasks.count
     }
     
@@ -81,6 +81,7 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
         let task = tasks[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlantDetailTaskCell") as! PlantDetailTaskCell
         cell.setTask(activity: task)
+        maintHistLabel.isHidden = false
         print("This cell is: \(cell)")
 
         return cell

@@ -270,23 +270,23 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvE-X3-zoc">
-                                        <rect key="frame" x="20" y="79" width="335" height="17"/>
+                                        <rect key="frame" x="20" y="72.5" width="335" height="19.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-hI-7bI">
-                                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCH-gE-duH">
-                                                <rect key="frame" x="117.5" y="0.0" width="100" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <rect key="frame" x="117.5" y="0.0" width="100" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewe-Fb-rwI">
-                                                <rect key="frame" x="234.5" y="0.0" width="100.5" height="17"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <rect key="frame" x="234.5" y="0.0" width="100.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -306,7 +306,7 @@
                                     <constraint firstItem="w4A-LZ-gWl" firstAttribute="top" secondItem="buE-OJ-ab9" secondAttribute="top" constant="20" id="7DU-6U-vbv"/>
                                     <constraint firstItem="w4A-LZ-gWl" firstAttribute="centerX" secondItem="buE-OJ-ab9" secondAttribute="centerX" id="Bgv-BI-PEp"/>
                                     <constraint firstAttribute="trailing" secondItem="fvE-X3-zoc" secondAttribute="trailing" constant="20" symbolic="YES" id="Gf7-j7-8jo"/>
-                                    <constraint firstAttribute="bottom" secondItem="fvE-X3-zoc" secondAttribute="bottom" constant="4" id="aRF-oa-tRG"/>
+                                    <constraint firstAttribute="bottom" secondItem="fvE-X3-zoc" secondAttribute="bottom" constant="8" id="aRF-oa-tRG"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opY-n1-gTH">
@@ -885,7 +885,7 @@
                                                     <constraint firstAttribute="height" constant="2" id="3d7-te-oUR"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maintenance History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCE-u4-swC">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maintenance History:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCE-u4-swC">
                                                 <rect key="frame" x="20" y="527.5" width="335" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1021,6 +1021,7 @@
                         <outlet property="descLabel" destination="wsY-lQ-THk" id="mbx-xQ-ONf"/>
                         <outlet property="floweringLabel" destination="dyS-qV-wyT" id="01j-vS-dRk"/>
                         <outlet property="lightLabel" destination="3Wx-1p-FsH" id="wBf-hu-Mcd"/>
+                        <outlet property="maintHistLabel" destination="OCE-u4-swC" id="jmQ-JR-9eU"/>
                         <outlet property="plantImage" destination="xkc-KV-Q63" id="NM0-sg-n16"/>
                         <outlet property="tableView" destination="v1l-bf-X0H" id="Kig-No-qV1"/>
                         <outlet property="titleLabel" destination="Z4Y-Am-pmf" id="cZf-lF-Nhi"/>
