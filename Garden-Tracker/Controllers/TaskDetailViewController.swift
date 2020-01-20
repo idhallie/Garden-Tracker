@@ -28,6 +28,7 @@ class TaskDetailViewController: UIViewController {
         taskDateLabel.text = formatter.string(from:(activity?.date!)!)
         
         notesField.text = activity?.notes
+        adjustUITextViewHeight(arg: notesField)
     }
     
     @IBAction func editBtnPressed(_ sender: UIBarButtonItem) {
@@ -37,5 +38,12 @@ class TaskDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! EditTaskViewController
         destVC.activity = activity
+    }
+    
+    func adjustUITextViewHeight(arg : UITextView)
+    {
+        arg.translatesAutoresizingMaskIntoConstraints = true
+        arg.sizeToFit()
+        arg.isScrollEnabled = false
     }
 }

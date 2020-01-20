@@ -83,15 +83,5 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
 
         return cell
     }
-    
-//      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//          let taskCell = UITableViewCell()
-//
-//          let task = tasks[indexPath.row]
-//          taskCell.textLabel?.text = task.task!
-//
-//          return taskCell
-//      }
-      
+
 }
