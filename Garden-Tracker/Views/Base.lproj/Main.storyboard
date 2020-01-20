@@ -144,14 +144,23 @@
                                             <action selector="clearBtnTapped:" destination="4R5-w2-MOa" eventType="touchUpInside" id="Mqw-yp-D2f"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjv-6c-7XZ">
+                                        <rect key="frame" x="291" y="0.0" width="69" height="30"/>
+                                        <state key="normal" title="Sort: z - a"/>
+                                        <connections>
+                                            <action selector="sortBtnTapped:" destination="4R5-w2-MOa" eventType="touchUpInside" id="cXU-sz-B8d"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="iiJ-zw-9B0" firstAttribute="leading" secondItem="vwX-qC-6b7" secondAttribute="leading" constant="15" id="4pV-qw-vZb"/>
+                                    <constraint firstItem="Yjv-6c-7XZ" firstAttribute="centerY" secondItem="vwX-qC-6b7" secondAttribute="centerY" id="8KK-cg-2o8"/>
                                     <constraint firstAttribute="height" constant="30" id="PQa-ce-UBv"/>
                                     <constraint firstItem="ZNy-36-R0v" firstAttribute="leading" secondItem="vwX-qC-6b7" secondAttribute="leading" constant="15" id="V9C-ie-hss"/>
                                     <constraint firstItem="iiJ-zw-9B0" firstAttribute="centerY" secondItem="vwX-qC-6b7" secondAttribute="centerY" id="ZiJ-jP-hX4"/>
                                     <constraint firstItem="ZNy-36-R0v" firstAttribute="centerY" secondItem="vwX-qC-6b7" secondAttribute="centerY" id="te5-Sp-R9N"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yjv-6c-7XZ" secondAttribute="trailing" constant="15" id="v6E-0L-4IJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -187,6 +196,7 @@
                         <outlet property="conditionImage" destination="L9T-3c-WbF" id="HGB-lZ-sOF"/>
                         <outlet property="filterButton" destination="iiJ-zw-9B0" id="cs8-e5-nru"/>
                         <outlet property="preWeatherStack" destination="Udc-cf-Kfc" id="Trm-8z-wWx"/>
+                        <outlet property="sortButton" destination="Yjv-6c-7XZ" id="COo-Z9-tfn"/>
                         <outlet property="tableView" destination="Qut-cZ-Wo8" id="xdC-Ww-DRA"/>
                         <outlet property="tempLabel" destination="in9-Q6-bFp" id="9ze-Pb-PZC"/>
                         <outlet property="weatherStack" destination="Lej-gb-vvM" id="bkK-xi-T78"/>

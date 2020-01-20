@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var preWeatherStack: UIStackView!
     @IBOutlet weak var weatherStack: UIStackView!
     
+    @IBOutlet weak var sortButton: UIButton!
+    var sortOrder = true
     
     var plants: [Plant] = []
     var filterCriteria: FilterCriteria?
@@ -91,6 +93,21 @@ class HomeViewController: UIViewController {
         filterButton.isHidden = false
     }
     
+    
+    @IBAction func sortBtnTapped(_ sender: UIButton) {
+        if sortOrder == true {
+            sortButton.setTitle("Sort: a - z", for: .normal)
+            sortOrder = false
+            loadPlants()
+            tableView.reloadData()
+        } else {
+            sortButton.setTitle("Sort: z - a", for: .normal)
+            sortOrder = true
+            loadPlants()
+            tableView.reloadData()
+        }
+    }
+    
     @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {}
     
         // MARK: Model Manipulation Methods
@@ -105,12 +122,17 @@ class HomeViewController: UIViewController {
         }
 
         func loadPlants() {
-            do {
-               plants = try context.fetch(Plant.fetchRequest())
-            }
-            catch {
-                print("Error loading plants: \(error)")
-            }
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<Plant>(entityName: "Plant")
+            let sort = NSSortDescriptor(key: #keyPath(Plant.name), ascending: sortOrder)
+            fetchRequest.sortDescriptors = [sort]
+                do {
+                   plants = try context.fetch(fetchRequest)
+                }
+                catch {
+                    print("Error loading plants: \(error)")
+                }
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
