@@ -28,6 +28,7 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        self.tableView.tableFooterView = UIView()
         
         titleLabel.text = plant?.name
         typeLabel.text = plant?.type
@@ -38,6 +39,7 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
         if let data = plant?.image as Data? {
             plantImage.image = UIImage(data: data)
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
