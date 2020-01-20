@@ -36,11 +36,16 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
     @IBOutlet weak var imageView: UIImageView!
     // Notes field
     @IBOutlet weak var plantNotes: UITextView!
+    @IBOutlet weak var updatePlantButton: UIButton!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        typeMenuTitle.createFloatingActionButton()
+        lightMenuTitle.createFloatingActionButton()
+        floweringMenuTitle.createFloatingActionButton()
+        updatePlantButton.createFloatingActionButton()
         
         // Populate existing data into fields
         plantName.text = plant?.name
