@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlantDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PlantDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,13 +17,18 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var floweringLabel: UILabel!
     @IBOutlet weak var descLabel: UITextView!
     @IBOutlet weak var plantImage: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     var plant: Plant?
     var activities : [Activity] = []
+    var tasks : [Activity] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         titleLabel.text = plant?.name
         typeLabel.text = plant?.type
         lightLabel.text = plant?.light
@@ -33,8 +38,13 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
         if let data = plant?.image as Data? {
             plantImage.image = UIImage(data: data)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         loadActivites()
         filterActivities()
+
+        tableView.reloadData()
     }
     
     
@@ -47,9 +57,8 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
         destVC.plant = plant
     }
     
-    
     func filterActivities() {
-        let tasks = activities.filter({ return $0.parentPlant?.name == plant?.name})
+        tasks = activities.filter({ return $0.parentPlant?.name == plant?.name})
         print("Plant tasks: \(tasks)")
     }
     
@@ -60,5 +69,29 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
             print("Error loading activities: \(error)")
         }
     }
-}
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("tasks count: \(tasks.count)")
+        return tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let task = tasks[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlantDetailTaskCell") as! PlantDetailTaskCell
+        cell.setTask(activity: task)
+        print("This cell is: \(cell)")
 
+        return cell
+    }
+    
+//      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//          let taskCell = UITableViewCell()
+//
+//          let task = tasks[indexPath.row]
+//          taskCell.textLabel?.text = task.task!
+//
+//          return taskCell
+//      }
+      
+}
