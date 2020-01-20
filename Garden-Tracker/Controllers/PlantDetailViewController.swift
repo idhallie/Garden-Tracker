@@ -19,6 +19,8 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var plantImage: UIImageView!
     
     var plant: Plant?
+    var activities : [Activity] = []
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,12 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
         lightLabel.text = plant?.light
         floweringLabel.text = plant?.flowering
         descLabel.text = plant?.notes
-
+        
         if let data = plant?.image as Data? {
             plantImage.image = UIImage(data: data)
         }
+        loadActivites()
+        filterActivities()
     }
     
     
@@ -41,6 +45,20 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! EditPlantViewController
         destVC.plant = plant
+    }
+    
+    
+    func filterActivities() {
+        let tasks = activities.filter({ return $0.parentPlant?.name == plant?.name})
+        print("Plant tasks: \(tasks)")
+    }
+    
+    func loadActivites() {
+        do {
+            activities = try context.fetch(Activity.fetchRequest())
+        } catch {
+            print("Error loading activities: \(error)")
+        }
     }
 }
 
