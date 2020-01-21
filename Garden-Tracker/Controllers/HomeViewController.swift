@@ -38,10 +38,6 @@ class HomeViewController: UIViewController {
             super.viewDidLoad()
             tableView.dataSource = self
             tableView.delegate = self
-            
-            // Hide the back button that may appear after navigating away and returning.
-//            let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
-//            navigationItem.leftBarButtonItem = backButton
 
             // for weather
             weatherManager.delegate = self
@@ -52,9 +48,6 @@ class HomeViewController: UIViewController {
                 locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
                 locationManager.requestLocation()
             }
-            
-            // to find database file:
-            // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         }
         
     func filter() {
@@ -197,7 +190,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let plant = plants[indexPath.row]
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomePlantCell") as! HomePlantCell
 
         cell.setPlant(plant: plant)
@@ -226,5 +218,4 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         tableView.reloadData()
     }
-
 }
