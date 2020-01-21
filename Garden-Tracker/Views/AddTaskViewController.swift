@@ -50,17 +50,6 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         taskNotes.text = "Notes"
         taskNotes.textColor = UIColor.lightGray
         taskNotes.delegate = self
-        
-        self.HideKeyboard()
-    }
-    
-    // Dismisses keyboard upon hitting 'return/done'
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
     }
 
     @IBAction func onClickDropBtn(_ sender: UIButton) {
@@ -85,8 +74,6 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let plant = plants[indexPath.row]
-        print(plant)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = plant.name!
 

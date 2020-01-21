@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskLogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -73,6 +74,9 @@ class TaskLogViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func loadActivites() {
+        let fetchRequest = NSFetchRequest<Activity>(entityName: "Activity")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        
         do {
         activities = try context.fetch(Activity.fetchRequest())
         } catch {
