@@ -130,7 +130,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-qC-6b7">
                                 <rect key="frame" x="0.0" y="144" width="375" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-zw-9B0">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-zw-9B0">
                                         <rect key="frame" x="15" y="0.0" width="38" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Filter"/>
@@ -146,7 +146,7 @@
                                             <action selector="clearBtnTapped:" destination="4R5-w2-MOa" eventType="touchUpInside" id="Mqw-yp-D2f"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjv-6c-7XZ">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjv-6c-7XZ">
                                         <rect key="frame" x="288" y="0.0" width="72" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Sort: z - a"/>
@@ -162,6 +162,7 @@
                                     <constraint firstAttribute="height" constant="30" id="PQa-ce-UBv"/>
                                     <constraint firstItem="ZNy-36-R0v" firstAttribute="leading" secondItem="vwX-qC-6b7" secondAttribute="leading" constant="15" id="V9C-ie-hss"/>
                                     <constraint firstItem="iiJ-zw-9B0" firstAttribute="centerY" secondItem="vwX-qC-6b7" secondAttribute="centerY" id="ZiJ-jP-hX4"/>
+                                    <constraint firstItem="Yjv-6c-7XZ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="iiJ-zw-9B0" secondAttribute="trailing" priority="250" constant="200" id="kh5-pv-oHr"/>
                                     <constraint firstItem="ZNy-36-R0v" firstAttribute="centerY" secondItem="vwX-qC-6b7" secondAttribute="centerY" id="te5-Sp-R9N"/>
                                     <constraint firstAttribute="trailing" secondItem="Yjv-6c-7XZ" secondAttribute="trailing" constant="15" id="v6E-0L-4IJ"/>
                                 </constraints>

@@ -40,7 +40,7 @@
 		268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlantCell.swift; sourceTree = "<group>"; };
 		268A04F123CFC10000DD9AD0 /* EditPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantViewController.swift; sourceTree = "<group>"; };
 		268A04F323D01F5400DD9AD0 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
-		26CFCA8B23C0EA730069E05D /* Garden-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garden-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CFCA8B23C0EA730069E05D /* Garden Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garden Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CFCA8E23C0EA730069E05D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CFCA9023C0EA730069E05D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		26CFCA9223C0EA730069E05D /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		26CFCA8C23C0EA730069E05D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26CFCA8B23C0EA730069E05D /* Garden-Tracker.app */,
+				26CFCA8B23C0EA730069E05D /* Garden Log.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 			);
 			name = "Garden-Tracker";
 			productName = "Garden-Tracker";
-			productReference = 26CFCA8B23C0EA730069E05D /* Garden-Tracker.app */;
+			productReference = 26CFCA8B23C0EA730069E05D /* Garden Log.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -406,7 +406,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Hallie.Garden-Tracker";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Garden Log";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,7 +424,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Hallie.Garden-Tracker";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Garden Log";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
