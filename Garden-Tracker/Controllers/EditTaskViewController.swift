@@ -35,8 +35,17 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
     // Notes
     @IBOutlet weak var taskNotes: UITextView!
     
+    
+    @IBOutlet weak var updateTaskButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        plantMenuTitle.createFloatingActionButton()
+        taskMenuTitle.createFloatingActionButton()
+        calendarMenuTitle.createFloatingActionButton()
+        saveDateBtn.createFloatingActionButton()
+        updateTaskButton.createFloatingActionButton()
+        
         plantMenuTitle.setTitle("Plant: \(activity?.parentPlant?.name ?? "Select a Plant")", for: .normal)
         selectedPlant = activity?.parentPlant
         taskMenuTitle.setTitle("Task: \(activity?.task ?? "Select a Task")", for: .normal)

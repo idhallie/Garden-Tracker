@@ -31,9 +31,17 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // Notes
     @IBOutlet weak var taskNotes: UITextView!
+    @IBOutlet weak var addTaskButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        plantMenuTitle.createFloatingActionButton()
+        taskMenuTitle.createFloatingActionButton()
+        calendarMenuTitle.createFloatingActionButton()
+        saveDateBtn.createFloatingActionButton()
+        addTaskButton.createFloatingActionButton()
+        
+        
         tblView.dataSource = self
         tblView.delegate = self
         tblView.rowHeight = 50
@@ -153,8 +161,6 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
 
     // MARK: - Add new task
     @IBAction func addTaskBtnTapped(_ sender: UIButton) {
-
-
         let newActivity = Activity(context: context)
         
         newActivity.task = task

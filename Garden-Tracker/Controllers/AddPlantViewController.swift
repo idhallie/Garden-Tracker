@@ -35,11 +35,19 @@ class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePicke
     // Notes field
     @IBOutlet weak var plantNotes: UITextView!
     
+    @IBOutlet weak var addPlantButton: UIButton!
+    
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        typeMenuTitle.createFloatingActionButton()
+        lightMenuTitle.createFloatingActionButton()
+        floweringMenuTitle.createFloatingActionButton()
+        addPlantButton.createFloatingActionButton()
+        
         plantNotes.text = "Notes"
         plantNotes.textColor = UIColor.lightGray
         plantNotes.delegate = self

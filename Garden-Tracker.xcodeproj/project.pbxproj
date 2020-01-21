@@ -24,6 +24,7 @@
 		26F3B3D823D119F10094733A /* FilterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3D723D119F10094733A /* FilterMenuViewController.swift */; };
 		26F3B3DA23D13E0F0094733A /* FilterSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3D923D13E0F0094733A /* FilterSubViewController.swift */; };
 		26F3B3E523D6213D0094733A /* PlantDetailTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */; };
+		26F3B3ED23D66F020094733A /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3EC23D66F020094733A /* UIButtonExtension.swift */; };
 		26FDBE9023C12BB600BEBA66 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */; };
 		26FDBE9823C2A80600BEBA66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9723C2A80600BEBA66 /* Constants.swift */; };
 		26FDBE9A23C3894500BEBA66 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9923C3894500BEBA66 /* WeatherManager.swift */; };
@@ -53,6 +54,7 @@
 		26F3B3D723D119F10094733A /* FilterMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMenuViewController.swift; sourceTree = "<group>"; };
 		26F3B3D923D13E0F0094733A /* FilterSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSubViewController.swift; sourceTree = "<group>"; };
 		26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTaskCell.swift; sourceTree = "<group>"; };
+		26F3B3EC23D66F020094733A /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		26FDBE9723C2A80600BEBA66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		26FDBE9923C3894500BEBA66 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
@@ -93,7 +95,7 @@
 		26CFCA8D23C0EA730069E05D /* Garden-Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				26F3B3E323D617F20094733A /* Cells */,
+				26F3B3E323D617F20094733A /* Customizations */,
 				26CFCA8E23C0EA730069E05D /* AppDelegate.swift */,
 				26CFCA9023C0EA730069E05D /* SceneDelegate.swift */,
 				26CFCAA623C0EA9D0069E05D /* Data Models */,
@@ -150,14 +152,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		26F3B3E323D617F20094733A /* Cells */ = {
+		26F3B3E323D617F20094733A /* Customizations */ = {
 			isa = PBXGroup;
 			children = (
 				264D2E9F23CA6FE10074A167 /* ActivityCell.swift */,
 				268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */,
 				26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */,
+				26F3B3EC23D66F020094733A /* UIButtonExtension.swift */,
 			);
-			path = Cells;
+			path = Customizations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26FDBE9023C12BB600BEBA66 /* AddPlantViewController.swift in Sources */,
+				26F3B3ED23D66F020094733A /* UIButtonExtension.swift in Sources */,
 				26FDBE9A23C3894500BEBA66 /* WeatherManager.swift in Sources */,
 				268A04F023CEC8C100DD9AD0 /* HomePlantCell.swift in Sources */,
 				26F3B3D823D119F10094733A /* FilterMenuViewController.swift in Sources */,
