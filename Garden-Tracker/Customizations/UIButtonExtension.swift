@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Thanks to Mark Moykens
+// Thanks to Mark Moeykens of Big Mountain Studio (YouTube video)
 
 extension UIButton {
     func createFloatingActionButton(){
@@ -17,6 +17,4 @@ extension UIButton {
         layer.shadowRadius = 5
         layer.shadowOffset = CGSize(width: 0, height: 10)
     }
-
-
 }

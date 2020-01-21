@@ -25,6 +25,7 @@
 		26F3B3DA23D13E0F0094733A /* FilterSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3D923D13E0F0094733A /* FilterSubViewController.swift */; };
 		26F3B3E523D6213D0094733A /* PlantDetailTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */; };
 		26F3B3ED23D66F020094733A /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3EC23D66F020094733A /* UIButtonExtension.swift */; };
+		26F3B3EF23D6C94B0094733A /* KeyboardHideExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F3B3EE23D6C94A0094733A /* KeyboardHideExtension.swift */; };
 		26FDBE9023C12BB600BEBA66 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */; };
 		26FDBE9823C2A80600BEBA66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9723C2A80600BEBA66 /* Constants.swift */; };
 		26FDBE9A23C3894500BEBA66 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDBE9923C3894500BEBA66 /* WeatherManager.swift */; };
@@ -55,6 +56,7 @@
 		26F3B3D923D13E0F0094733A /* FilterSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSubViewController.swift; sourceTree = "<group>"; };
 		26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailTaskCell.swift; sourceTree = "<group>"; };
 		26F3B3EC23D66F020094733A /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		26F3B3EE23D6C94A0094733A /* KeyboardHideExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHideExtension.swift; sourceTree = "<group>"; };
 		26FDBE8F23C12BB600BEBA66 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		26FDBE9723C2A80600BEBA66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		26FDBE9923C3894500BEBA66 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				268A04EF23CEC8C100DD9AD0 /* HomePlantCell.swift */,
 				26F3B3E423D6213D0094733A /* PlantDetailTaskCell.swift */,
 				26F3B3EC23D66F020094733A /* UIButtonExtension.swift */,
+				26F3B3EE23D6C94A0094733A /* KeyboardHideExtension.swift */,
 			);
 			path = Customizations;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				26F3B3ED23D66F020094733A /* UIButtonExtension.swift in Sources */,
 				26FDBE9A23C3894500BEBA66 /* WeatherManager.swift in Sources */,
 				268A04F023CEC8C100DD9AD0 /* HomePlantCell.swift in Sources */,
+				26F3B3EF23D6C94B0094733A /* KeyboardHideExtension.swift in Sources */,
 				26F3B3D823D119F10094733A /* FilterMenuViewController.swift in Sources */,
 				264D2E8523C799D90074A167 /* TaskLogViewController.swift in Sources */,
 				26CFCA9323C0EA730069E05D /* PlantDetailViewController.swift in Sources */,

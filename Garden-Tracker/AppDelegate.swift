@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Use this to customize the background of the tab bar
-       // UITabBar.appearance().barTintColor = .black
         UITabBar.appearance().tintColor = customPink
         
         // Override point for customization after application launch.

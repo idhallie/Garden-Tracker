@@ -72,11 +72,11 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
         // set delegates
         plantNotes.delegate = self
         plantName.delegate = self
-        plantNotes.delegate = self
         
         self.HideKeyboard()
     }
     
+    // Dismisses keyboard upon hitting 'return/done'
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
