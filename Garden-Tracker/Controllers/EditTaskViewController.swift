@@ -18,7 +18,7 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var plantMenuTitle: UIButton!
-    @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     var selectedPlant : Plant?
     
     // Task menu outlets
@@ -65,17 +65,28 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
             taskNotes.textColor = UIColor.black
         }
         
-        tblView.dataSource = self
-        tblView.delegate = self
-        tblView.rowHeight = 50
-        tblView.isHidden = true
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 50
+        tableView.isHidden = true
         
         taskNotes.delegate = self
+        
+        self.HideKeyboard()
+    }
+    
+    // Dismisses keyboard upon hitting 'return/done'
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 
     @IBAction func onClickDropBtn(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3) {
-            self.tblView.isHidden = !self.tblView.isHidden
+            self.tableView.isHidden = !self.tableView.isHidden
             self.view.layoutIfNeeded()
         }
     }
@@ -85,7 +96,7 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
         loadPlants()
 
         // reload the table view
-        tblView.reloadData()
+        tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -106,7 +117,7 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
         selectedPlant = plants[indexPath.row]
         plantMenuTitle.setTitle("Plant: \(plants[indexPath.row].name!)", for: .normal)
         UIView.animate(withDuration: 0.3) {
-         self.tblView.isHidden = !self.tblView.isHidden
+         self.tableView.isHidden = !self.tableView.isHidden
          self.view.layoutIfNeeded()
          }
     }

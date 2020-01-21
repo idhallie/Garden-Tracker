@@ -16,7 +16,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var plantMenuTitle: UIButton!
-    @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     var selectedPlant : Plant?
     
     // Task menu outlets
@@ -41,21 +41,31 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         saveDateBtn.createFloatingActionButton()
         addTaskButton.createFloatingActionButton()
         
-        
-        tblView.dataSource = self
-        tblView.delegate = self
-        tblView.rowHeight = 50
-        tblView.isHidden = true
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 50
+        tableView.isHidden = true
         
         // Notes defaults
         taskNotes.text = "Notes"
         taskNotes.textColor = UIColor.lightGray
         taskNotes.delegate = self
+        
+        self.HideKeyboard()
+    }
+    
+    // Dismisses keyboard upon hitting 'return/done'
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 
     @IBAction func onClickDropBtn(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3) {
-            self.tblView.isHidden = !self.tblView.isHidden
+            self.tableView.isHidden = !self.tableView.isHidden
             self.view.layoutIfNeeded()
         }
     }
@@ -65,7 +75,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         loadPlants()
 
         // reload the table view
-        tblView.reloadData()
+        tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,19 +84,20 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let plantCell = UITableViewCell()
-  
         let plant = plants[indexPath.row]
-        plantCell.textLabel?.text = plant.name!
+        print(plant)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = plant.name!
 
-        return plantCell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedPlant = plants[indexPath.row]
         plantMenuTitle.setTitle("Plant: \(plants[indexPath.row].name!)", for: .normal)
         UIView.animate(withDuration: 0.3) {
-         self.tblView.isHidden = !self.tblView.isHidden
+         self.tableView.isHidden = !self.tableView.isHidden
          self.view.layoutIfNeeded()
          }
     }
@@ -177,4 +188,3 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
 }
-

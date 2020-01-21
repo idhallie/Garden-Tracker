@@ -52,11 +52,11 @@ class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePicke
         plantNotes.textColor = UIColor.lightGray
         plantNotes.delegate = self
         plantName.delegate = self
-        plantNotes.delegate = self
         
         self.HideKeyboard()
     }
     
+    // Dismisses keyboard upon hitting 'return/done'
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
@@ -109,7 +109,6 @@ class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePicke
             textView.textColor = UIColor.black
         }
     }
-    
     
     // MARK: - Add new plant
     @IBAction func addBtnTapped(_ sender: UIButton) {
@@ -187,17 +186,4 @@ class AddPlantViewController: UIViewController, UITextViewDelegate, UIImagePicke
         return false
     }
 }
-
-extension UIViewController {
-    func HideKeyboard() {
-        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
-
-        view.addGestureRecognizer(Tap)
-    }
-
-    @objc func DismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
 
