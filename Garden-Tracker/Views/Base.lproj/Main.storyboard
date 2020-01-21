@@ -512,7 +512,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="zns-G9-VYf"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <state key="normal" title="Select a Plant">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -522,13 +522,13 @@
                                                     </button>
                                                     <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qIm-83-ypX">
                                                         <rect key="frame" x="0.0" y="50" width="335" height="170"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="170" id="5Ex-Ny-9QI"/>
                                                         </constraints>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="plantCell" textLabel="tGy-Sv-i7U" style="IBUITableViewCellStyleDefault" id="UOL-hO-qOs">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="tGy-Sv-i7U" style="IBUITableViewCellStyleDefault" id="UOL-hO-qOs">
                                                                 <rect key="frame" x="0.0" y="28" width="335" height="43.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UOL-hO-qOs" id="QSL-r9-h8f">
@@ -538,12 +538,15 @@
                                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tGy-Sv-i7U">
                                                                             <rect key="frame" x="15" y="0.0" width="305" height="43.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
+                                                                    <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </tableViewCellContentView>
+                                                                <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -564,7 +567,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="GA4-kW-SQI"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <state key="normal" title="Select a Task">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -578,6 +581,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="SP9-pJ-zTx"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <state key="normal" title="Applied Compost">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -591,6 +595,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="ogg-AT-s7k"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <state key="normal" title="Fertilized">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -604,6 +609,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="FPq-8H-6t7"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <state key="normal" title="Harvested">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -617,6 +623,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="gq4-g1-m3Q"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <state key="normal" title="Pruned">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -630,7 +637,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="8Ox-UV-4qY"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <state key="normal" title="Watered">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -663,7 +670,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="2nh-Bg-5CH"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <state key="normal" title="Select a Date">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -700,10 +707,10 @@
                                                     <constraint firstAttribute="height" constant="150" id="o1E-ka-a81"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Lq-QZ-XBg" customClass="CustomButton" customModule="Garden_Tracker" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Lq-QZ-XBg">
                                                 <rect key="frame" x="137.5" y="694" width="100" height="50"/>
                                                 <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -773,9 +780,9 @@
                         <outlet property="datePicker" destination="VWJ-Lp-asF" id="8gH-V0-yD1"/>
                         <outlet property="plantMenuTitle" destination="u5k-4f-gRL" id="Vsf-aL-EM7"/>
                         <outlet property="saveDateBtn" destination="nHm-Hq-pwB" id="HYb-1a-ozu"/>
+                        <outlet property="tableView" destination="qIm-83-ypX" id="mIe-QE-TSs"/>
                         <outlet property="taskMenuTitle" destination="Ipw-vu-Twi" id="Usw-vM-7f9"/>
                         <outlet property="taskNotes" destination="94U-0p-47c" id="9nO-Qt-uvw"/>
-                        <outlet property="tblView" destination="qIm-83-ypX" id="f5Z-ZB-oAu"/>
                         <outletCollection property="taskButtons" destination="F5O-sA-fWa" collectionClass="NSMutableArray" id="pC6-wq-HQk"/>
                         <outletCollection property="taskButtons" destination="bLM-h7-Fnc" collectionClass="NSMutableArray" id="2go-dw-YPO"/>
                         <outletCollection property="taskButtons" destination="4xw-NL-gHq" collectionClass="NSMutableArray" id="zpp-Wy-x7r"/>
