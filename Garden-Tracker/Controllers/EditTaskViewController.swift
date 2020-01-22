@@ -71,17 +71,6 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.isHidden = true
         
         taskNotes.delegate = self
-        
-        self.HideKeyboard()
-    }
-    
-    // Dismisses keyboard upon hitting 'return/done'
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
     }
 
     @IBAction func onClickDropBtn(_ sender: UIButton) {
@@ -105,12 +94,11 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let plantCell = UITableViewCell()
-  
         let plant = plants[indexPath.row]
-        plantCell.textLabel?.text = plant.name!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = plant.name!
 
-        return plantCell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

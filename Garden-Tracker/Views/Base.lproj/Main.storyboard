@@ -10,7 +10,7 @@
         <!--Garden Log-->
         <scene sceneID="fyr-ax-lwF">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4R5-w2-MOa" customClass="HomeViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4R5-w2-MOa" customClass="HomeViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hec-yz-ugB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="174" width="375" height="444"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomePlantCell" id="xWB-f2-5tu" customClass="HomePlantCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomePlantCell" id="xWB-f2-5tu" customClass="HomePlantCell" customModule="Garden_Log" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xWB-f2-5tu" id="5o3-7V-rNY">
@@ -215,7 +215,7 @@
         <!--Garden Log-->
         <scene sceneID="gKI-Pj-xbO">
             <objects>
-                <viewController id="ZLx-HW-65c" customClass="TaskLogViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZLx-HW-65c" customClass="TaskLogViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nxv-8Z-Uy7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +224,7 @@
                                 <rect key="frame" x="0.0" y="144" width="375" height="474"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityCell" id="24x-k5-J8k" customClass="ActivityCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityCell" id="24x-k5-J8k" customClass="ActivityCell" customModule="Garden_Log" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="24x-k5-J8k" id="zpt-xM-Ctg">
@@ -346,7 +346,7 @@
         <!--Task Detail View Controller-->
         <scene sceneID="d2n-eL-Y7Z">
             <objects>
-                <viewController id="87C-Tg-u61" customClass="TaskDetailViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="87C-Tg-u61" customClass="TaskDetailViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TYp-To-aM0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -486,7 +486,7 @@
         <!--Add Task View Controller-->
         <scene sceneID="yhP-I3-avA">
             <objects>
-                <viewController id="isL-JP-GAL" customClass="AddTaskViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="isL-JP-GAL" customClass="AddTaskViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YN5-vq-5vk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -794,25 +794,10 @@
             </objects>
             <point key="canvasLocation" x="2546" y="2139"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Yca-ud-Gfo">
-            <objects>
-                <viewController id="3Sh-Ra-dOZ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="L7V-aW-3Y4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="0pC-SH-2pY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M6u-nT-JEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3313" y="2129"/>
-        </scene>
         <!--Plant Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="PlantDetailViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="PlantDetailViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -917,7 +902,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PlantDetailTaskCell" rowHeight="80" id="k7Y-hj-iU5" customClass="PlantDetailTaskCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="PlantDetailTaskCell" rowHeight="80" id="k7Y-hj-iU5" customClass="PlantDetailTaskCell" customModule="Garden_Log" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="359" height="80"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k7Y-hj-iU5" id="QW0-sN-eOp">
@@ -1056,7 +1041,7 @@
         <!--Add Plant View Controller-->
         <scene sceneID="Fyr-NH-oOe">
             <objects>
-                <viewController id="6Y5-V4-lNk" customClass="AddPlantViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Y5-V4-lNk" customClass="AddPlantViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCk-e7-uBS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1647,7 +1632,7 @@
         <!--Edit Plant View Controller-->
         <scene sceneID="CQB-vO-OKi">
             <objects>
-                <viewController id="kF8-fl-Lri" customClass="EditPlantViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kF8-fl-Lri" customClass="EditPlantViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FTR-gJ-Z7i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2179,7 +2164,7 @@
         <!--Edit Task View Controller-->
         <scene sceneID="soF-ul-ojX">
             <objects>
-                <viewController id="zq9-pX-okr" customClass="EditTaskViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zq9-pX-okr" customClass="EditTaskViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gO-9E-r9Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2213,36 +2198,39 @@
                                                             <action selector="onClickDropBtn:" destination="zq9-pX-okr" eventType="touchUpInside" id="jnJ-hy-74y"/>
                                                         </connections>
                                                     </button>
-                                                    <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wwa-cf-hYg">
+                                                    <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DZl-uq-oAu">
                                                         <rect key="frame" x="0.0" y="50" width="335" height="170"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="170" id="OL9-Ll-NK9"/>
+                                                            <constraint firstAttribute="height" constant="170" id="NdJ-8Z-A4c"/>
                                                         </constraints>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="plantCell" textLabel="5Sm-TE-KME" style="IBUITableViewCellStyleDefault" id="S5w-Of-g1X">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="x63-l1-Ulc" style="IBUITableViewCellStyleDefault" id="u6x-cK-nZy">
                                                                 <rect key="frame" x="0.0" y="28" width="335" height="43.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S5w-Of-g1X" id="eaa-uf-LsU">
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u6x-cK-nZy" id="VeY-zi-FeU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Sm-TE-KME">
+                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x63-l1-Ulc">
                                                                             <rect key="frame" x="15" y="0.0" width="305" height="43.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
+                                                                    <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </tableViewCellContentView>
+                                                                <color key="backgroundColor" red="0.75169020890000005" green="0.47968453170000003" blue="0.61569714549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </tableViewCell>
                                                         </prototypes>
                                                         <connections>
-                                                            <outlet property="dataSource" destination="zq9-pX-okr" id="RTh-Nr-I9Q"/>
-                                                            <outlet property="delegate" destination="zq9-pX-okr" id="Ukl-a0-QPn"/>
+                                                            <outlet property="dataSource" destination="zq9-pX-okr" id="kyf-vC-8kn"/>
+                                                            <outlet property="delegate" destination="zq9-pX-okr" id="2wb-HM-412"/>
                                                         </connections>
                                                     </tableView>
                                                 </subviews>
@@ -2463,7 +2451,7 @@
                         <outlet property="datePicker" destination="uZC-ZZ-Y05" id="cou-Lx-9sB"/>
                         <outlet property="plantMenuTitle" destination="6lO-pM-rRz" id="Xaw-Bk-H7k"/>
                         <outlet property="saveDateBtn" destination="Zir-U1-7Az" id="Yqx-pv-qcI"/>
-                        <outlet property="tableView" destination="Wwa-cf-hYg" id="DB7-af-4Er"/>
+                        <outlet property="tableView" destination="DZl-uq-oAu" id="1EZ-fh-TJt"/>
                         <outlet property="taskMenuTitle" destination="KUY-E4-W4N" id="vQX-Zd-lnb"/>
                         <outlet property="taskNotes" destination="Mbt-fJ-7tt" id="QBL-xw-gZL"/>
                         <outlet property="updateTaskButton" destination="b17-Z5-RXe" id="sCw-l0-hU4"/>
@@ -2482,7 +2470,7 @@
         <!--Filter Menu View Controller-->
         <scene sceneID="S9m-4C-aiF">
             <objects>
-                <viewController id="JGn-Yd-Sv9" customClass="FilterMenuViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JGn-Yd-Sv9" customClass="FilterMenuViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dcr-P3-ozy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2491,7 +2479,7 @@
                                 <rect key="frame" x="0.0" y="94" width="375" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" rowHeight="80" id="XTd-Px-Yb1" customClass="ActivityCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" rowHeight="80" id="XTd-Px-Yb1" customClass="ActivityCell" customModule="Garden_Log" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XTd-Px-Yb1" id="Kw5-94-s1S">
@@ -2550,7 +2538,7 @@
         <!--Filter Sub View Controller-->
         <scene sceneID="kSR-3c-9Ah">
             <objects>
-                <viewController id="yYn-Xh-PlK" customClass="FilterSubViewController" customModule="Garden_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yYn-Xh-PlK" customClass="FilterSubViewController" customModule="Garden_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lYh-Pl-Cj8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2559,7 +2547,7 @@
                                 <rect key="frame" x="0.0" y="94" width="375" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubFilterCell" rowHeight="80" id="dBP-Ef-pUV" customClass="ActivityCell" customModule="Garden_Tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubFilterCell" rowHeight="80" id="dBP-Ef-pUV" customClass="ActivityCell" customModule="Garden_Log" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dBP-Ef-pUV" id="hCh-VN-STu">
