@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class EditTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
-
+    
     var plants: [Plant] = []
     var activities = [Activity]()
     var activity: Activity?
@@ -72,7 +72,7 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
         
         taskNotes.delegate = self
     }
-
+    
     @IBAction func onClickDropBtn(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3) {
             self.tableView.isHidden = !self.tableView.isHidden
@@ -83,11 +83,11 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         // load data from core data
         loadPlants()
-
+        
         // reload the table view
         tableView.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return plants.count
     }
@@ -97,7 +97,7 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
         let plant = plants[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = plant.name!
-
+        
         return cell
     }
     
@@ -105,9 +105,9 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
         selectedPlant = plants[indexPath.row]
         plantMenuTitle.setTitle("Plant: \(plants[indexPath.row].name!)", for: .normal)
         UIView.animate(withDuration: 0.3) {
-         self.tableView.isHidden = !self.tableView.isHidden
-         self.view.layoutIfNeeded()
-         }
+            self.tableView.isHidden = !self.tableView.isHidden
+            self.view.layoutIfNeeded()
+        }
     }
     
     func loadPlants() {
@@ -116,23 +116,23 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
         let fetchRequest = NSFetchRequest<Plant>(entityName: "Plant")
         let sort = NSSortDescriptor(key: #keyPath(Plant.name), ascending: true)
         fetchRequest.sortDescriptors = [sort]
-            do {
-               plants = try context.fetch(fetchRequest)
-            }
-            catch {
-                print("Fetching failed \(error)")
-            }
+        do {
+            plants = try context.fetch(fetchRequest)
         }
-
-// MARK: Task Menu
-
+        catch {
+            print("Fetching failed \(error)")
+        }
+    }
+    
+    // MARK: Task Menu
+    
     @IBAction func handleTaskSelection(_ sender: UIButton) {
         menuAction(taskButtons)
     }
     
     @IBAction func taskTapped(_ sender: UIButton) {
         task = sender.currentTitle
-
+        
         taskMenuTitle.setTitle("Task: \(task!)", for: .normal)
         print(taskMenuTitle.currentTitle!)
         
@@ -140,7 +140,7 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
             button.isHidden = !button.isHidden }
     }
     
-// MARK: Date Picker
+    // MARK: Date Picker
     
     @IBAction func selectDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
@@ -151,11 +151,10 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func saveDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
         saveDateBtn.isHidden = !saveDateBtn.isHidden
-       
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM dd, yyyy"
         calendarMenuTitle.setTitle("Date: \(formatter.string(from:datePicker.date))", for: .normal)
-
     }
     
     // Notes
@@ -167,7 +166,6 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: Animation function
-    
     func menuAction(_ menuButtons: Array<UIButton>) {
         menuButtons.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
@@ -176,15 +174,14 @@ class EditTaskViewController: UIViewController, UITableViewDataSource, UITableVi
             })
         }
     }
-
-    // MARK: - Update task
     
+    // MARK: - Update task
     @IBAction func updateTaskBtnTapped(_ sender: UIButton) {
         activity?.task = task
         activity?.date = datePicker.date
         activity?.notes = taskNotes.text!
         activity?.parentPlant = selectedPlant
-
+        
         //Save the data to coredata
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
