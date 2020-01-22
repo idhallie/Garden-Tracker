@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class AddTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
-
+    
     var plants: [Plant] = []
     var activities = [Activity]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -51,7 +51,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         taskNotes.textColor = UIColor.lightGray
         taskNotes.delegate = self
     }
-
+    
     @IBAction func onClickDropBtn(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3) {
             self.tableView.isHidden = !self.tableView.isHidden
@@ -62,11 +62,11 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         // load data from core data
         loadPlants()
-
+        
         // reload the table view
         tableView.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return plants.count
     }
@@ -76,7 +76,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         let plant = plants[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = plant.name!
-
+        
         return cell
     }
     
@@ -84,9 +84,9 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         selectedPlant = plants[indexPath.row]
         plantMenuTitle.setTitle("Plant: \(plants[indexPath.row].name!)", for: .normal)
         UIView.animate(withDuration: 0.3) {
-         self.tableView.isHidden = !self.tableView.isHidden
-         self.view.layoutIfNeeded()
-         }
+            self.tableView.isHidden = !self.tableView.isHidden
+            self.view.layoutIfNeeded()
+        }
     }
     
     func loadPlants() {
@@ -95,23 +95,22 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         let fetchRequest = NSFetchRequest<Plant>(entityName: "Plant")
         let sort = NSSortDescriptor(key: #keyPath(Plant.name), ascending: true)
         fetchRequest.sortDescriptors = [sort]
-            do {
-               plants = try context.fetch(fetchRequest)
-            }
-            catch {
-                print("Fetching failed \(error)")
-            }
+        do {
+            plants = try context.fetch(fetchRequest)
         }
-
-// MARK: Task Menu
-
+        catch {
+            print("Fetching failed \(error)")
+        }
+    }
+    
+    // MARK: Task Menu
     @IBAction func handleTaskSelection(_ sender: UIButton) {
         menuAction(taskButtons)
     }
     
     @IBAction func taskTapped(_ sender: UIButton) {
         task = sender.currentTitle
-
+        
         taskMenuTitle.setTitle("Task: \(task!)", for: .normal)
         print(taskMenuTitle.currentTitle!)
         
@@ -119,9 +118,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
             button.isHidden = !button.isHidden }
     }
     
-// MARK: Date Picker
-    
-    
+    // MARK: Date Picker
     @IBAction func selectDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
         saveDateBtn.isHidden = !saveDateBtn.isHidden
@@ -131,11 +128,10 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func saveDateTapped(_ sender: UIButton) {
         datePicker.isHidden = !datePicker.isHidden
         saveDateBtn.isHidden = !saveDateBtn.isHidden
-       
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM dd, yyyy"
         calendarMenuTitle.setTitle("Date: \(formatter.string(from:datePicker.date))", for: .normal)
-
     }
     
     // Notes
@@ -156,7 +152,7 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
             })
         }
     }
-
+    
     // MARK: - Add new task
     @IBAction func addTaskBtnTapped(_ sender: UIButton) {
         let newActivity = Activity(context: context)
@@ -167,11 +163,10 @@ class AddTaskViewController: UIViewController, UITableViewDataSource, UITableVie
         newActivity.parentPlant = selectedPlant
         
         self.activities.append(newActivity)
-
+        
         //Save the data to coredata
-
+        
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }
-    
 }

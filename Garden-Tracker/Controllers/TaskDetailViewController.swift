@@ -9,7 +9,6 @@
 import UIKit
 
 class TaskDetailViewController: UIViewController {
-
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var plantNameLabel: UILabel!

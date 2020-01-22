@@ -86,5 +86,4 @@ class PlantDetailViewController: UIViewController, UINavigationControllerDelegat
 
         return cell
     }
-
 }

@@ -13,7 +13,7 @@ struct FilterCriteria {
     var item: String
 }
 class FilterSubViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     var category: String!
     var categoryItems: [String] = []
     
@@ -21,7 +21,7 @@ class FilterSubViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -29,18 +29,18 @@ class FilterSubViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func makeArray() -> [String] {
-            switch category {
-            case "type":
-                return ["Annual", "Bulb", "Evergreen", "Edible", "Grass", "Perennial", "Shrub", "Succulent", "Tree", "Vine"]
-            case "light":
-                return ["Full Sun", "Part Sun", "Part Shade", "Full Shade"]
-            case "flowering":
-                return ["Winter", "Spring", "Summer", "Fall", "Not Applicable"]
-            default:
-                return ["No matches for selected category."]
-            }
+        switch category {
+        case "type":
+            return ["Annual", "Bulb", "Evergreen", "Edible", "Grass", "Perennial", "Shrub", "Succulent", "Tree", "Vine"]
+        case "light":
+            return ["Full Sun", "Part Sun", "Part Shade", "Full Shade"]
+        case "flowering":
+            return ["Winter", "Spring", "Summer", "Fall", "Not Applicable"]
+        default:
+            return ["No matches for selected category."]
+        }
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryItems.count
     }
@@ -56,10 +56,10 @@ class FilterSubViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let filterSelection = FilterCriteria(category: category, item: categoryItems[indexPath.row])
         print("From menu: \(filterSelection)")
-
+        
         performSegue(withIdentifier: "FilterHomeSegue", sender: filterSelection)
     }
- 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FilterHomeSegue" {
             let destVC = segue.destination as! HomeViewController

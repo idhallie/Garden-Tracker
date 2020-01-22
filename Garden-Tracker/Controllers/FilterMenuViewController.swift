@@ -11,13 +11,12 @@ import UIKit
 class FilterMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let categories = ["Plant Type", "Light Needs", "Flowering Season"]
-
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -44,15 +43,15 @@ class FilterMenuViewController: UIViewController, UITableViewDataSource, UITable
         let selection = categories[indexPath.row]
         
         var category: String {
-        switch selection {
-        case "Plant Type":
-            return "type"
-        case "Light Needs":
-            return "light"
-        case "Flowering Season":
-            return "flowering"
-        default:
-            return "No matches for selected category."
+            switch selection {
+            case "Plant Type":
+                return "type"
+            case "Light Needs":
+                return "light"
+            case "Flowering Season":
+                return "flowering"
+            default:
+                return "No matches for selected category."
             }
         }
         performSegue(withIdentifier: "FilterSubSegue", sender: category)
@@ -64,5 +63,4 @@ class FilterMenuViewController: UIViewController, UITableViewDataSource, UITable
             destVC.category = sender as? String
         }
     }
-
 }

@@ -11,7 +11,7 @@ import CoreData
 
 
 class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
+    
     var plants = [Plant]()
     var plant: Plant?
     
@@ -31,7 +31,7 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
     @IBOutlet weak var floweringMenuTitle: UIButton!
     @IBOutlet var floweringButtons: [UIButton]!
     var flowering : String! = ""
-
+    
     // Add Image
     @IBOutlet weak var imageView: UIImageView!
     // Notes field
@@ -95,13 +95,13 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
         typeMenuTitle.setTitle("Type: \(plantType!)", for: .normal)
         
         menuAction(typeButtons)
-        }
+    }
     
     // LIGHT MENU
     @IBAction func handleLightSelection(_ sender: UIButton) {
         menuAction(lightButtons)
     }
-        
+    
     @IBAction func lightBtnTapped(_ sender: UIButton) {
         lightNeeds = sender.currentTitle!
         lightMenuTitle.setTitle("Light Needs: \(lightNeeds!)", for: .normal)
@@ -166,10 +166,10 @@ class EditPlantViewController: UIViewController, UITextViewDelegate, UIImagePick
         actionSheet.view.layoutIfNeeded()
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in imagePickerController.sourceType = .camera
-
+            
             
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-              self.present(imagePickerController, animated: true, completion: nil)
+                self.present(imagePickerController, animated: true, completion: nil)
             } else {
                 print("Camera not available.")
             }

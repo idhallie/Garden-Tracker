@@ -75,10 +75,11 @@ class TaskLogViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func loadActivites() {
         let fetchRequest = NSFetchRequest<Activity>(entityName: "Activity")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        let sort = NSSortDescriptor(key: #keyPath(Activity.date), ascending: false)
+        fetchRequest.sortDescriptors = [sort]
         
         do {
-        activities = try context.fetch(Activity.fetchRequest())
+            activities = try context.fetch(fetchRequest)
         } catch {
             print("Error loading activities: \(error)")
         }
